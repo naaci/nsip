@@ -1,0 +1,267 @@
+  
+  [1X2 [33X[0;0YNumerical Sets[133X[101X
+  
+  
+  [1X2.1 [33X[0;0YCategory of Numerical Sets[133X[101X
+  
+  [1X2.1-1 IsNumericalSet[101X
+  
+  [33X[1;0Y[29X[2XIsNumericalSet[102X( [3Xarg[103X ) [32X filter[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YA numerical set is a cofinite subset of [23X\mathbb N[123X which contains [23X0[123X.[133X
+  
+  
+  [1X2.2 [33X[0;0YConstruction of A Numerical Set[133X[101X
+  
+  [1X2.2-1 NumericalSet[101X
+  
+  [33X[1;0Y[29X[2XNumericalSet[102X( [3XList[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YNumericalSet[133X
+  
+  [33X[0;0YThe minimal numerical set conatining the given elements.[133X
+  
+  [1X2.2-2 NumericalSetByGaps[101X
+  
+  [33X[1;0Y[29X[2XNumericalSetByGaps[102X( [3XList[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YNumericalSet[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS := NumericalSet([0,3,4,5,7]);[127X[104X
+    [4X[28X{0,3,4,5,7,->}[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XT := NumericalSetByGaps([1,2,6]);[127X[104X
+    [4X[28X{0,3,4,5,7,->}[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XS  = T;[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.3 [33X[0;0YAttributes of A Numerical Set[133X[101X
+  
+  [1X2.3-1 SmallElements[101X
+  
+  [33X[1;0Y[29X[2XSmallElements[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [33X[0;0YSmallElements of [23XS[123X is the subset S which are smaller than the Conductor.[133X
+  
+  [1X2.3-2 Gaps[101X
+  
+  [33X[1;0Y[29X[2XGaps[102X( [3XGaps[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [1X2.3-3 Genus[101X
+  
+  [33X[1;0Y[29X[2XGenus[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [33X[0;0YGenus of [23XS[123X is the number of the gaps of [23XS[123X.[133X
+  
+  [1X2.3-4 Length[101X
+  
+  [33X[1;0Y[29X[2XLength[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [33X[0;0YLength of [23XS[123X is the number of the small elements of [23XS[123X.[133X
+  
+  [1X2.3-5 Conductor[101X
+  
+  [33X[1;0Y[29X[2XConductor[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [33X[0;0YThe  conductor  of [23XS[123X is the smallest element of [23XS[123X such that every subsequent
+  integer is an element of [23XS[123X.[133X
+  
+  [1X2.3-6 FrobeniusNumber[101X
+  
+  [33X[1;0Y[29X[2XFrobeniusNumber[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [33X[0;0YThe largest gap of [23XS[123X is called the Frobenius number of [23XS[123X.[133X
+  
+  [1X2.3-7 Multiplicity[101X
+  
+  [33X[1;0Y[29X[2XMultiplicity[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [1X2.3-8 PseudoFrobeniusNumbers[101X
+  
+  [33X[1;0Y[29X[2XPseudoFrobeniusNumbers[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger List[133X
+  
+  [33X[0;0YThe  type  of  an numerical set is the number of pseudo-Frobenius numbers of
+  the  numerical  set.  Given  a  numerical set S, the set of pseudo-Frobenius
+  numbers of [23XS[123X is defined by[133X
+  
+  
+  [24X[33X[0;6YPF\left(  S\right) =\left\{x\in \mathbb{Z}\setminus S : x+S\setminus \left\{
+  0\right\} \subseteq S\right\}.[133X
+  
+  [124X
+  
+  [1X2.3-9 GapsOfFirstType[101X
+  
+  [33X[1;0Y[29X[2XGapsOfFirstType[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [33X[0;0YThe set of gaps of the first type is[133X
+  
+  
+  [24X[33X[0;6YN\left(  S\right)  =\left\{  x\in  \mathbb{N}  \setminus S: F\left( S\right)
+  -x\in S\right\}[133X
+  
+  [124X
+  
+  [1X2.3-10 GapsOfSecondType[101X
+  
+  [33X[1;0Y[29X[2XGapsOfSecondType[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [33X[0;0YThe  set  of  gaps  of the second type gaps [23XL\left( S\right)[123X consists of the
+  remaining gap numbers, i.e., [23XL(S)=G(S)\setminus N(S)[123X.[133X
+  
+  [1X2.3-11 Dual[101X
+  
+  [33X[1;0Y[29X[2XDual[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YNumericalSet[133X
+  
+  [1X2.3-12 Dual2[101X
+  
+  [33X[1;0Y[29X[2XDual2[102X( [3Xarg[103X ) [32X attribute[133X
+  
+  [1X2.3-13 Atom[101X
+  
+  [33X[1;0Y[29X[2XAtom[102X( [3XNumericalSet[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YNumericalSet[133X
+  
+  [1X2.3-14 IsPositiveSemiSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsPositiveSemiSymmetric[102X( [3XNumericalSet[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X2.3-15 IsNegativeSemiSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsNegativeSemiSymmetric[102X( [3XNumericalSet[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [33X[0;0YNumerical monoids are always negative semisymmetric \cite{Antokoletz2002}[133X
+  
+  [1X2.3-16 IsSemiSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsSemiSymmetric[102X( [3XNumericalSet[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X2.3-17 IsSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsSymmetric[102X( [3XNumericalSet[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X2.3-18 IsAlmostSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsAlmostSymmetric[102X( [3XNumericalSemigroupSet[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X2.3-19 IsSuperSemiSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsSuperSemiSymmetric[102X( [3XNumericalSet[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSmallElements(S);[127X[104X
+    [4X[28X[ 0, 3, 4, 5, 7 ][128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGenus(S);[127X[104X
+    [4X[28X3[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLength(S);[127X[104X
+    [4X[28X4[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XFrobeniusNumber(S);[127X[104X
+    [4X[28X6[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XConductor(S);[127X[104X
+    [4X[28X7[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMultiplicity(S);[127X[104X
+    [4X[28X3[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XPseudoFrobeniusNumbers(S);[127X[104X
+    [4X[28X[ 1, 2, 6 ][128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XType(S);[127X[104X
+    [4X[28X3[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XAtom(S);[127X[104X
+    [4X[28X{0,4,5,7,->}[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XDual(S);[127X[104X
+    [4X[28X{0,4,5,7,->}[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGapsOfFirstType(S);[127X[104X
+    [4X[28X[ 1, 2, 6 ][128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XGapsOfSecondType(S);[127X[104X
+    [4X[28X[  ][128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsNegativeSemiSymmetric(S);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsPositiveSemiSymmetric(S);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsSemiSymmetric(S);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsSymmetric(S);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XIsAlmostSymmetric(S);[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.4 [33X[0;0YNumerical Semigroups[133X[101X
+  
+  [1X2.4-1 IsNumericalSemigroupSet[101X
+  
+  [33X[1;0Y[29X[2XIsNumericalSemigroupSet[102X( [3XNumericalSet[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  

@@ -1,0 +1,97 @@
+  
+  [1X3 [33X[0;0YInteger Partitions[133X[101X
+  
+  
+  [1X3.1 [33X[0;0YConstruction of An Integer Partition[133X[101X
+  
+  [1X3.1-1 IntegerPartition[101X
+  
+  [33X[1;0Y[29X[2XIntegerPartition[102X( [3XParts[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YIntegerPartition[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XP := IntegerPartition([7,2,1,1]);[127X[104X
+    [4X[28XSG  A + 11= 7+ 2+ 1+ 1[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X3.2 [33X[0;0YAttributes of An Integer Partition[133X[101X
+  
+  [1X3.2-1 Total[101X
+  
+  [33X[1;0Y[29X[2XTotal[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [1X3.2-2 Parts[101X
+  
+  [33X[1;0Y[29X[2XParts[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [1X3.2-3 Genus[101X
+  
+  [33X[1;0Y[29X[2XGenus[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [33X[0;0YCalculates the Genus of the given integer partition,[133X
+  
+  [1X3.2-4 Length[101X
+  
+  [33X[1;0Y[29X[2XLength[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [1X3.2-5 Dual[101X
+  
+  [33X[1;0Y[29X[2XDual[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YIntegerPartition[133X
+  
+  [1X3.2-6 Dual2[101X
+  
+  [33X[1;0Y[29X[2XDual2[102X( [3Xarg[103X ) [32X attribute[133X
+  
+  [1X3.2-7 IsSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsSymmetric[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X3.2-8 IsPseudoSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsPseudoSymmetric[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X3.2-9 IsPositiveSemiSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsPositiveSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X3.2-10 IsNegativeSemiSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsNegativeSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X3.2-11 IsSuperSemiSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsSuperSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X3.2-12 IsAlmostSymmetric[101X
+  
+  [33X[1;0Y[29X[2XIsAlmostSymmetric[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X3.2-13 Trace[101X
+  
+  [33X[1;0Y[29X[2XTrace[102X( [3Xarg[103X ) [32X attribute[133X
+  
+  
+  [1X3.3 [33X[0;0YInteger SG Partitions[133X[101X
+  
+  [1X3.3-1 IsSGIntegerPartition[101X
+  
+  [33X[1;0Y[29X[2XIsSGIntegerPartition[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
+  [1X3.3-2 IsArf[101X
+  
+  [33X[1;0Y[29X[2XIsArf[102X( [3Xarg[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
+  
