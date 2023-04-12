@@ -3,7 +3,15 @@
 #! @BeginExample
 S := NumericalSet( [0,3,4,5,7] );
 #! {0,3,4,5,7,->}
-S  = NumericalSet( IntegerPartition( S ) );
+P := IntegerPartition( S );
+#!     A - 6= 3+ 1+ 1+ 1
+S  = NumericalSet( P );
+#! true
+Genus( S ) = Genus( P );
+#! true
+Length( S ) = Length( P );
+#! true
+FrobeniusNumber( S ) = FrobeniusNumber( P );
 #! true
 #! @EndExample
 

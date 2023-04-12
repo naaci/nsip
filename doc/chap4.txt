@@ -21,7 +21,15 @@
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XS := NumericalSet( [0,3,4,5,7] );[127X[104X
     [4X[28X{0,3,4,5,7,->}[128X[104X
-    [4X[25Xgap>[125X [27XS  = NumericalSet( IntegerPartition( S ) );[127X[104X
+    [4X[25Xgap>[125X [27XP := IntegerPartition( S );[127X[104X
+    [4X[28X    A - 6= 3+ 1+ 1+ 1[128X[104X
+    [4X[25Xgap>[125X [27XS  = NumericalSet( P );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XGenus( S ) = Genus( P );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XLength( S ) = Length( P );[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XFrobeniusNumber( S ) = FrobeniusNumber( P );[127X[104X
     [4X[28Xtrue[128X[104X
   [4X[32X[104X
   

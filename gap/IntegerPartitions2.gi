@@ -11,6 +11,10 @@ InstallMethod(Length, [IsIntegerPartition],
     P -> Length( Parts ( P ))
 );
 
+InstallMethod(FrobeniusNumber, [IsIntegerPartition], 
+    P -> Length( P ) + Genus( P ) - 1
+);
+
 InstallMethod(Total, [IsIntegerPartition], 
     P -> Sum( Parts ( P ))
 );

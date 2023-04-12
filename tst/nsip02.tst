@@ -48,11 +48,11 @@ gap> Multiplicity(S);
 
 # doc/_Chapter_Numerical_Sets.xml:303-306
 gap> PseudoFrobeniusNumbers(S);
-[ 1, 2, 6 ]
+[ 6 ]
 
 # doc/_Chapter_Numerical_Sets.xml:309-312
 gap> Type(S);
-3
+1
 
 # doc/_Chapter_Numerical_Sets.xml:315-318
 gap> Atom(S);

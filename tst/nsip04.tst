@@ -10,13 +10,21 @@
 #
 gap> START_TEST("nsip04.tst");
 
-# doc/_Chapter_Conversions.xml:30-35
+# doc/_Chapter_Conversions.xml:30-43
 gap> S := NumericalSet( [0,3,4,5,7] );
 {0,3,4,5,7,->}
-gap> S  = NumericalSet( IntegerPartition( S ) );
+gap> P := IntegerPartition( S );
+    A - 6= 3+ 1+ 1+ 1
+gap> S  = NumericalSet( P );
+true
+gap> Genus( S ) = Genus( P );
+true
+gap> Length( S ) = Length( P );
+true
+gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
 true
 
-# doc/_Chapter_Conversions.xml:38-43
+# doc/_Chapter_Conversions.xml:46-51
 gap> P := IntegerPartition( [7,2,1,1] );
 SG  A + 11= 7+ 2+ 1+ 1
 gap> P = IntegerPartition( NumericalSet( P ));

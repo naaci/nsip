@@ -50,12 +50,12 @@ Multiplicity(S);
 
 #! @BeginExample
 PseudoFrobeniusNumbers(S);
-#! [ 1, 2, 6 ]
+#! [ 6 ]
 #! @EndExample
 
 #! @BeginExample
 Type(S);
-#! 3
+#! 1
 #! @EndExample
 
 #! @BeginExample

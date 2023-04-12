@@ -19,6 +19,10 @@ DeclareAttribute( "Genus", IsIntegerPartition );
 DeclareAttribute( "Length", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
+#! @Returns Integer
+DeclareAttribute( "FrobeniusNumber", IsIntegerPartition );
+
+#! @Arguments IntegerPartition
 #! @Returns IntegerPartition
 DeclareAttribute( "Dual", IsIntegerPartition );
 DeclareAttribute( "Dual2", IsIntegerPartition );

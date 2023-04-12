@@ -39,46 +39,51 @@
   [33X[1;0Y[29X[2XLength[102X( [3XIntegerPartition[103X ) [32X attribute[133X
   [6XReturns:[106X  [33X[0;10YInteger[133X
   
-  [1X3.2-5 Dual[101X
+  [1X3.2-5 FrobeniusNumber[101X
+  
+  [33X[1;0Y[29X[2XFrobeniusNumber[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YInteger[133X
+  
+  [1X3.2-6 Dual[101X
   
   [33X[1;0Y[29X[2XDual[102X( [3XIntegerPartition[103X ) [32X attribute[133X
   [6XReturns:[106X  [33X[0;10YIntegerPartition[133X
   
-  [1X3.2-6 Dual2[101X
+  [1X3.2-7 Dual2[101X
   
   [33X[1;0Y[29X[2XDual2[102X( [3Xarg[103X ) [32X attribute[133X
   
-  [1X3.2-7 IsSymmetric[101X
+  [1X3.2-8 IsSymmetric[101X
   
   [33X[1;0Y[29X[2XIsSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-8 IsPseudoSymmetric[101X
+  [1X3.2-9 IsPseudoSymmetric[101X
   
   [33X[1;0Y[29X[2XIsPseudoSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-9 IsPositiveSemiSymmetric[101X
+  [1X3.2-10 IsPositiveSemiSymmetric[101X
   
   [33X[1;0Y[29X[2XIsPositiveSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-10 IsNegativeSemiSymmetric[101X
+  [1X3.2-11 IsNegativeSemiSymmetric[101X
   
   [33X[1;0Y[29X[2XIsNegativeSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-11 IsSuperSemiSymmetric[101X
+  [1X3.2-12 IsSuperSemiSymmetric[101X
   
   [33X[1;0Y[29X[2XIsSuperSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-12 IsAlmostSymmetric[101X
+  [1X3.2-13 IsAlmostSymmetric[101X
   
   [33X[1;0Y[29X[2XIsAlmostSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-13 Trace[101X
+  [1X3.2-14 Trace[101X
   
   [33X[1;0Y[29X[2XTrace[102X( [3Xarg[103X ) [32X attribute[133X
   

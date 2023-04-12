@@ -62,15 +62,16 @@
       3.2-2 Parts
       3.2-3 Genus
       3.2-4 Length
-      3.2-5 Dual
-      3.2-6 Dual2
-      3.2-7 IsSymmetric
-      3.2-8 IsPseudoSymmetric
-      3.2-9 IsPositiveSemiSymmetric
-      3.2-10 IsNegativeSemiSymmetric
-      3.2-11 IsSuperSemiSymmetric
-      3.2-12 IsAlmostSymmetric
-      3.2-13 Trace
+      3.2-5 FrobeniusNumber
+      3.2-6 Dual
+      3.2-7 Dual2
+      3.2-8 IsSymmetric
+      3.2-9 IsPseudoSymmetric
+      3.2-10 IsPositiveSemiSymmetric
+      3.2-11 IsNegativeSemiSymmetric
+      3.2-12 IsSuperSemiSymmetric
+      3.2-13 IsAlmostSymmetric
+      3.2-14 Trace
     3.3 [33X[0;0YInteger SG Partitions[133X
       3.3-1 IsSGIntegerPartition
       3.3-2 IsArf

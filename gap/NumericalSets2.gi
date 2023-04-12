@@ -33,7 +33,7 @@ InstallMethod( PseudoFrobeniusNumbers, [IsNumericalSet],
         function( x )
             local y;
             for y in [ 1..Conductor( S ) ] do 
-                if x in S and not x + y in S then
+                if y in S and not x + y in S then
                     return false;
                 fi;
             od;

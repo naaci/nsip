@@ -4,12 +4,13 @@
   
   [2XAtom[102X, for IsNumericalSet 2.3-13 
   [2XConductor[102X, for IsNumericalSet 2.3-5 
-  [2XDual[102X, for IsIntegerPartition 3.2-5 
+  [2XDual[102X, for IsIntegerPartition 3.2-6 
       for IsNumericalSet 2.3-11 
-  [2XDual2[102X, for IsIntegerPartition 3.2-6 
+  [2XDual2[102X, for IsIntegerPartition 3.2-7 
       for IsNumericalSet 2.3-12 
   [2XDurfeeDecomposition[102X, for IsIntegerPartition 5.1-1 
-  [2XFrobeniusNumber[102X, for IsNumericalSet 2.3-6 
+  [2XFrobeniusNumber[102X, for IsIntegerPartition 3.2-5 
+      for IsNumericalSet 2.3-6 
   [2XGaps[102X, for IsNumericalSet 2.3-2 
   [2XGapsOfFirstType[102X, for IsNumericalSet 2.3-9 
   [2XGapsOfSecondType[102X, for IsNumericalSet 2.3-10 
@@ -17,21 +18,21 @@
       for IsNumericalSet 2.3-3 
   [2XIntegerPartition[102X, for IsList 3.1-1 
       for IsNumericalSet 4.1-2 
-  [2XIsAlmostSymmetric[102X, for IsIntegerPartition 3.2-12 
+  [2XIsAlmostSymmetric[102X, for IsIntegerPartition 3.2-13 
       for IsNumericalSet 2.3-18 
   [2XIsArf[102X, for IsIntegerPartition 3.3-2 
-  [2XIsNegativeSemiSymmetric[102X, for IsIntegerPartition 3.2-10 
+  [2XIsNegativeSemiSymmetric[102X, for IsIntegerPartition 3.2-11 
       for IsNumericalSet 2.3-15 
   [2XIsNumericalSemigroupSet[102X, for IsNumericalSet 2.4-1 
   [2XIsNumericalSet[102X, for IsAttributeStoringRep 2.1-1 
-  [2XIsPositiveSemiSymmetric[102X, for IsIntegerPartition 3.2-9 
+  [2XIsPositiveSemiSymmetric[102X, for IsIntegerPartition 3.2-10 
       for IsNumericalSet 2.3-14 
-  [2XIsPseudoSymmetric[102X, for IsIntegerPartition 3.2-8 
+  [2XIsPseudoSymmetric[102X, for IsIntegerPartition 3.2-9 
   [2XIsSemiSymmetric[102X, for IsNumericalSet 2.3-16 
   [2XIsSGIntegerPartition[102X, for IsIntegerPartition 3.3-1 
-  [2XIsSuperSemiSymmetric[102X, for IsIntegerPartition 3.2-11 
+  [2XIsSuperSemiSymmetric[102X, for IsIntegerPartition 3.2-12 
       for IsNumericalSet 2.3-19 
-  [2XIsSymmetric[102X, for IsIntegerPartition 3.2-7 
+  [2XIsSymmetric[102X, for IsIntegerPartition 3.2-8 
       for IsNumericalSet 2.3-17 
   [2XLength[102X, for IsIntegerPartition 3.2-4 
       for IsNumericalSet 2.3-4 
@@ -43,7 +44,7 @@
   [2XPseudoFrobeniusNumbers[102X, for IsNumericalSet 2.3-8 
   [2XSmallElements[102X, for IsNumericalSet 2.3-1 
   [2XTotal[102X, for IsIntegerPartition 3.2-1 
-  [2XTrace[102X, for IsIntegerPartition 3.2-13 
+  [2XTrace[102X, for IsIntegerPartition 3.2-14 
   [2XTree[102X, for IsIntegerPartition 5.1-2 
   
   
