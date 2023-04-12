@@ -14,7 +14,7 @@ gap> START_TEST("nsip04.tst");
 gap> S := NumericalSet( [0,3,4,5,7] );
 {0,3,4,5,7,->}
 gap> P := IntegerPartition( S );
-    A - 6= 3+ 1+ 1+ 1
+    A - 1 1 6= 3+ 1+ 1+ 1
 gap> S  = NumericalSet( P );
 true
 gap> Genus( S ) = Genus( P );
@@ -26,7 +26,7 @@ true
 
 # doc/_Chapter_Conversions.xml:46-51
 gap> P := IntegerPartition( [7,2,1,1] );
-SG  A + 11= 7+ 2+ 1+ 1
+SG  A + 4 2 11= 7+ 2+ 1+ 1
 gap> P = IntegerPartition( NumericalSet( P ));
 true
 

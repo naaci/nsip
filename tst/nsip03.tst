@@ -12,7 +12,7 @@ gap> START_TEST("nsip03.tst");
 
 # doc/_Chapter_Integer_Partitions.xml:21-24
 gap> P := IntegerPartition([7,2,1,1]);
-SG  A + 11= 7+ 2+ 1+ 1
+SG  A + 4 2 11= 7+ 2+ 1+ 1
 
 #
 gap> STOP_TEST("nsip03.tst", 1);

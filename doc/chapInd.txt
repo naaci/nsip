@@ -46,6 +46,7 @@
   [2XTotal[102X, for IsIntegerPartition 3.2-1 
   [2XTrace[102X, for IsIntegerPartition 3.2-14 
   [2XTree[102X, for IsIntegerPartition 5.1-2 
+  [2XType[102X, for IsIntegerPartition 3.2-15 
   
   
   -------------------------------------------------------

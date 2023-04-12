@@ -11,7 +11,7 @@
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XP := IntegerPartition([7,2,1,1]);[127X[104X
-    [4X[28XSG  A + 11= 7+ 2+ 1+ 1[128X[104X
+    [4X[28XSG  A + 4 2 11= 7+ 2+ 1+ 1[128X[104X
   [4X[32X[104X
   
   
@@ -86,6 +86,10 @@
   [1X3.2-14 Trace[101X
   
   [33X[1;0Y[29X[2XTrace[102X( [3Xarg[103X ) [32X attribute[133X
+  
+  [1X3.2-15 Type[101X
+  
+  [33X[1;0Y[29X[2XType[102X( [3Xarg[103X ) [32X operation[133X
   
   
   [1X3.3 [33X[0;0YInteger SG Partitions[133X[101X

@@ -54,9 +54,15 @@ InstallMethod( IsAlmostSymmetric, [IsIntegerPartition],
 InstallMethod( Trace, [IsIntegerPartition], function( P )
     local i;
     i := 1;
-    while i < P[ i ] do
+    while true do
+        if i > P[ i ] then 
+            return i - 1;
+            # break;
+        fi;
         i := i + 1;
     od;
-    return i;
 end );
 
+InstallMethod( Type, [IsIntegerPartition], 
+    P -> Type( NumericalSet( P ))
+);

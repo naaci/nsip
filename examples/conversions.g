@@ -4,7 +4,7 @@
 S := NumericalSet( [0,3,4,5,7] );
 #! {0,3,4,5,7,->}
 P := IntegerPartition( S );
-#!     A - 6= 3+ 1+ 1+ 1
+#!     A - 1 1 6= 3+ 1+ 1+ 1
 S  = NumericalSet( P );
 #! true
 Genus( S ) = Genus( P );
@@ -17,7 +17,7 @@ FrobeniusNumber( S ) = FrobeniusNumber( P );
 
 #! @BeginExample
 P := IntegerPartition( [7,2,1,1] );
-#! SG  A + 11= 7+ 2+ 1+ 1
+#! SG  A + 4 2 11= 7+ 2+ 1+ 1
 P = IntegerPartition( NumericalSet( P ));
 #! true
 #! @EndExample

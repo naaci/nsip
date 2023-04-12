@@ -48,3 +48,6 @@ DeclareProperty( "IsAlmostSymmetric", IsIntegerPartition );
 #!
 DeclareAttribute( "Trace", IsIntegerPartition );
 
+#!
+DeclareOperation( "Type", [IsIntegerPartition] );
+

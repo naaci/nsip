@@ -55,6 +55,8 @@ view_integer_partition := function(P)
             Add(flags,"  ");
         fi;
     fi;
+    Add(flags,FormattedString(Type( P ),2));
+    Add(flags,FormattedString(Trace( P ),2));
     return flags;
 end;
 
