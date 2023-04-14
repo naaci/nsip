@@ -1,3 +1,26 @@
+InstallMethod(Gaps, [IsIntegerPartition], function( P )
+    local i,j,G;
+    G := [];
+    for i in [1..Length(P)] do
+        for j in [1..P[i]-P[i+1]] do 
+            Add(G, P[1] - P[i] + j + i - 1);
+        od;
+    od;
+    return G;
+end);
+
+InstallMethod(GapsOfFirstType, [IsIntegerPartition], function( P )
+    local i,G;
+    G := [];
+    for i in [1..Length(P)] do
+            Add(G, P[i] - i  + Length(P) );
+    od;
+    return G;
+end);
+
+InstallMethod(GapsOfSecondType, [IsIntegerPartition], 
+    P -> Difference(Gaps( P ), GapsOfFirstType( P ))
+);
 
 InstallMethod(Genus, [IsIntegerPartition], function( P )
     if Length( P ) = 0 then 

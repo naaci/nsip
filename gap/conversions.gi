@@ -1,8 +1,8 @@
 
 InstallMethod( NumericalSet, [IsIntegerPartition],
-    S -> NumericalSet(
-        List( [ 1..Length( S ) + 1 ], 
-        i -> Genus( S ) - 1 - ( S[ i ] - i )
+    P -> NumericalSet(
+        List( [ 1..Length( P ) + 1 ], 
+        i -> Genus( P ) - 1 - ( P[ i ] - i )
         )));
 
 InstallMethod( IntegerPartition, [IsNumericalSet], 

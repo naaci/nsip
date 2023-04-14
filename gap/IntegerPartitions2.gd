@@ -10,6 +10,18 @@ DeclareAttribute( "Total", IsIntegerPartition );
 DeclareAttribute( "Parts", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
+#! @Returns List
+DeclareAttribute( "Gaps", IsIntegerPartition );
+
+#! @Arguments IntegerPartition
+#! @Returns List
+DeclareAttribute( "GapsOfFirstType", IsIntegerPartition );
+
+#! @Arguments IntegerPartition
+#! @Returns List
+DeclareAttribute( "GapsOfSecondType", IsIntegerPartition );
+
+#! @Arguments IntegerPartition
 #! @Returns Integer
 #! @Description Calculates the Genus of the given integer partition,
 DeclareAttribute( "Genus", IsIntegerPartition );
