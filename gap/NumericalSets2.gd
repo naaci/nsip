@@ -6,6 +6,10 @@
 #! @Description SmallElements of $S$ is the subset S which are smaller than the Conductor.
 DeclareAttribute( "SmallElements", IsNumericalSet );
 
+#! @Arguments NumericalSet
+#! @Returns List
+DeclareAttribute( "Parts", IsNumericalSet );
+
 #! @Arguments Gaps
 #! @Returns List
 DeclareAttribute( "Gaps", IsNumericalSet );

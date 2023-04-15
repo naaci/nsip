@@ -1,8 +1,8 @@
-# /doc/chap*.html
-# /doc/chap*.txt
-# /doc/*.css
-# /doc/*.js
-# /doc/chooser.html
+/doc/chap*.html
+/doc/chap*.txt
+/doc/*.css
+/doc/*.js
+/doc/chooser.html
 /doc/*.aux
 /doc/*.bbl
 /doc/*.blg
@@ -17,8 +17,14 @@
 /doc/*.six
 /doc/*.tex
 /doc/*.toc
-# /doc/manual.pdf
+/doc/manual.pdf
 /doc/_*.xml
+
+/doc/*.fls
+/doc/*.dvi
+/doc/*.fdb_latexmk
+
+/doc/*.pdf
 
 /bin/
 /gen/

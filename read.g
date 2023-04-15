@@ -12,5 +12,6 @@ ReadPackage( "nsip", "gap/IntegerPartitions2.gi" );
 ReadPackage( "nsip", "gap/IntegerPartitionsSG.gi" );
 
 ReadPackage( "nsip", "gap/conversions.gi" );
+ReadPackage( "nsip", "gap/random.gi" );
 
 ReadPackage( "nsip", "gap/tree.gi" );

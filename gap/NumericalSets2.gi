@@ -1,9 +1,20 @@
-InstallMethod(Genus, [IsNumericalSet],
-    S -> Length(Gaps( S ))
+InstallMethod( Parts, [IsNumericalSet], 
+    S -> AssociatedPartition( Reversed( Gaps( S ) - [ 0 .. Genus( S ) - 1 ]))
 );
 
-InstallMethod( SmallElements, [IsNumericalSet],
-    S -> Difference( [ 0 .. Conductor( S ) ], Gaps( S ) )
+InstallMethod(GapsOfFirstType, [IsNumericalSet],
+    S -> Intersection( Gaps( S ), FrobeniusNumber( S ) - S )
+    # S -> Difference( Gaps( S ), GapsOfSecondType( S ))
+);
+
+InstallMethod(GapsOfSecondType, [IsNumericalSet],
+    S -> Difference( Gaps( S ), FrobeniusNumber( S ) - S )
+    # S -> Difference( Gaps( S ), GapsOfFirstType( S ))
+    # S -> Intersection( Gaps( S ), Dual( S ) )
+);
+
+InstallMethod(Genus, [IsNumericalSet],
+    S -> Length(Gaps( S ))
 );
 
 InstallMethod(Length, [IsNumericalSet],
@@ -18,43 +29,34 @@ InstallMethod(FrobeniusNumber, [IsNumericalSet], function( S )
     fi;
 end );
 
-InstallMethod(Conductor, [IsNumericalSet], 
-    S -> FrobeniusNumber( S ) + 1
+InstallMethod( IsSymmetric, [IsNumericalSet], 
+    IsPositiveSemiSymmetric and IsNegativeSemiSymmetric
 );
 
-InstallMethod( Multiplicity, [IsNumericalSet],
-    S -> S[2]
+InstallMethod( IsPseudoSymmetric, [IsNumericalSet], 
+    S -> GapsOfSecondType( S ) = [FrobeniusNumber( S ) / 2 ]
 );
 
-InstallMethod( PseudoFrobeniusNumbers, [IsNumericalSet],
-    S -> Filtered(
-        Gaps( S ), 
-        # x -> IsSubset( S, x + Difference( SmallElements( S ), [ 0 ]))); # definition of IsSubset is reverse 
-        function( x )
-            local y;
-            for y in [ 1..Conductor( S ) ] do 
-                if y in S and not x + y in S then
-                    return false;
-                fi;
-            od;
-            return true;
-        end )
+InstallMethod( IsPositiveSemiSymmetric, [IsNumericalSet],
+    S -> IsSubset( Gaps( S ), FrobeniusNumber( S ) - S)
+    # S -> GapsOfSecondType( S ) = []
+);
+
+InstallMethod( IsNegativeSemiSymmetric, [IsNumericalSet],
+    S -> IsSubset( FrobeniusNumber( S ) - S, Gaps( S ) )
+);
+
+InstallMethod( IsAlmostSymmetric, [IsNumericalSet],
+    S -> IsSubset( PseudoFrobeniusNumbers(S), GapsOfSecondType(S) )
 );
 
 InstallMethod( Type, [IsNumericalSet],
     S -> Length( PseudoFrobeniusNumbers( S ))
 );
 
-InstallMethod( Atom, [IsNumericalSet],
-    S -> NumericalSet(Filtered(
-        [1..Conductor( S )],
-        x -> IsSubset( S, x + SmallElements( S ) # definition of IsSubset is reverse 
-    )))
-);
-
 InstallMethod( Dual, [IsNumericalSet],
     S -> NumericalSet(
-        Difference( [ 0..Conductor( S ) ], FrobeniusNumber( S ) - S )
+        Difference( [ 0 .. Conductor( S ) ], FrobeniusNumber( S ) - S )
     )
 );
 
@@ -67,38 +69,34 @@ InstallMethod( Dual2, [IsNumericalSet],
     # ))
 );
 
-InstallMethod(GapsOfFirstType, [IsNumericalSet],
-    S -> Intersection( Gaps( S ), FrobeniusNumber( S ) - S )
-    # S -> Difference( Gaps( S ), GapsOfSecondType( S ))
-);
-
-InstallMethod(GapsOfSecondType, [IsNumericalSet],
-    S -> Difference( Gaps( S ), FrobeniusNumber( S ) - S )
-    # S -> Difference( Gaps( S ), GapsOfFirstType( S ))
-    # S -> Intersection( Gaps( S ), Dual( S ) )
-);
-
-InstallMethod( IsNegativeSemiSymmetric, [IsNumericalSet],
-    S -> IsSubset( FrobeniusNumber( S ) - S, Gaps( S ) )
-);
-
-InstallMethod( IsPositiveSemiSymmetric, [IsNumericalSet],
-    S -> IsSubset( Gaps( S ), FrobeniusNumber( S ) - S)
-    # S -> GapsOfSecondType( S ) = []
-);
-
 InstallMethod( IsSemiSymmetric, [IsNumericalSet], 
     IsNegativeSemiSymmetric
 );
 
-InstallMethod( IsSymmetric, [IsNumericalSet], 
-    IsPositiveSemiSymmetric and IsNegativeSemiSymmetric
+########################
+
+InstallMethod( PseudoFrobeniusNumbers, [IsNumericalSet],
+    S -> Filtered(
+        Gaps( S ), 
+        x -> IsSubset( S, x + Difference( SmallElements( S ), [ 0 ])))
 );
 
-InstallMethod( IsPseudoSymmetric, [IsNumericalSet], 
-    S -> GapsOfSecondType( S ) = [FrobeniusNumber( S ) / 2 ]
+InstallMethod( Atom, [IsNumericalSet],
+    S -> NumericalSet(Filtered(
+        [1..Conductor( S )],
+        x -> IsSubset( S, x + SmallElements( S )) # definition of IsSubset is reverse 
+    ))
 );
 
-InstallMethod( IsAlmostSymmetric, [IsNumericalSet],
-    S -> IsSubset( PseudoFrobeniusNumbers(S), GapsOfSecondType(S) )
+InstallMethod( SmallElements, [IsNumericalSet],
+    S -> Difference( [ 0 .. Conductor( S ) ], Gaps( S ) )
 );
+
+InstallMethod(Conductor, [IsNumericalSet], 
+    S -> FrobeniusNumber( S ) + 1
+);
+
+InstallMethod( Multiplicity, [IsNumericalSet],
+    S -> S[2]
+);
+

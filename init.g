@@ -15,5 +15,6 @@ ReadPackage( "nsip", "gap/IntegerPartitionsSG.gd" );
 
 #! @Chapter Conversions
 ReadPackage( "nsip", "gap/conversions.gd" );
+ReadPackage( "nsip", "gap/random.gd" );
 
 ReadPackage( "nsip", "gap/tree.gd" );

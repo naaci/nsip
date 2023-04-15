@@ -1,5 +1,4 @@
 InstallMethod( NumericalSet, [IsList], function( S )
-    Info(InfoIntPart, 1 ,"NumericalSet from the list of integers");
     if S = [] then
         return NumericalSetByGaps([]);
     fi;
@@ -9,7 +8,6 @@ InstallMethod( NumericalSet, [IsList], function( S )
 end );
 
 InstallMethod( NumericalSetByGaps, [IsList], function( G )
-    Info(InfoIntPart, 1 ,"NumericalSetByGaps from the list of integers");
     return ObjectifyWithAttributes( rec( ), NumericalSetsType
         , Gaps, Intersection( G, PositiveIntegers )
         );

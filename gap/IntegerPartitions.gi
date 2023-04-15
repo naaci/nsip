@@ -1,21 +1,12 @@
 
 InstallMethod( IntegerPartition, [IsList], function( L )
-    # local c;
-    # for c in L do
-    #     if not IsInt( c ) then
-    #         return fail;
-    #     fi;
-    # od;
 
-    Sort( L , function( x, y )
-        return x > y;
-    end );
+    if ForAny( L, x -> not x in NonnegativeIntegers ) then
+        return fail;
+    fi;
 
     return ObjectifyWithAttributes( rec( ), IntegerPartitionsType
-        , Parts, L
-        # , Genus, First( L )
-        # , Length, Length( L )
-        # , Total, Sum( L )
+        , Parts, Reversed( SortedList( Filtered( L, i -> not i = 0)))
         );
 end );
 
