@@ -27,67 +27,82 @@
   [33X[1;0Y[29X[2XParts[102X( [3XIntegerPartition[103X ) [32X attribute[133X
   [6XReturns:[106X  [33X[0;10YList[133X
   
-  [1X3.2-3 Genus[101X
+  [1X3.2-3 Gaps[101X
+  
+  [33X[1;0Y[29X[2XGaps[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [1X3.2-4 GapsOfFirstType[101X
+  
+  [33X[1;0Y[29X[2XGapsOfFirstType[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [1X3.2-5 GapsOfSecondType[101X
+  
+  [33X[1;0Y[29X[2XGapsOfSecondType[102X( [3XIntegerPartition[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YList[133X
+  
+  [1X3.2-6 Genus[101X
   
   [33X[1;0Y[29X[2XGenus[102X( [3XIntegerPartition[103X ) [32X attribute[133X
   [6XReturns:[106X  [33X[0;10YInteger[133X
   
   [33X[0;0YCalculates the Genus of the given integer partition,[133X
   
-  [1X3.2-4 Length[101X
+  [1X3.2-7 Length[101X
   
   [33X[1;0Y[29X[2XLength[102X( [3XIntegerPartition[103X ) [32X attribute[133X
   [6XReturns:[106X  [33X[0;10YInteger[133X
   
-  [1X3.2-5 FrobeniusNumber[101X
+  [1X3.2-8 FrobeniusNumber[101X
   
   [33X[1;0Y[29X[2XFrobeniusNumber[102X( [3XIntegerPartition[103X ) [32X attribute[133X
   [6XReturns:[106X  [33X[0;10YInteger[133X
   
-  [1X3.2-6 Dual[101X
+  [1X3.2-9 Dual[101X
   
   [33X[1;0Y[29X[2XDual[102X( [3XIntegerPartition[103X ) [32X attribute[133X
   [6XReturns:[106X  [33X[0;10YIntegerPartition[133X
   
-  [1X3.2-7 Dual2[101X
+  [1X3.2-10 Dual2[101X
   
   [33X[1;0Y[29X[2XDual2[102X( [3Xarg[103X ) [32X attribute[133X
   
-  [1X3.2-8 IsSymmetric[101X
+  [1X3.2-11 IsSymmetric[101X
   
   [33X[1;0Y[29X[2XIsSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-9 IsPseudoSymmetric[101X
+  [1X3.2-12 IsPseudoSymmetric[101X
   
   [33X[1;0Y[29X[2XIsPseudoSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-10 IsPositiveSemiSymmetric[101X
+  [1X3.2-13 IsPositiveSemiSymmetric[101X
   
   [33X[1;0Y[29X[2XIsPositiveSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-11 IsNegativeSemiSymmetric[101X
+  [1X3.2-14 IsNegativeSemiSymmetric[101X
   
   [33X[1;0Y[29X[2XIsNegativeSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-12 IsSuperSemiSymmetric[101X
+  [1X3.2-15 IsSuperSemiSymmetric[101X
   
   [33X[1;0Y[29X[2XIsSuperSemiSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-13 IsAlmostSymmetric[101X
+  [1X3.2-16 IsAlmostSymmetric[101X
   
   [33X[1;0Y[29X[2XIsAlmostSymmetric[102X( [3Xarg[103X ) [32X property[133X
   [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X[133X
   
-  [1X3.2-14 Trace[101X
+  [1X3.2-17 Trace[101X
   
   [33X[1;0Y[29X[2XTrace[102X( [3Xarg[103X ) [32X attribute[133X
   
-  [1X3.2-15 Type[101X
+  [1X3.2-18 Type[101X
   
   [33X[1;0Y[29X[2XType[102X( [3Xarg[103X ) [32X operation[133X
   
