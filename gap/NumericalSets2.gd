@@ -72,6 +72,7 @@ DeclareAttribute( "GapsOfSecondType", IsNumericalSet );
 #!
 DeclareAttribute( "Dual", IsNumericalSet );
 DeclareAttribute( "Dual2", IsNumericalSet );
+DeclareAttribute( "Dual3", IsNumericalSet );
 
 #! @Arguments NumericalSet
 #! @Returns NumericalSet
@@ -99,6 +100,10 @@ DeclareProperty( "IsPseudoSymmetric", IsNumericalSet );
 #! @Arguments NumericalSemigroupSet
 #!
 DeclareProperty( "IsAlmostSymmetric", IsNumericalSet );
+
+#! @Arguments NumericalSemigroupSet
+#!
+DeclareProperty( "IsPerfectSemigroup", IsNumericalSet );
 
 #! @Arguments NumericalSet
 #!

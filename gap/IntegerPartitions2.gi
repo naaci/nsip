@@ -1,5 +1,9 @@
+InstallMethod(N, [IsIntegerPartition], 
+    P -> Reversed( Parts( ( P ))) + [ 0 .. Length( P ) - 1 ] 
+);
+
 InstallMethod(Gaps, [IsIntegerPartition], 
-    P -> Reversed( Parts( Dual( P ))) + [ 0 .. Genus( P ) - 1 ] 
+    P -> N( Dual( P ))
     # P -> Union(Set(
     #      [1..Length(P)], i -> Set(
     #         [ 1 .. P[ i ] - P[ i + 1 ]], j -> Genus( P ) - 1 - ( P[ i ] - i ) + j
@@ -10,7 +14,7 @@ InstallMethod(Gaps, [IsIntegerPartition],
 InstallMethod(GapsOfFirstType, [IsIntegerPartition], 
     P -> Intersection( 
             Gaps( P ),
-            Reversed( Parts( ( P ))) + [ 0 .. Length( P ) - 1 ] 
+            N( P )
             #  Set( [ 1 .. Length(P) ], i -> P[ i ] - i  + Length( P ) )
          )
 );
@@ -18,9 +22,12 @@ InstallMethod(GapsOfFirstType, [IsIntegerPartition],
 InstallMethod(GapsOfSecondType, [IsIntegerPartition], 
     P -> Difference(
             Gaps( P ), 
-            GapsOfFirstType( P )
-            # Reversed( Parts( ( P ))) + [ 0 .. Length( P ) - 1 ] 
+            N( P )
          )
+);
+
+InstallMethod(Length, [IsIntegerPartition], 
+    P -> Length( Parts ( P ))
 );
 
 InstallMethod(Genus, [IsIntegerPartition], function( P )
@@ -31,16 +38,24 @@ InstallMethod(Genus, [IsIntegerPartition], function( P )
     fi;
 end);
 
-InstallMethod(Length, [IsIntegerPartition], 
-    P -> Length( Parts ( P ))
-);
-
 InstallMethod(FrobeniusNumber, [IsIntegerPartition], 
     P -> Length( P ) + Genus( P ) - 1
 );
 
 InstallMethod( IsSymmetric, [IsIntegerPartition], 
     P -> Dual( P ) = P
+);
+
+InstallMethod( Dual, [IsIntegerPartition], 
+    P -> IntegerPartition( AssociatedPartition( Parts( P )))
+);
+
+InstallMethod( Dual2, [IsIntegerPartition], 
+    P -> IntegerPartition( List( [ 2..Length( P ) + 1 ], i -> Genus( P ) - P[ i ] ))
+);
+
+InstallMethod( Dual3, [IsIntegerPartition], 
+    P -> IntegerPartition( Dual3( NumericalSet( P )))
 );
 
 InstallMethod( IsPseudoSymmetric, [IsIntegerPartition], 
@@ -59,16 +74,12 @@ InstallMethod( IsAlmostSymmetric, [IsIntegerPartition],
     P -> IsAlmostSymmetric( NumericalSet( P ) )
 );
 
+InstallMethod( IsPerfectSemigroup, [IsIntegerPartition], 
+    P -> ForAll( [ 1 .. Length( P ) ], i -> P[ i ] - P[ i + 1 ] > 1 )
+);
+
 InstallMethod( Type, [IsIntegerPartition], 
     P -> Type( NumericalSet( P ))
-);
-
-InstallMethod( Dual, [IsIntegerPartition], 
-    P -> IntegerPartition( AssociatedPartition( Parts( P )))
-);
-
-InstallMethod( Dual2, [IsIntegerPartition], 
-    P -> IntegerPartition( List( [ 2..Length( P ) + 1 ], i -> Genus( P ) - P[ i ] ))
 );
 
 #############################

@@ -18,3 +18,4 @@ DeclareOperation( "IsIrreducible", [IsSGIntegerPartition] );
 
 DeclareProperty( "IsAlmostSymmetric", IsSGIntegerPartition );
 
+DeclareAttribute( "GapsOfFirstType", IsSGIntegerPartition );

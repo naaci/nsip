@@ -50,6 +50,10 @@ InstallMethod( IsAlmostSymmetric, [IsNumericalSet],
     S -> IsSubset( PseudoFrobeniusNumbers(S), GapsOfSecondType(S) )
 );
 
+InstallMethod( IsPerfectSemigroup, [IsNumericalSet], 
+    S -> ForAll( [ 1 .. Length( S ) ], i -> S[ i ] - S[ i + 1 ] > 1 )
+);
+
 InstallMethod( Type, [IsNumericalSet],
     S -> Length( PseudoFrobeniusNumbers( S ))
 );
@@ -60,13 +64,15 @@ InstallMethod( Dual, [IsNumericalSet],
     )
 );
 
-# ??????????
 InstallMethod( Dual2, [IsNumericalSet],
     S -> NumericalSet(Dual2(IntegerPartition(S)))
-    # S -> NumericalSet( Filtered(
-    #     [ 0..FrobeniusNumber( S ) ],
-    #     x -> IsSubset( S, x + Difference( SmallElements( S ), [0] ) )
-    # ))
+);
+
+InstallMethod( Dual3, [IsNumericalSet],
+    S -> NumericalSet( Filtered(
+        [ 0..FrobeniusNumber( S ) ],
+        x -> IsSubset( S, x + Difference( SmallElements( S ), [0] ) )
+    ))
 );
 
 InstallMethod( IsSemiSymmetric, [IsNumericalSet], 

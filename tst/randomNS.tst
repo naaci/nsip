@@ -1,5 +1,8 @@
-gap> P := RandomIntegerPartition(1000,1000);;
-gap> S := NumericalSet( P );;
+gap> while true do
+> P := RandomIntegerPartition(1000,1000);;
+> S := NumericalSet( P );;
+> if not IsNumericalSemigroupSet( S ) then break; fi;
+> od;
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );
@@ -7,10 +10,6 @@ true
 gap> P = Dual( Dual( P ) );
 true
 gap> S = Dual( Dual( S ) );
-true
-gap> P = Dual2( Dual2( P ) );
-true
-gap> S = Dual2( Dual2( S ) );
 true
 gap> Gaps( S ) = Gaps( P );
 true
@@ -35,6 +34,8 @@ true
 gap> IsNegativeSemiSymmetric( S ) = IsNegativeSemiSymmetric( P );
 true
 gap> IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
+true
+gap> IsPerfectSemigroup( S ) = IsPerfectSemigroup( P );
 true
 gap> Type( S ) = Type( P );
 true

@@ -53,3 +53,4 @@ InstallMethod( IsAlmostSymmetric, [IsSGIntegerPartition],
             )))
 );
 
+InstallMethod( GapsOfFirstType, [IsSGIntegerPartition], N );

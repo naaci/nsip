@@ -11,6 +11,10 @@ DeclareAttribute( "Parts", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
 #! @Returns List
+DeclareAttribute( "N", IsIntegerPartition );
+
+#! @Arguments IntegerPartition
+#! @Returns List
 DeclareAttribute( "Gaps", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
@@ -38,6 +42,7 @@ DeclareAttribute( "FrobeniusNumber", IsIntegerPartition );
 #! @Returns IntegerPartition
 DeclareAttribute( "Dual", IsIntegerPartition );
 DeclareAttribute( "Dual2", IsIntegerPartition );
+DeclareAttribute( "Dual3", IsIntegerPartition );
 
 #!
 DeclareProperty( "IsSymmetric", IsIntegerPartition );
@@ -56,6 +61,9 @@ DeclareProperty( "IsSuperSemiSymmetric", IsIntegerPartition );
 
 #!
 DeclareProperty( "IsAlmostSymmetric", IsIntegerPartition );
+
+#!
+DeclareProperty( "IsPerfectSemigroup", IsIntegerPartition );
 
 #!
 DeclareAttribute( "Trace", IsIntegerPartition );
