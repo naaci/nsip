@@ -1,7 +1,7 @@
 gap> S := NumericalSet( [0,3,4,5,7] );
 {0,3,4,5,7,->}
 gap> P := IntegerPartition( S );
-    A - 1 1 6= 3+ 1+ 1+ 1
+      + 1 1 6= 3+ 1+ 1+ 1
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );
@@ -21,8 +21,6 @@ true
 gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
 true
 gap> IsSymmetric( S ) = IsSymmetric( P );
-true
-gap> IsPseudoSymmetric( S ) = IsPseudoSymmetric( P );
 true
 gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
 true

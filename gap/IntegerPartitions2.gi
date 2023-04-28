@@ -1,7 +1,3 @@
-InstallMethod(N, [IsIntegerPartition], 
-    P -> Reversed( Parts( ( P ))) + [ 0 .. Length( P ) - 1 ] 
-);
-
 InstallMethod(Gaps, [IsIntegerPartition], 
     P -> N( Dual( P ))
     # P -> Union(Set(
@@ -11,19 +7,21 @@ InstallMethod(Gaps, [IsIntegerPartition],
     # ))
 );
 
+###############################################
+
+InstallMethod(N, [IsIntegerPartition], 
+    P -> Reversed( Parts( P )) + [ 0 .. Length( P ) - 1 ] 
+);
+
 InstallMethod(GapsOfFirstType, [IsIntegerPartition], 
-    P -> Intersection( 
-            Gaps( P ),
-            N( P )
-            #  Set( [ 1 .. Length(P) ], i -> P[ i ] - i  + Length( P ) )
-         )
+    P -> Intersection( Gaps( P ), N( P ))
+    # S -> Difference( Gaps( S ), GapsOfSecondType( S ))
 );
 
 InstallMethod(GapsOfSecondType, [IsIntegerPartition], 
-    P -> Difference(
-            Gaps( P ), 
-            N( P )
-         )
+    P -> Difference( Gaps( P ), N( P ))
+    # S -> Difference( Gaps( S ), GapsOfFirstType( S ))
+    # S -> Intersection( Gaps( S ), Dual( S ) )
 );
 
 InstallMethod(Length, [IsIntegerPartition], 
@@ -46,6 +44,30 @@ InstallMethod( IsSymmetric, [IsIntegerPartition],
     P -> Dual( P ) = P
 );
 
+# InstallMethod( IsPseudoSymmetric, [IsIntegerPartition], 
+#     P -> IsPseudoSymmetric( NumericalSet( P ) )
+# );
+
+InstallMethod( IsNegativeSemiSymmetric, [IsIntegerPartition],
+    P -> IsSubset( Gaps( P ), N( P ))
+);
+
+InstallMethod( IsPositiveSemiSymmetric, [IsIntegerPartition],
+    P -> IsSubset( N( P ), Gaps( P ) )
+);
+
+InstallMethod( IsAlmostSymmetric, [IsIntegerPartition],
+    P -> IsAlmostSymmetric( NumericalSet( P ) )
+);
+
+InstallMethod( IsPerfectSemigroup, [IsIntegerPartition], 
+    P -> ForAll( [ 1 .. Length( P ) + 1 ], i -> P[ i ] - P[ i + 1 ] <> 1 )
+);
+
+InstallMethod( Type, [IsIntegerPartition], 
+    P -> Type( NumericalSet( P ))
+);
+
 InstallMethod( Dual, [IsIntegerPartition], 
     P -> IntegerPartition( AssociatedPartition( Parts( P )))
 );
@@ -58,28 +80,8 @@ InstallMethod( Dual3, [IsIntegerPartition],
     P -> IntegerPartition( Dual3( NumericalSet( P )))
 );
 
-InstallMethod( IsPseudoSymmetric, [IsIntegerPartition], 
-    P -> IsPseudoSymmetric( NumericalSet( P ) )
-);
-
-InstallMethod( IsPositiveSemiSymmetric, [IsIntegerPartition],
-    P -> IsPositiveSemiSymmetric( NumericalSet( P ) )
-);
-
-InstallMethod( IsNegativeSemiSymmetric, [IsIntegerPartition],
-    P -> IsNegativeSemiSymmetric( NumericalSet( P ) )
-);
-
-InstallMethod( IsAlmostSymmetric, [IsIntegerPartition],
-    P -> IsAlmostSymmetric( NumericalSet( P ) )
-);
-
-InstallMethod( IsPerfectSemigroup, [IsIntegerPartition], 
-    P -> ForAll( [ 1 .. Length( P ) ], i -> P[ i ] - P[ i + 1 ] > 1 )
-);
-
-InstallMethod( Type, [IsIntegerPartition], 
-    P -> Type( NumericalSet( P ))
+InstallMethod( IsSemiSymmetric, [IsIntegerPartition], 
+    IsPositiveSemiSymmetric
 );
 
 #############################

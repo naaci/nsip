@@ -10,11 +10,11 @@
 #
 gap> START_TEST("nsip04.tst");
 
-# doc/_Chapter_Conversions.xml:46-87
+# doc/_Chapter_Conversions.xml:46-85
 gap> S := NumericalSet( [0,3,4,5,7] );
 {0,3,4,5,7,->}
 gap> P := IntegerPartition( S );
-    A - 1 1 6= 3+ 1+ 1+ 1
+      + 1 1 6= 3+ 1+ 1+ 1
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );
@@ -33,8 +33,6 @@ gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
 true
 gap> IsSymmetric( S ) = IsSymmetric( P );
 true
-gap> IsPseudoSymmetric( S ) = IsPseudoSymmetric( P );
-true
 gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
 true
 gap> IsNegativeSemiSymmetric( S ) = IsNegativeSemiSymmetric( P );
@@ -52,9 +50,9 @@ true
 gap> Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
 true
 
-# doc/_Chapter_Conversions.xml:90-131
+# doc/_Chapter_Conversions.xml:88-127
 gap> P := IntegerPartition( [7,2,1,1] );
-SG  A + 4 2 11= 7+ 2+ 1+ 1
+SG  A - 4 2 11= 7+ 2+ 1+ 1
 gap> S := NumericalSet( P );
 {0,6,8,9,11,->}
 gap> S  = NumericalSet( IntegerPartition( S ) );
@@ -74,8 +72,6 @@ true
 gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
 true
 gap> IsSymmetric( S ) = IsSymmetric( P );
-true
-gap> IsPseudoSymmetric( S ) = IsPseudoSymmetric( P );
 true
 gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
 true

@@ -27,8 +27,6 @@ gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
 true
 gap> IsSymmetric( S ) = IsSymmetric( P );
 true
-gap> IsPseudoSymmetric( S ) = IsPseudoSymmetric( P );
-true
 gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
 true
 gap> IsNegativeSemiSymmetric( S ) = IsNegativeSemiSymmetric( P );

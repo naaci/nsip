@@ -24,7 +24,7 @@ DeclareAttribute( "NumericalSet", IsList );
 #! @Returns NumericalSet
 DeclareAttribute( "NumericalSetByGaps", IsList );
 
-# DeclareAttribute( "Enumerator", IsNumericalSet);
+DeclareOperation( "Iterator", [IsNumericalSet]);
 
 DeclareOperation("PrintObj",[IsNumericalSet]);
 
@@ -32,10 +32,14 @@ DeclareOperation("in",[IsInt,IsNumericalSet]);
 
 DeclareOperation("[]",[IsNumericalSet,IsInt]);
 
-DeclareOperation("+",[IsInt,IsNumericalSet]);
+DeclareOperation("+",[IsNumericalSet,IsList]);
+DeclareOperation("-",[IsNumericalSet,IsList]);
+
+DeclareOperation("+",[IsNumericalSet,IsInt]);
 
 DeclareOperation("-",[IsInt,IsNumericalSet]);
 
-DeclareOperation("-",[IsNumericalSet,IsInt]);
-
 DeclareOperation("=",[IsNumericalSet,IsNumericalSet]);
+
+DeclareOperation("Extend",[IsNumericalSet,IsList]);
+DeclareOperation("Extend",[IsNumericalSet,IsInt]);

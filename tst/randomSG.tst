@@ -7,6 +7,8 @@ gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );
 true
+gap> IsSGIntegerPartition( P );
+true
 gap> P = Dual( Dual( P ) );
 true
 gap> S = Dual( Dual( S ) );

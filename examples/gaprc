@@ -1,4 +1,5 @@
 Read( Filename( DirectoriesPackageLibrary( "nsip", "examples" ), "LoadPackage.g" ));
+Read( Filename( DirectoriesPackageLibrary( "nsip", "examples" ), "conversions1.g"));
 # Read( Filename( DirectoriesPackageLibrary( "nsip", "examples" ), "NumericalSets.g"));
 # Read( Filename( DirectoriesPackageLibrary( "nsip", "examples" ), "IntegerPartitions.g"));
 # Read( Filename( DirectoriesPackageLibrary( "nsip", "examples" ), "conversions.g"));

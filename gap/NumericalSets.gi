@@ -23,10 +23,6 @@ InstallMethod( PrintObj, [IsNumericalSet], function( S )
     );
 end );
 
-# InstallMethod( Enumerator, [IsNumericalSet], function( S )
-#     return SmallElements( S );
-# end);
-
 InstallMethod( \[\], [IsNumericalSet,IsInt], function( S , i )
     if i <= Length( SmallElements( S )) then
         return SmallElements( S )[ i ];
@@ -43,28 +39,60 @@ InstallMethod( \in, [IsInt,IsNumericalSet], function( s , S )
     return not(s in Gaps( S )) and s in NonnegativeIntegers;
 end);
 
-# InstallMethod( Enumerator, [IsNumericalSet], function( S )
-#     return ( SmallElements( S ));
-# end);
+InstallMethod( Iterator, [ IsNumericalSet ],
+    S -> IteratorByFunctions( rec(
+        NextIterator:= function( iter )
+            iter!.counter := iter!.counter + 1;
+            if iter!.counter < Length( S ) then
+                return SmallElements( S )[ iter!.counter ];
+            else
+                return Conductor( S ) - Length( S ) - 1 + iter!.counter;
+            fi;
+            return;
+        end,
+        IsDoneIterator := ReturnFalse,
+        ShallowCopy := function( iter )
+            return rec(
+                counter := iter!.counter
+                );
+        end 
+    ))
+);
 
-InstallMethod( \+, [IsInt,IsNumericalSet], function( x , S )
+InstallMethod( \+, [IsNumericalSet,IsList], function( S , L )
+    Print(11111,"\n");
+    return NumericalSet( Union( Set(
+        SmallElements( S ),
+        s -> s + L
+    )));
+end);
+
+InstallMethod( \+, [IsNumericalSet,IsInt], function( S, a )
     return NumericalSet( List(
         SmallElements( S ),
-        s -> s + x
+        s -> s + a
     ));
 end);
 
-InstallMethod( \-, [IsNumericalSet,IsInt], function( S , x )
-    return NumericalSet( List(
-        Filtered(SmallElements( S ), s -> s >= x),
-        s -> s - x
+InstallMethod( \-, [IsInt,IsNumericalSet], function( a , S )
+    return List(
+        Filtered(SmallElements( S ), s -> s <= a),
+        s -> a - s
+    );
+end);
+
+InstallMethod( \-, [IsNumericalSet,IsList], function( S , L )
+    Print(-11111,"\n");
+    return NumericalSet( Filtered(
+        [ 0 .. Conductor( S ) ],
+        x -> IsSubset( S, x + L )
     ));
 end);
 
-InstallMethod( \-, [IsInt,IsNumericalSet], function( x , S )
-    return ( List(
-        Filtered(SmallElements( S ), s -> s <= x),
-        s -> x - s
-    ));
+InstallMethod( Extend, [IsNumericalSet,IsList], function( S, L )
+    return NumericalSetByGaps( Difference( Gaps( S ), L ));
 end);
 
+InstallMethod( Extend, [IsNumericalSet,IsInt], function( S, a )
+    return Extend( S, [a] );
+end);

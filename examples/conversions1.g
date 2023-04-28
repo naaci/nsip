@@ -5,7 +5,7 @@
 S := NumericalSet( [0,3,4,5,7] );
 #! {0,3,4,5,7,->}
 P := IntegerPartition( S );
-#!     A - 1 1 6= 3+ 1+ 1+ 1
+#!       + 1 1 6= 3+ 1+ 1+ 1
 S  = NumericalSet( IntegerPartition( S ) );
 #! true
 P  = IntegerPartition( NumericalSet( P ) );
@@ -23,8 +23,6 @@ Length( S ) = Length( P );
 FrobeniusNumber( S ) = FrobeniusNumber( P );
 #! true
 IsSymmetric( S ) = IsSymmetric( P );
-#! true
-IsPseudoSymmetric( S ) = IsPseudoSymmetric( P );
 #! true
 IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
 #! true

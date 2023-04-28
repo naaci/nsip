@@ -37,7 +37,7 @@ InstallMethod( IsPseudoSymmetric, [IsSGIntegerPartition],
     P -> Genus( P ) = Length( P ) + 1
 );
 
-InstallMethod( IsPositiveSemiSymmetric, [IsSGIntegerPartition],
+InstallMethod( IsNegativeSemiSymmetric, [IsSGIntegerPartition],
     P -> true
 );
 

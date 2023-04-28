@@ -5,12 +5,17 @@
 #! @Returns List
 #! @Description SmallElements of $S$ is the subset S which are smaller than the Conductor.
 DeclareAttribute( "SmallElements", IsNumericalSet );
+DeclareAttribute( "NonzeroSmallElements", IsNumericalSet );
 
 #! @Arguments NumericalSet
 #! @Returns List
 DeclareAttribute( "Parts", IsNumericalSet );
 
-#! @Arguments Gaps
+#! @Arguments NumericalSet
+#! @Returns List
+DeclareAttribute( "N", IsNumericalSet );
+
+#! @Arguments NumericalSet
 #! @Returns List
 DeclareAttribute( "Gaps", IsNumericalSet );
 
@@ -67,12 +72,14 @@ DeclareAttribute( "GapsOfSecondType", IsNumericalSet );
 
 #! @Subsection Duality and Symmetry
 
+#! @BeginGroup Duality
 #! @Arguments NumericalSet
 #! @Returns NumericalSet
 #!
 DeclareAttribute( "Dual", IsNumericalSet );
 DeclareAttribute( "Dual2", IsNumericalSet );
 DeclareAttribute( "Dual3", IsNumericalSet );
+#! @EndGroup
 
 #! @Arguments NumericalSet
 #! @Returns NumericalSet
@@ -93,9 +100,13 @@ DeclareProperty( "IsSemiSymmetric", IsNumericalSet );
 
 #! @Arguments NumericalSet
 #!
+DeclareProperty( "IsIrrducible", IsNumericalSet );
+
+#! @Arguments NumericalSet
+#!
 DeclareProperty( "IsSymmetric", IsNumericalSet );
 
-DeclareProperty( "IsPseudoSymmetric", IsNumericalSet );
+# DeclareProperty( "IsPseudoSymmetric", IsNumericalSet );
 
 #! @Arguments NumericalSemigroupSet
 #!
@@ -109,3 +120,6 @@ DeclareProperty( "IsPerfectSemigroup", IsNumericalSet );
 #!
 # DeclareProperty( "IsSuperSemiSymmetric", IsNumericalSet );
 
+#! @Arguments NumericalSet
+#!
+DeclareAttribute( "CClosure", IsNumericalSet );

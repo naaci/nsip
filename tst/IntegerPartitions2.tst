@@ -1,5 +1,5 @@
 gap> P := IntegerPartition([7,2,1,1]);
-SG  A + 4 2 11= 7+ 2+ 1+ 1
+SG  A - 4 2 11= 7+ 2+ 1+ 1
 gap> Gaps(P);
 [ 1, 2, 3, 4, 5, 7, 10 ]
 gap> GapsOfFirstType(P);
@@ -17,15 +17,15 @@ false
 gap> IsPseudoSymmetric(P);
 false
 gap> IsPositiveSemiSymmetric(P);
-true
-gap> IsNegativeSemiSymmetric(P);
 false
+gap> IsNegativeSemiSymmetric(P);
+true
 gap> IsAlmostSymmetric(P);
 true
 gap> Type(P);
 4
 gap> Dual(P);
-    A - 1 2 11= 4+ 2+ 1+ 1+ 1+ 1+ 1
+      + 1 2 11= 4+ 2+ 1+ 1+ 1+ 1+ 1
 gap> Dual2(P);
         2 4 24= 7+ 6+ 6+ 5
 gap> IsSuperSemiSymmetric(P);

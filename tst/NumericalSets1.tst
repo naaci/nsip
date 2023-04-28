@@ -16,12 +16,10 @@ gap> FrobeniusNumber(S);
 7
 gap> IsSymmetric(S);
 false
-gap> IsPseudoSymmetric(S);
-false
 gap> IsPositiveSemiSymmetric(S);
-true
-gap> IsNegativeSemiSymmetric(S);
 false
+gap> IsNegativeSemiSymmetric(S);
+true
 gap> IsAlmostSymmetric(S);
 false
 gap> Type(S);
@@ -42,3 +40,5 @@ gap> Conductor(S);
 8
 gap> Multiplicity(S);
 3
+gap> CClosure(S);
+{0,3,4,6,8,->}

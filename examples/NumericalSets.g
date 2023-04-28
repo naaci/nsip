@@ -80,12 +80,12 @@ GapsOfSecondType(S);
 
 #! @BeginExample
 IsNegativeSemiSymmetric(S);
-#! true
+#! false
 #! @EndExample
 
 #! @BeginExample
 IsPositiveSemiSymmetric(S);
-#! false
+#! true
 #! @EndExample
 
 #! @BeginExample

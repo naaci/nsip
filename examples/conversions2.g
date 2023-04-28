@@ -3,7 +3,7 @@
 
 #! @BeginExample
 P := IntegerPartition( [7,2,1,1] );
-#! SG  A + 4 2 11= 7+ 2+ 1+ 1
+#! SG  A - 4 2 11= 7+ 2+ 1+ 1
 S := NumericalSet( P );
 #! {0,6,8,9,11,->}
 S  = NumericalSet( IntegerPartition( S ) );
@@ -23,8 +23,6 @@ Length( S ) = Length( P );
 FrobeniusNumber( S ) = FrobeniusNumber( P );
 #! true
 IsSymmetric( S ) = IsSymmetric( P );
-#! true
-IsPseudoSymmetric( S ) = IsPseudoSymmetric( P );
 #! true
 IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
 #! true

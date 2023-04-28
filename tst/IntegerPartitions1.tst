@@ -1,5 +1,5 @@
 gap> P := IntegerPartition([7,3,1,1]);
-    A   5 2 12= 7+ 3+ 1+ 1
+        5 2 12= 7+ 3+ 1+ 1
 gap> Gaps(P);
 [ 1, 2, 3, 4, 6, 7, 10 ]
 gap> GapsOfFirstType(P);
@@ -14,8 +14,6 @@ gap> FrobeniusNumber(P);
 10
 gap> IsSymmetric(P);
 false
-gap> IsPseudoSymmetric(P);
-false
 gap> IsPositiveSemiSymmetric(P);
 false
 gap> IsNegativeSemiSymmetric(P);
@@ -25,9 +23,9 @@ true
 gap> Type(P);
 5
 gap> Dual(P);
-    P   2 2 12= 4+ 2+ 2+ 1+ 1+ 1+ 1
+        2 2 12= 4+ 2+ 2+ 1+ 1+ 1+ 1
 gap> Dual2(P);
-      + 2 4 23= 7+ 6+ 6+ 4
+      - 2 4 23= 7+ 6+ 6+ 4
 gap> IsSuperSemiSymmetric(P);
 false
 gap> Total(P);

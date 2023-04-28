@@ -25,10 +25,14 @@ view_integer_partition := function(P)
 
     if IsSymmetric( P ) then
         Add(flags," S");
-    elif IsPseudoSymmetric( P ) then
-        Add(flags," P");
-    elif IsAlmostSymmetric( P ) then
-        Add(flags," A");
+    elif IsSGIntegerPartition( P ) then
+        if IsPseudoSymmetric( P ) then
+            Add(flags," P");
+        elif IsAlmostSymmetric( P ) then
+            Add(flags," A");
+        else
+            Add(flags,"  ");
+        fi;
     else
         Add(flags,"  ");
     fi;
