@@ -5,7 +5,7 @@
 # DeclareRepresentation( "IsNumericalSetRep", IsAttributeStoringRep, [] );
 
 #! 
-DeclareCategory( "IsNumericalSet", IsAttributeStoringRep );
+DeclareCategory( "IsNumericalSet", IsIntegerPartitionOrNumericalSet );
 BindGlobal( "NumericalSetsType", 
         NewType( CollectionsFamily( CyclotomicsFamily ), 
                  IsNumericalSet ) );

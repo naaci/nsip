@@ -1,5 +1,5 @@
 gap> while true do
-> P := RandomNSGPartition(10,15);;
+> P := IntegerPartition( Dual3( RandomIntegerPartition( 10, 15 )));;
 > S := NumericalSet( P );;
 > if not IsArf(P) then break; fi;
 > od;

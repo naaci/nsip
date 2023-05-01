@@ -1,25 +1,22 @@
 
 InstallMethod( IsSymmetric, [IsNSG],
-    P -> Genus( P ) = Length( P )
+    X -> Genus( X ) = Length( X )
 );
 
 InstallMethod( IsPseudoSymmetric, [IsNSG],
-    P -> Genus( P ) = Length( P ) + 1
+    X -> Genus( X ) = Length( X ) + 1
 );
 
 InstallMethod( IsIrreducible, [IsNSG], 
-    P -> IsSymmetric( P ) or IsPseudoSymmetric( P )
+    X -> IsSymmetric( X ) or IsPseudoSymmetric( X )
 );
 
 InstallMethod( IsNegativeSemiSymmetric, [IsNSG],
-    P -> true
+    X -> true
 );
 
 InstallMethod( GapsOfFirstType, [IsNSG], N );
 
-InstallMethod( IsAlmostSymmetric, [IsNSG], function( S )
-    if FrobeniusNumber( S ) = -1 then
-        return true;
-    fi;
-    return 2 * Genus( S ) = FrobeniusNumber( S ) + Type( S );
-end );
+InstallMethod( IsAlmostSymmetric, [IsNSG],
+    X -> FrobeniusNumber( X ) = -1 or 2 * Genus( X ) = FrobeniusNumber( X ) + Type( X )
+);

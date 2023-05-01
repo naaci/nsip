@@ -4,3 +4,5 @@
 #! @Arguments NumericalSet
 #!
 DeclareProperty( "IsNSG", IsNumericalSet );
+
+DeclareProperty( "IsArf", IsNumericalSet );

@@ -4,3 +4,7 @@ InstallMethod( IsNSG, [IsNumericalSet],
         SmallElements( S ), s -> IsSubset( S, s + SmallElements( S ))
     )
 );
+
+InstallMethod( IsArf, [IsNumericalSet], 
+    S -> IsArf( NumericalSet( S ))
+);

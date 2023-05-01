@@ -1,7 +1,6 @@
 
 InstallMethod( IntegerPartition, [IsList], function( L )
-
-    if ForAny( L, x -> not x in NonnegativeIntegers ) then
+    if not IsSubset(NonnegativeIntegers, L) then
         return fail;
     fi;
 
@@ -9,6 +8,21 @@ InstallMethod( IntegerPartition, [IsList], function( L )
         , Parts, Reversed( SortedList( Filtered( L, i -> not i = 0)))
         );
 end );
+
+################################################################################
+
+InstallMethod( \=, [IsIntegerPartition,IsIntegerPartition], function( P1, P2 )
+    return Parts( P1 ) = Parts( P2 );
+end);
+
+InstallMethod( \[\], [IsIntegerPartition,IsInt], function( P , i )
+    if i > Length( P ) then 
+        return 0;
+    fi;
+    return Parts( P )[ i ];
+end);
+
+################################################################################
 
 view_integer_partition := function(P)
     local flags;
@@ -65,13 +79,3 @@ InstallMethod( PrintObj, [IsIntegerPartition], function( P )
     Print( JoinStringsWithSeparator( List(Parts( P ), a -> FormattedString(a,2)), "+" ));
 end);
 
-InstallMethod( \=, [IsIntegerPartition,IsIntegerPartition], function( P1, P2 )
-    return Parts( P1 ) = Parts( P2 );
-end);
-
-InstallMethod( \[\], [IsIntegerPartition,IsInt], function( P , i )
-    if i > Length( P ) then 
-        return 0;
-    fi;
-    return Parts( P )[ i ];
-end);

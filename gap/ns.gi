@@ -1,9 +1,9 @@
-InstallMethod(GapsOfFirstType, [IsIntegerPartitionOrNumericalSet],
+InstallMethod(GapsOfFirstType, [IsIntegerPartitionOrNumericalSet], 
     X -> Intersection( Gaps( X ), N( X ) )
     # X -> Difference( Gaps( X ), GapsOfSecondType( X ) )
 );
 
-InstallMethod(GapsOfSecondType, [IsIntegerPartitionOrNumericalSet],
+InstallMethod(GapsOfSecondType, [IsIntegerPartitionOrNumericalSet], 
     X -> Difference( Gaps( X ), N( X ) )
     # X -> Difference( Gaps( X ), GapsOfFirstType( X ) )
     # X -> Intersection( Gaps( X ), Dual( X ) )
@@ -25,13 +25,22 @@ InstallMethod( IsPositiveSemiSymmetric, [IsIntegerPartitionOrNumericalSet],
     # X -> GapsOfSecondType( X ) = []
 );
 
+InstallMethod( IsNegative, [IsIntegerPartitionOrNumericalSet],
+    X -> Length( X ) <= Genus( X )
+);
+
+InstallMethod( IsPositive, [IsIntegerPartitionOrNumericalSet],
+    X -> Genus( X ) <= Length( X ) 
+);
+
 InstallMethod( IsSemiSymmetric, [IsIntegerPartitionOrNumericalSet], 
     IsPositiveSemiSymmetric
 );
 
 InstallMethod( IsAlmostSymmetric, [IsIntegerPartitionOrNumericalSet],
-    # X -> IsSubset( PseudoFrobeniusNumbers( X ), GapsOfSecondType( X ) )
     X -> IsSubset( Dual3( X ), GapsOfSecondType( X ) )
+    # X -> IsAlmostSymmetric( NumericalSet( X ) )
+
 );
 
 InstallMethod( Atom, [IsIntegerPartitionOrNumericalSet],

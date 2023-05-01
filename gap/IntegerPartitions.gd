@@ -6,7 +6,7 @@
 # DeclareRepresentation( "IsIntegerPartitionRep", IsAttributeStoringRep, [] );
 
 # !
-DeclareCategory( "IsIntegerPartition", IsAttributeStoringRep );
+DeclareCategory( "IsIntegerPartition", IsIntegerPartitionOrNumericalSet );
 BindGlobal( "IntegerPartitionsType", 
     NewType( 
         CollectionsFamily( CyclotomicsFamily ), 

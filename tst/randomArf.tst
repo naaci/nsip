@@ -1,5 +1,5 @@
 gap> while true do
-> P := RandomNSGPartition(10,15);;
+> P := IntegerPartition( Dual3( RandomIntegerPartition( 10, 15 )));;
 > if IsArf( P ) and not IsAlmostSymmetric(P) then break; fi;
 > od;
 gap> S := NumericalSet( P );;

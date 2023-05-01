@@ -38,7 +38,7 @@ Persons := [
  ), 
   rec( 
     FirstNames := "Nihal", 
-    LastName := "Gümüşbaş Öztürk", 
+    LastName := "Gümüşbaş", 
     #WWWHome := TODO, 
     Email := "nihalgumusbas@gmail.com", 
     IsAuthor := false, 

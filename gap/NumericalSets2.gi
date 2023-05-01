@@ -37,6 +37,16 @@ InstallMethod( Dual2, [IsNumericalSet],
     S -> NumericalSet(Dual2(IntegerPartition(S)))
 );
 
+InstallMethod( Dual3, [IsNumericalSet],
+    # S -> S - NonzeroSmallElements( S )
+    S -> NumericalSet( Filtered(
+        [ 0..Conductor( S ) ],
+        x -> IsSubset( S, x + NonzeroSmallElements( S ) )
+    ))
+);
+
+########################
+
 InstallMethod( IsSuperSemiSymmetric, [IsNumericalSet], function(S)
     local j;
     for j in [ 2..Length(S) ] do
@@ -47,15 +57,6 @@ InstallMethod( IsSuperSemiSymmetric, [IsNumericalSet], function(S)
     return true;
 end);
 
-########################
-
-InstallMethod( Dual3, [IsNumericalSet],
-    # S -> S - NonzeroSmallElements( S )
-    S -> NumericalSet( Filtered(
-        [ 0..Conductor( S ) ],
-        x -> IsSubset( S, x + NonzeroSmallElements( S ) )
-    ))
-);
 
 ########################
 

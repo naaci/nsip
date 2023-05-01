@@ -33,10 +33,6 @@ InstallMethod( IsPerfectSemigroup, [IsIntegerPartition],
     P -> ForAll( [ 1 .. Length( P ) + 1 ], i -> P[ i ] - P[ i + 1 ] <> 1 )
 );
 
-InstallMethod( Type, [IsIntegerPartition], 
-    P -> Type( NumericalSet( P ))
-);
-
 InstallMethod( Dual, [IsIntegerPartition], 
     P -> IntegerPartition( AssociatedPartition( Parts( P )))
 );
@@ -46,7 +42,7 @@ InstallMethod( Dual2, [IsIntegerPartition],
 );
 
 InstallMethod( Dual3, [IsIntegerPartition], 
-    P -> IntegerPartition( Dual3( NumericalSet( P )))
+    P -> Dual3( NumericalSet( P ))
 );
 
 #############################
