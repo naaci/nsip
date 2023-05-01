@@ -1,5 +1,5 @@
 gap> while true do
-> P := RandomIntegerPartition(10,15);;
+> P := RandomNSGPartition(10,15);;
 > if IsArf( P ) and not IsAlmostSymmetric(P) then break; fi;
 > od;
 gap> S := NumericalSet( P );;
@@ -42,6 +42,8 @@ true
 gap> IsPerfectSemigroup( S ) = IsPerfectSemigroup( P );
 true
 gap> Type( S ) = Type( P );
+true
+gap> N( S ) = N( P );
 true
 gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true

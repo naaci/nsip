@@ -1,13 +1,13 @@
 gap> while true do
-> P := RandomIntegerPartition(10,15);;
+> P := RandomNSGPartition(10,15);;
 > S := NumericalSet( P );;
-> if IsNumericalSemigroupSet( S ) and not IsArf(P) then break; fi;
+> if not IsArf(P) then break; fi;
 > od;
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );
 true
-gap> IsSGIntegerPartition( P );
+gap> IsNSG( P );
 true
 gap> P = Dual( Dual( P ) );
 true
@@ -44,6 +44,8 @@ true
 gap> IsPerfectSemigroup( S ) = IsPerfectSemigroup( P );
 true
 gap> Type( S ) = Type( P );
+true
+gap> N( S ) = N( P );
 true
 gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true

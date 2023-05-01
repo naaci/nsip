@@ -10,7 +10,7 @@
 #
 gap> START_TEST("nsip04.tst");
 
-# doc/_Chapter_Conversions.xml:46-85
+# doc/_Chapter_Conversions.xml:72-111
 gap> S := NumericalSet( [0,3,4,5,7] );
 {0,3,4,5,7,->}
 gap> P := IntegerPartition( S );
@@ -50,7 +50,7 @@ true
 gap> Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
 true
 
-# doc/_Chapter_Conversions.xml:88-127
+# doc/_Chapter_Conversions.xml:114-153
 gap> P := IntegerPartition( [7,2,1,1] );
 SG  A - 4 2 11= 7+ 2+ 1+ 1
 gap> S := NumericalSet( P );

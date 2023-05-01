@@ -32,7 +32,7 @@ gap> Total(P);
 12
 gap> Trace(P);
 2
-gap> IsSGIntegerPartition(P);
+gap> IsNSG(P);
 false
 gap> IsArf(P);
 false

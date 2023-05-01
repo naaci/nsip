@@ -1,7 +1,7 @@
 gap> while true do
 > P := RandomIntegerPartition(1000,1000);;
 > S := NumericalSet( P );;
-> if not IsNumericalSemigroupSet( S ) then break; fi;
+> if not IsNSG( S ) then break; fi;
 > od;
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
@@ -36,6 +36,8 @@ true
 gap> IsPerfectSemigroup( S ) = IsPerfectSemigroup( P );
 true
 gap> Type( S ) = Type( P );
+true
+gap> N( S ) = N( P );
 true
 gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true

@@ -1,6 +1,6 @@
 
 
-InstallMethod( IsSGIntegerPartition, [IsIntegerPartition], function( P )
+InstallMethod( IsNSG, [IsIntegerPartition], function( P )
     local i, j, k, x, xs;
 
     xs := List( [ 1 .. Length( P ) ], i -> - P[ i ] + i );
@@ -25,32 +25,15 @@ InstallMethod( IsArf, [IsIntegerPartition], function( L )
             return false;
         fi;
     od;
-    Setter( IsSGIntegerPartition )( L, true );
+    Setter( IsNSG )( L, true );
     return true;
 end );
 
-InstallMethod( IsSymmetric, [IsSGIntegerPartition],
-    P -> Genus( P ) = Length( P )
-);
+# InstallMethod( IsAlmostSymmetric, [IsNSG and IsIntegerPartition],
+#     P -> IsNSG( 
+#         IntegerPartition( 
+#             AssociatedPartition(
+#                Parts( P ){[ 2..Length( P ) ]}
+#             )))
+# );
 
-InstallMethod( IsPseudoSymmetric, [IsSGIntegerPartition],
-    P -> Genus( P ) = Length( P ) + 1
-);
-
-InstallMethod( IsNegativeSemiSymmetric, [IsSGIntegerPartition],
-    P -> true
-);
-
-InstallMethod( IsIrreducible, [IsSGIntegerPartition], 
-    P -> IsSymmetric( P ) or IsPseudoSymmetric( P )
-);
-
-InstallMethod( IsAlmostSymmetric, [IsSGIntegerPartition],
-    P -> IsSGIntegerPartition( 
-        IntegerPartition( 
-            AssociatedPartition(
-               Parts( P ){[ 2..Length( P ) ]}
-            )))
-);
-
-InstallMethod( GapsOfFirstType, [IsSGIntegerPartition], N );

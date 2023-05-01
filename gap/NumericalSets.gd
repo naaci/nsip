@@ -16,15 +16,16 @@ BindGlobal( "NumericalSetsType",
 #! @Arguments List
 #! @Returns NumericalSet
 #! @Description The minimal numerical set conatining the given elements.
-DeclareAttribute( "NumericalSet", IsList );
+DeclareAttribute( "NumericalSet", IsListOrCollection );
 
 #! @Subsection NumericalSetByGaps
 
 #! @Arguments List
 #! @Returns NumericalSet
-DeclareAttribute( "NumericalSetByGaps", IsList );
+#! @Description The minimal numerical set with the gaps given.
+DeclareAttribute( "NumericalSetByGaps", IsListOrCollection );
 
-DeclareOperation( "Iterator", [IsNumericalSet]);
+# DeclareOperation( "Iterator", [IsNumericalSet]);
 
 DeclareOperation("PrintObj",[IsNumericalSet]);
 
@@ -32,14 +33,17 @@ DeclareOperation("in",[IsInt,IsNumericalSet]);
 
 DeclareOperation("[]",[IsNumericalSet,IsInt]);
 
-DeclareOperation("+",[IsNumericalSet,IsList]);
-DeclareOperation("-",[IsNumericalSet,IsList]);
+# DeclareOperation("+",[IsNumericalSet,IsList]);
+# DeclareOperation("-",[IsNumericalSet,IsList]);
 
 DeclareOperation("+",[IsNumericalSet,IsInt]);
+DeclareOperation("+",[IsInt,IsNumericalSet]);
 
 DeclareOperation("-",[IsInt,IsNumericalSet]);
 
 DeclareOperation("=",[IsNumericalSet,IsNumericalSet]);
 
-DeclareOperation("Extend",[IsNumericalSet,IsList]);
+DeclareOperation("Extend",[IsNumericalSet,IsListOrCollection]);
 DeclareOperation("Extend",[IsNumericalSet,IsInt]);
+
+DeclareOperation("Intersection2",[IsNumericalSet,IsNumericalSet]);

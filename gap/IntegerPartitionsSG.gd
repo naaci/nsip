@@ -4,30 +4,11 @@
 
 #! @Arguments IntegerPartition
 #!
-DeclareProperty( "IsSGIntegerPartition", IsIntegerPartition );
+DeclareProperty( "IsNSG", IsIntegerPartition );
 
-# DeclareProperty( "IsSymmetric", IsSGIntegerPartition );
+# DeclareProperty( "IsSymmetric", IsNSG );
 
 #! @Arguments IntegerPartition
 #!
 DeclareProperty( "IsArf", IsIntegerPartition );
 
-#! @Arguments IntegerSGPartition
-#!
-DeclareProperty( "IsPseudoSymmetric", IsSGIntegerPartition );
-
-#! @Arguments IntegerSGPartition
-#!
-DeclareProperty( "IsPositiveSemiSymmetric", IsSGIntegerPartition );
-
-#! @Arguments IntegerSGPartition
-#!
-DeclareOperation( "IsIrreducible", [IsSGIntegerPartition] );
-
-#! @Arguments IntegerSGPartition
-#!
-DeclareProperty( "IsAlmostSymmetric", IsSGIntegerPartition );
-
-#! @Arguments IntegerSGPartition
-#!
-DeclareAttribute( "GapsOfFirstType", IsSGIntegerPartition );

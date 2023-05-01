@@ -10,83 +10,83 @@
 #
 gap> START_TEST("nsip02.tst");
 
-# doc/_Chapter_Numerical_Sets.xml:49-52
+# doc/_Chapter_Numerical_Sets.xml:60-63
 gap> S := NumericalSet([0,3,4,5,7]);
 {0,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:55-58
+# doc/_Chapter_Numerical_Sets.xml:66-69
 gap> T := NumericalSetByGaps([1,2,6]);
 {0,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:61-64
+# doc/_Chapter_Numerical_Sets.xml:72-75
 gap> S  = T;
 true
 
-# doc/_Chapter_Numerical_Sets.xml:305-308
+# doc/_Chapter_Numerical_Sets.xml:232-235
 gap> SmallElements(S);
 [ 0, 3, 4, 5, 7 ]
 
-# doc/_Chapter_Numerical_Sets.xml:311-314
+# doc/_Chapter_Numerical_Sets.xml:238-241
 gap> Genus(S);
 3
 
-# doc/_Chapter_Numerical_Sets.xml:317-320
+# doc/_Chapter_Numerical_Sets.xml:244-247
 gap> Length(S);
 4
 
-# doc/_Chapter_Numerical_Sets.xml:323-326
+# doc/_Chapter_Numerical_Sets.xml:250-253
 gap> FrobeniusNumber(S);
 6
 
-# doc/_Chapter_Numerical_Sets.xml:329-332
+# doc/_Chapter_Numerical_Sets.xml:256-259
 gap> Conductor(S);
 7
 
-# doc/_Chapter_Numerical_Sets.xml:335-338
+# doc/_Chapter_Numerical_Sets.xml:262-265
 gap> Multiplicity(S);
 3
 
-# doc/_Chapter_Numerical_Sets.xml:341-344
+# doc/_Chapter_Numerical_Sets.xml:268-271
 gap> PseudoFrobeniusNumbers(S);
 [ 6 ]
 
-# doc/_Chapter_Numerical_Sets.xml:347-350
+# doc/_Chapter_Numerical_Sets.xml:274-277
 gap> Type(S);
 1
 
-# doc/_Chapter_Numerical_Sets.xml:353-356
+# doc/_Chapter_Numerical_Sets.xml:280-283
 gap> Atom(S);
 {0,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:359-362
+# doc/_Chapter_Numerical_Sets.xml:286-289
 gap> Dual(S);
 {0,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:365-368
+# doc/_Chapter_Numerical_Sets.xml:292-295
 gap> GapsOfFirstType(S);
 [ 1, 2, 6 ]
 
-# doc/_Chapter_Numerical_Sets.xml:371-374
+# doc/_Chapter_Numerical_Sets.xml:298-301
 gap> GapsOfSecondType(S);
 [  ]
 
-# doc/_Chapter_Numerical_Sets.xml:377-380
+# doc/_Chapter_Numerical_Sets.xml:304-307
 gap> IsNegativeSemiSymmetric(S);
 false
 
-# doc/_Chapter_Numerical_Sets.xml:383-386
+# doc/_Chapter_Numerical_Sets.xml:310-313
 gap> IsPositiveSemiSymmetric(S);
 true
 
-# doc/_Chapter_Numerical_Sets.xml:389-392
+# doc/_Chapter_Numerical_Sets.xml:316-319
 gap> IsSemiSymmetric(S);
 true
 
-# doc/_Chapter_Numerical_Sets.xml:395-398
+# doc/_Chapter_Numerical_Sets.xml:322-325
 gap> IsSymmetric(S);
 false
 
-# doc/_Chapter_Numerical_Sets.xml:401-404
+# doc/_Chapter_Numerical_Sets.xml:328-331
 gap> IsAlmostSymmetric(S);
 true
 

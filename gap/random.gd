@@ -1,3 +1,3 @@
 
 DeclareGlobalFunction( "RandomIntegerPartition" );
-DeclareGlobalFunction( "RandomIntegerNumericalSet" );
+DeclareGlobalFunction( "RandomNSGPartition" );

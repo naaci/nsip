@@ -17,7 +17,7 @@ view_integer_partition := function(P)
 
     if IsArf( P ) then 
         Add(flags,"Arf");
-    elif IsSGIntegerPartition( P ) then
+    elif IsNSG( P ) then
         Add(flags,"SG ");
     else
         Add(flags,"   ");
@@ -25,7 +25,7 @@ view_integer_partition := function(P)
 
     if IsSymmetric( P ) then
         Add(flags," S");
-    elif IsSGIntegerPartition( P ) then
+    elif IsNSG( P ) then
         if IsPseudoSymmetric( P ) then
             Add(flags," P");
         elif IsAlmostSymmetric( P ) then
