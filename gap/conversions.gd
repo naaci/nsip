@@ -1,18 +1,18 @@
-#! @Chapter Numerical Sets
-#! @Section Construction of A Numerical Set
-#! @Subsection Construction of The Numerical Set From An Integer Partition
+#! @Chapter Conversions
 
-#! @Arguments IntegerPartition
-#! @Returns NumericalSet
-#! @Description Calculates the numerical set correspondint to given integer partition.
-DeclareAttribute( "NumericalSet", IsIntegerPartition );
+#! @Section Converting A NumericalSet to IntegerPartition
 
-#! @Chapter Integer Partitions
-#! @Section Construction of An Integer Partition
-#! @Subsection Construction of The Integer Partition From A Numerical Set
-
+#! @Label
 #! @Arguments NumericalSet
 #! @Returns IntegerPartition
-#! @Description Calculates the integer partition correspondint to given numerical set.
+#! @Description Calculates the integer partition corresponding to given numerical set.
 DeclareAttribute( "IntegerPartition", IsNumericalSet);
+
+#! @Section Converting An IntegerPartition to NumericalSet
+
+#! @Label
+#! @Arguments IntegerPartition
+#! @Returns NumericalSet
+#! @Description Calculates the numerical set corresponding to given integer partition.
+DeclareAttribute( "NumericalSet", IsIntegerPartition );
 

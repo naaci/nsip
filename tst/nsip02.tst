@@ -10,85 +10,37 @@
 #
 gap> START_TEST("nsip02.tst");
 
-# doc/_Chapter_Numerical_Sets.xml:60-63
+# doc/_Chapter_Numerical_Sets.xml:49-52
 gap> S := NumericalSet([0,3,4,5,7]);
 {0,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:66-69
-gap> T := NumericalSetByGaps([1,2,6]);
+# doc/_Chapter_Numerical_Sets.xml:55-58
+gap> S := NumericalSetByGaps([1,2,6]);
 {0,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:72-75
-gap> S  = T;
-true
-
-# doc/_Chapter_Numerical_Sets.xml:232-235
+# doc/_Chapter_Numerical_Sets.xml:287-290
 gap> SmallElements(S);
 [ 0, 3, 4, 5, 7 ]
 
-# doc/_Chapter_Numerical_Sets.xml:238-241
+# doc/_Chapter_Numerical_Sets.xml:293-296
 gap> Genus(S);
 3
 
-# doc/_Chapter_Numerical_Sets.xml:244-247
+# doc/_Chapter_Numerical_Sets.xml:299-302
 gap> Length(S);
 4
 
-# doc/_Chapter_Numerical_Sets.xml:250-253
+# doc/_Chapter_Numerical_Sets.xml:305-308
 gap> FrobeniusNumber(S);
 6
 
-# doc/_Chapter_Numerical_Sets.xml:256-259
+# doc/_Chapter_Numerical_Sets.xml:311-314
 gap> Conductor(S);
 7
 
-# doc/_Chapter_Numerical_Sets.xml:262-265
+# doc/_Chapter_Numerical_Sets.xml:317-320
 gap> Multiplicity(S);
 3
-
-# doc/_Chapter_Numerical_Sets.xml:268-271
-gap> PseudoFrobeniusNumbers(S);
-[ 6 ]
-
-# doc/_Chapter_Numerical_Sets.xml:274-277
-gap> Type(S);
-1
-
-# doc/_Chapter_Numerical_Sets.xml:280-283
-gap> Atom(S);
-{0,4,5,7,->}
-
-# doc/_Chapter_Numerical_Sets.xml:286-289
-gap> Dual(S);
-{0,4,5,7,->}
-
-# doc/_Chapter_Numerical_Sets.xml:292-295
-gap> GapsOfFirstType(S);
-[ 1, 2, 6 ]
-
-# doc/_Chapter_Numerical_Sets.xml:298-301
-gap> GapsOfSecondType(S);
-[  ]
-
-# doc/_Chapter_Numerical_Sets.xml:304-307
-gap> IsNegativeSemiSymmetric(S);
-false
-
-# doc/_Chapter_Numerical_Sets.xml:310-313
-gap> IsPositiveSemiSymmetric(S);
-true
-
-# doc/_Chapter_Numerical_Sets.xml:316-319
-gap> IsSemiSymmetric(S);
-true
-
-# doc/_Chapter_Numerical_Sets.xml:322-325
-gap> IsSymmetric(S);
-false
-
-# doc/_Chapter_Numerical_Sets.xml:328-331
-gap> IsAlmostSymmetric(S);
-true
 
 #
 gap> STOP_TEST("nsip02.tst", 1);

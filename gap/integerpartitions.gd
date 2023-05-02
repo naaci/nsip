@@ -1,4 +1,33 @@
 #! @Chapter Integer Partitions
+#! @Section Definiton
+
+#! @Label
+#! @Arguments Object
+#! @Description Integer Partitions ...
+DeclareCategory( "IsIntegerPartition", IsIntegerPartitionOrNumericalSet );
+BindGlobal( "IntegerPartitionsType", 
+    NewType( 
+        CollectionsFamily( CyclotomicsFamily ), 
+        IsIntegerPartition 
+        )
+);
+
+#! @Section Construction of An Integer Partition
+
+#! @Label
+#! @Arguments Parts
+#! @Returns IntegerPartition
+DeclareAttribute( "IntegerPartition", IsList );
+
+#! @Section Equality of Integer Partitions
+DeclareOperation( "=", [IsIntegerPartition,IsIntegerPartition] );
+
+#! @Section Enumerating An Integer Partition
+DeclareOperation( "[]", [IsIntegerPartition,IsInt] );
+
+DeclareOperation( "ViewObj_", [IsIntegerPartition] );
+
+#! @Chapter Integer Partitions
 #! @Section Attributes of An Integer Partition
 
 #! @Arguments IntegerPartition
@@ -40,14 +69,21 @@ DeclareAttribute( "Dual3", IsIntegerPartition );
 
 
 #! @Arguments IntegerPartition
-#!
 DeclareProperty( "IsSuperSemiSymmetric", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
-#!
 DeclareProperty( "IsPerfectSemigroup", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
-#!
 DeclareAttribute( "Trace", IsIntegerPartition );
+
+#! @Chapter Integer Partitions
+#! @Section Integer SG Partitions
+
+
+#! @Arguments IntegerPartition
+DeclareProperty( "IsNSG", IsIntegerPartition );
+
+#! @Arguments IntegerPartition
+DeclareProperty( "IsArf", IsIntegerPartition );
 

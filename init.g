@@ -1,25 +1,26 @@
 DeclareInfoClass("InfoIntPart");
+
 DeclareCategory( "IsIntegerPartitionOrNumericalSet", IsAttributeStoringRep );
 
 #! @Chapter Introduction
 #! @Section Loading Package
 
 #! @Chapter Numerical Sets
-ReadPackage( "nsip", "gap/NumericalSets.gd" );
-ReadPackage( "nsip", "gap/NumericalSets2.gd" );
-# ReadPackage( "nsip", "gap/NumericalSets3.gd" );
-ReadPackage( "nsip", "gap/NumericalSetsSG.gd" );
+#! @Section Definition
+#! @Section Construction of A Numerical Set
+#! @Section Converting to
+ReadPackage( "nsip", "gap/numericalsets.gd" );
 
 #! @Chapter Integer Partitions
-ReadPackage( "nsip", "gap/IntegerPartitions.gd" );
-ReadPackage( "nsip", "gap/IntegerPartitions2.gd" );
-# ReadPackage( "nsip", "gap/IntegerPartitions3.gd" );
-ReadPackage( "nsip", "gap/IntegerPartitionsSG.gd" );
+#! @Section Definition
+#! @Section Construction of An Integer Partitions
+#! @Section Converting to
+ReadPackage( "nsip", "gap/integerpartitions.gd" );
 
 #! @Chapter Conversions
 ReadPackage( "nsip", "gap/conversions.gd" );
-ReadPackage( "nsip", "gap/ns.gd" );
-ReadPackage( "nsip", "gap/nsg.gd" );
+ReadPackage( "nsip", "gap/attributes.gd" );
+ReadPackage( "nsip", "gap/attributesSG.gd" );
 ReadPackage( "nsip", "gap/random.gd" );
 
 ReadPackage( "nsip", "gap/tree.gd" );

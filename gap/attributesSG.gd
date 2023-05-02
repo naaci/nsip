@@ -1,26 +1,19 @@
-#! @Chapter Conversions
-#! @Section NSG
+#! @Chapter Common Methods
+#! @Section For Numerical Semigroups And Their Integer Partitions
 
-#! @Arguments IsNSG
-#!
-DeclareProperty( "IsSymmetric", IsNSG );
-
-#! @Arguments IsNSG
-#!
 DeclareProperty( "IsNegativeSemiSymmetric", IsNSG );
 
+#! @Label
 #! @Arguments IsNSG
 #!
 DeclareProperty( "IsPseudoSymmetric", IsNSG );
 
+#! @Label
 #! @Arguments IsNSG
 #!
 DeclareOperation( "IsIrreducible", [IsNSG] );
 
+#! @Label
 #! @Arguments IsNSG
 #!
 DeclareProperty( "IsAlmostSymmetric", IsNSG );
-
-#! @Arguments IsNSG
-#!
-DeclareAttribute( "GapsOfFirstType", IsNSG );

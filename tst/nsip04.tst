@@ -10,84 +10,16 @@
 #
 gap> START_TEST("nsip04.tst");
 
-# doc/_Chapter_Conversions.xml:72-111
-gap> S := NumericalSet( [0,3,4,5,7] );
-{0,3,4,5,7,->}
+# doc/_Chapter_Conversions.xml:23-28
 gap> P := IntegerPartition( S );
       + 1 1 6= 3+ 1+ 1+ 1
-gap> S  = NumericalSet( IntegerPartition( S ) );
-true
-gap> P  = IntegerPartition( NumericalSet( P ) );
-true
-gap> Gaps( S ) = Gaps( P );
-true
-gap> GapsOfFirstType( S ) = GapsOfFirstType( P );
-true
-gap> GapsOfSecondType( S ) = GapsOfSecondType( P );
-true
-gap> Genus( S ) = Genus( P );
-true
-gap> Length( S ) = Length( P );
-true
-gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
-true
-gap> IsSymmetric( S ) = IsSymmetric( P );
-true
-gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
-true
-gap> IsNegativeSemiSymmetric( S ) = IsNegativeSemiSymmetric( P );
-true
-gap> IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
-true
-gap> Type( S ) = Type( P );
-true
-gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
-true
-gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
-true
-gap> IntegerPartition( Dual2( S )) = Dual2( IntegerPartition( S ) );
-true
-gap> Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
+gap> S  = NumericalSet( P );
 true
 
-# doc/_Chapter_Conversions.xml:114-153
-gap> P := IntegerPartition( [7,2,1,1] );
-SG  A - 4 2 11= 7+ 2+ 1+ 1
+# doc/_Chapter_Conversions.xml:53-58
 gap> S := NumericalSet( P );
-{0,6,8,9,11,->}
-gap> S  = NumericalSet( IntegerPartition( S ) );
-true
-gap> P  = IntegerPartition( NumericalSet( P ) );
-true
-gap> Gaps( S ) = Gaps( P );
-true
-gap> GapsOfFirstType( S ) = GapsOfFirstType( P );
-true
-gap> GapsOfSecondType( S ) = GapsOfSecondType( P );
-true
-gap> Genus( S ) = Genus( P );
-true
-gap> Length( S ) = Length( P );
-true
-gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
-true
-gap> IsSymmetric( S ) = IsSymmetric( P );
-true
-gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
-true
-gap> IsNegativeSemiSymmetric( S ) = IsNegativeSemiSymmetric( P );
-true
-gap> IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
-true
-gap> Type( S ) = Type( P );
-true
-gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
-true
-gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
-true
-gap> IntegerPartition( Dual2( S )) = Dual2( IntegerPartition( S ) );
-true
-gap> Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
+{0,3,4,5,7,->}
+gap> P  = IntegerPartition( S );
 true
 
 #
