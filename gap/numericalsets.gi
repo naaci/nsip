@@ -90,12 +90,12 @@ InstallMethod( Extend, [IsNumericalSet,IsInt], function( S, a )
 end);
 
 InstallMethod( Intersection2, [IsNumericalSet,IsNumericalSet], function(S1, S2)
-    return NumericalSetByGaps(Union(Gaps(S1),Gaps(S2)));
+    return NumericalSetByGaps(Union2(Gaps(S1),Gaps(S2)));
 end);
 
-# InstallMethod( IntersectSet, [IsNumericalSet,IsNumericalSet], function(S1, S2)
-#     return NumericalSetByGaps(Union(Gaps(S1),Gaps(S2)));
-# end);
+InstallMethod( Union2, [IsNumericalSet,IsNumericalSet], function(S1, S2)
+    return NumericalSetByGaps(Intersection2(Gaps(S1),Gaps(S2)));
+end);
 
 ################################################################################
 

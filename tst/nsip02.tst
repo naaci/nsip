@@ -18,27 +18,27 @@ gap> S := NumericalSet([0,3,4,5,7]);
 gap> S := NumericalSetByGaps([1,2,6]);
 {0,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:287-290
+# doc/_Chapter_Numerical_Sets.xml:296-299
 gap> SmallElements(S);
 [ 0, 3, 4, 5, 7 ]
 
-# doc/_Chapter_Numerical_Sets.xml:293-296
+# doc/_Chapter_Numerical_Sets.xml:302-305
 gap> Genus(S);
 3
 
-# doc/_Chapter_Numerical_Sets.xml:299-302
+# doc/_Chapter_Numerical_Sets.xml:308-311
 gap> Length(S);
 4
 
-# doc/_Chapter_Numerical_Sets.xml:305-308
+# doc/_Chapter_Numerical_Sets.xml:314-317
 gap> FrobeniusNumber(S);
 6
 
-# doc/_Chapter_Numerical_Sets.xml:311-314
+# doc/_Chapter_Numerical_Sets.xml:320-323
 gap> Conductor(S);
 7
 
-# doc/_Chapter_Numerical_Sets.xml:317-320
+# doc/_Chapter_Numerical_Sets.xml:326-329
 gap> Multiplicity(S);
 3
 

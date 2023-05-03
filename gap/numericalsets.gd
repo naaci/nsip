@@ -79,6 +79,9 @@ DeclareOperation("Extend",[IsNumericalSet,IsInt]);
 #! 
 DeclareOperation("Intersection2",[IsNumericalSet,IsNumericalSet]);
 
+#! 
+DeclareOperation("Union2",[IsNumericalSet,IsNumericalSet]);
+
 #! @Section Attributes of A Numerical Set
 
 #! @Arguments NumericalSet
