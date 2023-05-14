@@ -62,3 +62,14 @@ InstallMethod( Type, [IsIntegerPartitionOrNumericalSet],
     X -> Length( PseudoFrobeniusNumbers( X ) )
 );
 
+InstallMethod( Order, [ IsIntegerPartitionOrNumericalSet ], 
+function(X)
+    local i, D;
+    i := 0;
+    D := X;
+    while Length( D ) > 0 do
+        i := i + 1;
+        D := Dual3(D);
+    od;
+    return i;
+end);

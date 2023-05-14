@@ -62,3 +62,4 @@ DeclareAttribute( "PseudoFrobeniusNumbers", IsIntegerPartitionOrNumericalSet );
 #!
 DeclareOperation( "Type", [IsIntegerPartitionOrNumericalSet] );
 
+DeclareAttribute( "Order", IsIntegerPartitionOrNumericalSet );
