@@ -190,3 +190,7 @@ end );
 #             )))
 # );
 
+InstallMethod( CClosure, [IsIntegerPartition], 
+    P -> IntegerPartition( CClosure( NumericalSet( P )))
+);
+

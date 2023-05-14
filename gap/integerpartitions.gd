@@ -87,3 +87,4 @@ DeclareProperty( "IsNSG", IsIntegerPartition );
 #! @Arguments IntegerPartition
 DeclareProperty( "IsArf", IsIntegerPartition );
 
+DeclareAttribute( "CClosure", IsIntegerPartition );
