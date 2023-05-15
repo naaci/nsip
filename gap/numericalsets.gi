@@ -196,6 +196,18 @@ InstallMethod( CClosure, [IsNumericalSet],
 );
 
 
+#############################
+
+InstallMethod(Total, [IsNumericalSet], 
+    S -> Total( IntegerPartition( S ))
+);
+
+InstallMethod( Trace, [IsNumericalSet], 
+    S -> Trace( IntegerPartition( S ))
+);
+
+#############################
+
 InstallMethod( IsNSG, [IsNumericalSet],
     S -> ForAll(
         SmallElements( S ), s -> IsSubset( S, s + SmallElements( S ))

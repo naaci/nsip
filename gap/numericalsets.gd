@@ -160,6 +160,13 @@ DeclareProperty( "IsPerfectSemigroup", IsNumericalSet );
 #!
 DeclareAttribute( "CClosure", IsNumericalSet );
 
+
+#! @Arguments NumericalSet
+DeclareAttribute( "Trace", IsNumericalSet );
+
+#! @Arguments NumericalSet
+DeclareAttribute( "Total", IsNumericalSet );
+
 #! @Section Numerical Semigroups
 
 #! @Arguments NumericalSet
