@@ -69,15 +69,22 @@ view_integer_partition := function(P)
     return flags;
 end;
 
-InstallMethod( ViewObj, [IsIntegerPartition], function( P )
-    Print( JoinStringsWithSeparator( view_integer_partition( P ), "" ));
-    Print( " ",Total( P ), "=");
-    Print( P );
-end );
+InstallMethod( ViewString, [IsIntegerPartition], 
+    P -> Concatenation(
+        JoinStringsWithSeparator( view_integer_partition( P ), "" ),
+        " ",
+        String( Total( P ) ),
+        "=",
+        String( P )
+    )
+);
 
-InstallMethod( PrintObj, [IsIntegerPartition], function( P )
-    Print( JoinStringsWithSeparator( List(Parts( P ), a -> FormattedString(a,2)), "+" ));
-end);
+InstallMethod( String, [IsIntegerPartition],
+    P -> JoinStringsWithSeparator( 
+        # Parts( P ),
+        List(Parts( P ), X -> FormattedString( X, 2 )),
+    "+")
+);
 
 ################################################################################
 

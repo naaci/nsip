@@ -99,13 +99,13 @@ end);
 
 ################################################################################
 
-InstallMethod( PrintObj, [IsNumericalSet], function( S )
-    Print( 
+InstallMethod( String, [IsNumericalSet],
+    S -> Concatenation(
         "{", 
         JoinStringsWithSeparator( SmallElements( S ), "," ), 
         ",->}"
-    );
-end );
+    )
+);
 
 ################################################################################
 
