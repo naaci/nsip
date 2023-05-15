@@ -203,5 +203,5 @@ InstallMethod( IsNSG, [IsNumericalSet],
 );
 
 InstallMethod( IsArf, [IsNumericalSet], 
-    S -> IsArf( NumericalSet( S ))
+    S -> IsArf( IntegerPartition( S ))
 );
