@@ -191,7 +191,7 @@ InstallMethod( Multiplicity, [IsNumericalSet],
 InstallMethod( CClosure, [IsNumericalSet], 
     S -> Extend( S, Union(Set(
         NonzeroSmallElements( S ), 
-        s -> s + DivisorsInt( s ) 
+        s -> s + PrimeDivisors( s ) 
     )))
 );
 

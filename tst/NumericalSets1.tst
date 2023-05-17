@@ -41,4 +41,4 @@ gap> Conductor(S);
 gap> Multiplicity(S);
 3
 gap> CClosure(S);
-{0,3,4,6,8,->}
+{0,3,6,8,->}
