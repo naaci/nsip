@@ -128,7 +128,10 @@ InstallMethod( Dual, [IsIntegerPartition],
 );
 
 InstallMethod( Dual2, [IsIntegerPartition], 
-    P -> IntegerPartition( List( [ 1 .. Length( P ) ], i -> Genus( P ) - P[ i + Last( Parts( Dual( P ) ) ) ] ) )
+    P -> IntegerPartition( List( 
+        [ 1 .. Length( P ) ], 
+        i -> Genus( P ) - P[ i + Gaps( P )[ 1 ] ] 
+    ) )
 );
 
 InstallMethod( Dual3, [IsIntegerPartition], 

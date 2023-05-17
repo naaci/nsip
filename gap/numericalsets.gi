@@ -145,7 +145,10 @@ InstallMethod( Dual, [IsNumericalSet],
 );
 
 InstallMethod( Dual2, [IsNumericalSet],
-    S -> NumericalSet( N( S ) + 1 )
+    S -> NumericalSetByGaps( 
+        Gaps( S )[ 1 ] + FrobeniusNumber( S ) - Gaps( S )
+    )
+    # S -> NumericalSet( N( S ) + Gaps( S )[ 1 ] )
 );
 
 InstallMethod( Dual3, [IsNumericalSet],
