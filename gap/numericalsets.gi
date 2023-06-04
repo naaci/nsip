@@ -136,10 +136,6 @@ InstallMethod(N, [IsNumericalSet],
 
 ###############################################
 
-InstallMethod( IsPerfectSemigroup, [IsNumericalSet], 
-    S -> ForAll( [ 1 .. Length( S ) ], i -> S[ i + 1 ] - S[ i ] <> 2 )
-);
-
 InstallMethod( Dual, [IsNumericalSet],
     S -> NumericalSetByGaps( N( S ) )
 );
@@ -219,4 +215,23 @@ InstallMethod( IsNSG, [IsNumericalSet],
 
 InstallMethod( IsArf, [IsNumericalSet], 
     S -> IsArf( IntegerPartition( S ))
+);
+
+
+InstallMethod( IsPerfectSemigroup, [IsNumericalSet], 
+    S -> ForAll( [ 1 .. Length( S ) ], i -> S[ i + 1 ] - S[ i ] <> 2 )
+);
+
+InstallMethod( IsStrict, [IsNumericalSet], 
+    S -> ForAll( [ 1 .. Length( S ) ], i -> S[ i + 1 ] - S[ i ] <> 1 )
+);
+
+InstallMethod( IsOdd, [IsNumericalSet], 
+    S -> Length( S ) = 0 or 
+    ForAll( 
+        [ 1 .. Length( S ) - 1 ], 
+        i -> (S[ i + 1 ] - S[ i ]) mod 2 = 1
+        )
+    and 
+    (Length( S ) - Conductor( S )) mod 2 = 1
 );

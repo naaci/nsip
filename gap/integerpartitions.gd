@@ -88,3 +88,15 @@ DeclareProperty( "IsNSG", IsIntegerPartition );
 DeclareProperty( "IsArf", IsIntegerPartition );
 
 DeclareAttribute( "CClosure", IsIntegerPartition );
+
+DeclareProperty( "IsStrict", IsIntegerPartition );
+DeclareProperty( "IsOdd", IsIntegerPartition );
+
+# DeclareOperation( "+", [IsIntegerPartition,IsIntegerPartition] );
+
+DeclareAttribute( "Bend", IsStrict and IsOdd and IsIntegerPartition);
+
+DeclareAttribute( "UnBend", IsSymmetric and IsIntegerPartition);
+
+DeclareAttribute( "EulerBijection", IsStrict and IsIntegerPartition);
+DeclareAttribute( "EulerBijection", IsOdd and IsIntegerPartition);

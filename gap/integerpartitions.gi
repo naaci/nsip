@@ -119,10 +119,6 @@ InstallMethod(N, [IsIntegerPartition],
 
 ###############################################
 
-InstallMethod( IsPerfectSemigroup, [IsIntegerPartition], 
-    P -> ForAll( [ 1 .. Length( P ) + 1 ], i -> P[ i ] - P[ i + 1 ] <> 1 )
-);
-
 InstallMethod( Dual, [IsIntegerPartition], 
     P -> IntegerPartition( AssociatedPartition( Parts( P )))
 );
@@ -203,4 +199,79 @@ end );
 InstallMethod( CClosure, [IsIntegerPartition], 
     P -> IntegerPartition( CClosure( NumericalSet( P )))
 );
+
+InstallMethod( IsPerfectSemigroup, [IsIntegerPartition], 
+    P -> ForAll( [ 1 .. Length( P ) + 1 ], i -> P[ i ] - P[ i + 1 ] <> 1 )
+);
+
+InstallMethod( IsStrict, [IsIntegerPartition], 
+    P -> ForAll( [ 1 .. Length( P )], i -> P[ i ] <> P[ i + 1] )
+);
+
+InstallMethod( IsOdd, [IsIntegerPartition], 
+    P -> ForAll( Parts( P ), IsOddInt )
+);
+
+# PIMSLectures
+# InstallMethod( \+, [IsIntegerPartition,IsIntegerPartition], function ( P1, P2 )
+#     return IntegerPartition(
+#         List( [ 1 .. Length( P1 ) + Length( P2 ) ] ),
+#      )
+# end);
+
+InstallMethod( EulerBijection, [IsStrict and IsIntegerPartition], function( P )
+    local A, x, j, k, B;
+    A := [];
+    for x in Parts( P ) do
+        j := 0;
+        while x mod 2^( j + 1) = 0 do
+            j := j + 1;
+        od;
+        for k in [ 1 .. 2^j ] do
+            Add( A, Int( x / 2^j ));
+        od;
+    od;
+    B := IntegerPartition( A );
+    SetIsOdd( B, true );
+    return B;
+end);
+
+InstallMethod( EulerBijection, [IsOdd and IsIntegerPartition], function( P )
+    local A, x, i, j, B;
+    A := [];
+    i := 1;
+    while i <= Length( P ) do
+        j := 1;
+        while P[ i ] = P[ i + j * 2 - 1] do
+             j := j * 2;
+        od;
+        Add( A, P[ i ] * j);
+        i := i + j;
+    od;
+    B := IntegerPartition( A );
+    SetIsStrict( B, true );
+    return B;
+end);
+
+InstallMethod( Bend, [IsStrict and IsOdd and IsIntegerPartition], function ( P )
+    local A, B;
+    A := ( Parts( P ) - 1 ) / 2 + [ 1 .. Length( P ) ];
+    B := IntegerPartition( Concatenation( 
+        A,
+        AssociatedPartition( A ){[Length( A ) + 1 .. A[ 1 ]]}
+    ) );
+    SetIsSymmetric( B, true );
+    return B;
+end);
+
+InstallMethod( UnBend, [IsSymmetric and IsIntegerPartition], function( P )
+    local B;
+    B := IntegerPartition( List(
+        [ 1 .. Trace( P )],
+        i -> ( P[ i ] - i ) * 2 + 1
+    ) );
+    SetIsStrict( B, true );
+    SetIsOdd( B, true );
+    return B;
+end);
 

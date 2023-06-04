@@ -36,4 +36,9 @@ gap> IsNSG(P);
 false
 gap> IsArf(P);
 false
-gap> quit;
+gap> IsOdd(P);
+true
+gap> IsStrict(P);
+false
+gap> EulerBijection(EulerBijection(P))=P;
+true

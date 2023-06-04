@@ -174,3 +174,7 @@ DeclareAttribute( "Total", IsNumericalSet );
 DeclareProperty( "IsNSG", IsNumericalSet );
 
 DeclareProperty( "IsArf", IsNumericalSet );
+
+
+DeclareProperty( "IsStrict", IsNumericalSet );
+DeclareProperty( "IsOdd", IsNumericalSet );
