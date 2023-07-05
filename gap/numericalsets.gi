@@ -235,3 +235,7 @@ InstallMethod( IsOdd, [IsNumericalSet],
     and 
     (Length( S ) - Conductor( S )) mod 2 = 1
 );
+
+InstallMethod( Weight, [IsNumericalSet],
+    S -> Weight( IntegerPartition( S ))
+);

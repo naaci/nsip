@@ -100,3 +100,7 @@ DeclareAttribute( "UnBend", IsSymmetric and IsIntegerPartition);
 
 DeclareAttribute( "EulerBijection", IsStrict and IsIntegerPartition);
 DeclareAttribute( "EulerBijection", IsOdd and IsIntegerPartition);
+
+DeclareAttribute( "Weight", IsIntegerPartition);
+
+DeclareGlobalFunction( "PartitionGenerators" );

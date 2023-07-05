@@ -71,11 +71,14 @@ end;
 
 InstallMethod( ViewString, [IsIntegerPartition], 
     P -> Concatenation(
+        TextAttr.0,
         JoinStringsWithSeparator( view_integer_partition( P ), "" ),
         " ",
         String( Total( P ) ),
         "=",
-        String( P )
+        TextAttr.3,
+        String( P ),
+        TextAttr.reset
     )
 );
 
@@ -275,3 +278,35 @@ InstallMethod( UnBend, [IsSymmetric and IsIntegerPartition], function( P )
     return B;
 end);
 
+InstallGlobalFunction( PartitionGenerators, function( n )
+        # for P in List(Partitions( n ),IntegerPartition) do
+        local partition, known_parts, generators, partititions, i, j, k, fazlalar;
+        known_parts := Set([]);
+        generators := Set([]);
+        partititions := Partitions( n );
+
+        fazlalar := [];
+
+        for k in [1..Length(partititions)] do
+            for i in [ 1 .. Length(partititions) ] do
+                for j in [ 1 .. Length(partititions) ] do
+                    if i<>j and IsSubset(partititions[ i ],partititions[ j ]) then
+                        # Add( fazlalar, j);
+                        Remove( partititions, j );
+                    fi;
+                    if j = Length(partititions) then
+                        break;
+                    fi;
+                od;
+                if i = Length(partititions) then
+                    break;
+                fi;
+            od;
+        od;
+
+        return partititions{Difference([1..Length(partititions)],fazlalar)};
+end);
+
+InstallMethod(Weight, [IsIntegerPartition],
+    P -> Sum( List( [1 .. Length( P ) - 1 ], i -> ( Length( P ) - i ) * ( P[ i ] - P[ i + 1 ] )))
+);
