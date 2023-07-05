@@ -102,5 +102,6 @@ DeclareAttribute( "EulerBijection", IsStrict and IsIntegerPartition);
 DeclareAttribute( "EulerBijection", IsOdd and IsIntegerPartition);
 
 DeclareAttribute( "Weight", IsIntegerPartition);
+DeclareAttribute( "Weight2", IsStrict and IsIntegerPartition);
 
 DeclareGlobalFunction( "PartitionGenerators" );

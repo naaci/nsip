@@ -71,14 +71,14 @@ end;
 
 InstallMethod( ViewString, [IsIntegerPartition], 
     P -> Concatenation(
-        TextAttr.0,
+        # TextAttr.0,
         JoinStringsWithSeparator( view_integer_partition( P ), "" ),
         " ",
         String( Total( P ) ),
         "=",
-        TextAttr.3,
-        String( P ),
-        TextAttr.reset
+        # TextAttr.3,
+        String( P )
+        # TextAttr.reset
     )
 );
 
@@ -309,4 +309,8 @@ end);
 
 InstallMethod(Weight, [IsIntegerPartition],
     P -> Sum( List( [1 .. Length( P ) - 1 ], i -> ( Length( P ) - i ) * ( P[ i ] - P[ i + 1 ] )))
+);
+
+InstallMethod(Weight2, [IsStrict and IsIntegerPartition],
+    P -> Sum( List( [1 .. Length( P ) - 1 ], i -> ( Length( P ) - i ) * ( P[ i ] - P[ i + 1 ] - 1 )))
 );
