@@ -123,7 +123,17 @@ InstallMethod(N, [IsIntegerPartition],
 ###############################################
 
 InstallMethod( Dual, [IsIntegerPartition], 
-    P -> IntegerPartition( AssociatedPartition( Parts( P )))
+    P -> IntegerPartition( List( 
+        [ 1 .. Genus( P ) ], 
+        i -> Length( Filtered( 
+            Parts( P ),
+            # [ 1 .. Length( P ) ], 
+            x -> i <= x
+            # j -> i <= P[ j ]
+            ))
+        ))
+
+    # P -> IntegerPartition( AssociatedPartition( Parts( P )))
 );
 
 InstallMethod( Dual2, [IsIntegerPartition], 
