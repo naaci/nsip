@@ -59,11 +59,16 @@ DeclareAttribute( "Length", IsIntegerPartition );
 #! @Returns Integer
 DeclareAttribute( "FrobeniusNumber", IsIntegerPartition );
 
+#! @Arguments IntegerPartition
+#! @Returns Integer
+DeclareAttribute( "Multiplicity", IsIntegerPartition );
+
 #! @BeginGroup DualityOfIntegerPartition
 #! @Arguments IntegerPartition
 #! @Returns IntegerPartition
+DeclareAttribute( "ConjugateOf", IsIntegerPartition );
+DeclareSynonym( "Conjugate", ConjugateOf);
 DeclareAttribute( "Dual", IsIntegerPartition );
-DeclareAttribute( "Dual2", IsIntegerPartition );
 DeclareAttribute( "Dual3", IsIntegerPartition );
 #! @EndGroup
 

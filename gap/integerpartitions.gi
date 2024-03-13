@@ -92,7 +92,7 @@ InstallMethod( String, [IsIntegerPartition],
 ################################################################################
 
 InstallMethod(Gaps, [IsIntegerPartition], 
-    P -> N( Dual( P ))
+    P -> N( ConjugateOf( P ))
     # P -> Union(Set(
     #      [1..Length(P)], i -> Set(
     #         [ 1 .. P[ i ] - P[ i + 1 ]], j -> Genus( P ) - 1 - ( P[ i ] - i ) + j
@@ -116,13 +116,17 @@ InstallMethod(FrobeniusNumber, [IsIntegerPartition],
     P -> Length( P ) + Genus( P ) - 1
 );
 
+InstallMethod( Multiplicity, [IsIntegerPartition],
+    P -> Genus( P ) - P[2] + 1
+);
+
 InstallMethod(N, [IsIntegerPartition], 
     P -> Reversed( Parts( P )) + [ 0 .. Length( P ) - 1 ]
 );
 
 ###############################################
 
-InstallMethod( Dual, [IsIntegerPartition], 
+InstallMethod( ConjugateOf, [IsIntegerPartition], 
     P -> IntegerPartition( List( 
         [ 1 .. Genus( P ) ], 
         i -> Length( Filtered( 
@@ -136,7 +140,7 @@ InstallMethod( Dual, [IsIntegerPartition],
     # P -> IntegerPartition( AssociatedPartition( Parts( P )))
 );
 
-InstallMethod( Dual2, [IsIntegerPartition], 
+InstallMethod( Dual, [IsIntegerPartition], 
     P -> IntegerPartition( List( 
         [ 1 .. Length( P ) ], 
         i -> Genus( P ) - P[ i + Gaps( P )[ 1 ] ] 
@@ -150,7 +154,7 @@ InstallMethod( Dual3, [IsIntegerPartition],
 #############################
 
 InstallMethod( IsSuperSemiSymmetric, [IsIntegerPartition],
-    P -> IsNSG( Dual( P ))
+    P -> IsNSG( ConjugateOf( P ))
 );
 
 InstallMethod(Total, [IsIntegerPartition], 

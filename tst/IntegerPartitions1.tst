@@ -22,9 +22,9 @@ gap> IsAlmostSymmetric(P);
 true
 gap> Type(P);
 5
-gap> Dual(P);
+gap> ConjugateOf(P);
         2 2 12= 4+ 2+ 2+ 1+ 1+ 1+ 1
-gap> Dual2(P);
+gap> Dual(P);
       - 2 4 23= 7+ 6+ 6+ 4
 gap> IsSuperSemiSymmetric(P);
 false

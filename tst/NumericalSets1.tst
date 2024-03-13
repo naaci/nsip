@@ -24,9 +24,9 @@ gap> IsAlmostSymmetric(S);
 false
 gap> Type(S);
 3
-gap> Dual(S);
+gap> ConjugateOf(S);
 {0,1,2,3,5,6,8,->}
-gap> Dual2(S);
+gap> Dual(S);
 {0,5,8,->}
 gap> IsSemiSymmetric(S);
 false

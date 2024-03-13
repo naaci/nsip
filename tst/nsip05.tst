@@ -23,7 +23,7 @@ gap> Atom(S);
 {0,4,5,7,->}
 
 # doc/_Chapter_Common_Methods.xml:147-150
-gap> Dual(S);
+gap> ConjugateOf(S);
 {0,4,5,7,->}
 
 # doc/_Chapter_Common_Methods.xml:153-156
@@ -115,19 +115,19 @@ gap> Type( S ) = Type( P );
 true
 
 # doc/_Chapter_Common_Methods.xml:325-328
-gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
+gap> IntegerPartition( ConjugateOf( S )) = ConjugateOf( IntegerPartition( S ) );
 true
 
 # doc/_Chapter_Common_Methods.xml:331-334
-gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
+gap> ConjugateOf( NumericalSet( P ) ) = NumericalSet( ConjugateOf( P ));
 true
 
 # doc/_Chapter_Common_Methods.xml:337-340
-gap> IntegerPartition( Dual2( S )) = Dual2( IntegerPartition( S ) );
+gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true
 
 # doc/_Chapter_Common_Methods.xml:343-346
-gap> Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
+gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
 true
 
 #

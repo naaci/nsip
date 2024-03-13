@@ -7,9 +7,9 @@ gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );
 true
-gap> P = Dual( Dual( P ) );
+gap> P = ConjugateOf( ConjugateOf( P ) );
 true
-gap> S = Dual( Dual( S ) );
+gap> S = ConjugateOf( ConjugateOf( S ) );
 true
 gap> Gaps( S ) = Gaps( P );
 true
@@ -39,11 +39,11 @@ gap> Type( S ) = Type( P );
 true
 gap> N( S ) = N( P );
 true
+gap> IntegerPartition( ConjugateOf( S )) = ConjugateOf( IntegerPartition( S ) );
+true
+gap> ConjugateOf( NumericalSet( P ) ) = NumericalSet( ConjugateOf( P ));
+true
 gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true
 gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
-true
-gap> IntegerPartition( Dual2( S )) = Dual2( IntegerPartition( S ) );
-true
-gap> Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
 true

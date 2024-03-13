@@ -136,11 +136,11 @@ InstallMethod(N, [IsNumericalSet],
 
 ###############################################
 
-InstallMethod( Dual, [IsNumericalSet],
+InstallMethod( ConjugateOf, [IsNumericalSet],
     S -> NumericalSetByGaps( N( S ) )
 );
 
-InstallMethod( Dual2, [IsNumericalSet],
+InstallMethod( Dual, [IsNumericalSet],
     S -> NumericalSetByGaps( 
         Gaps( S )[ 1 ] + FrobeniusNumber( S ) - Gaps( S )
     )

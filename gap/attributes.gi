@@ -6,12 +6,12 @@ InstallMethod(GapsOfFirstType, [IsIntegerPartitionOrNumericalSet],
 InstallMethod(GapsOfSecondType, [IsIntegerPartitionOrNumericalSet], 
     X -> Difference( Gaps( X ), N( X ) )
     # X -> Difference( Gaps( X ), GapsOfFirstType( X ) )
-    # X -> Intersection( Gaps( X ), Dual( X ) )
+    # X -> Intersection( Gaps( X ), ConjugateOf( X ) )
 );
 
 InstallMethod( IsSymmetric, [IsIntegerPartitionOrNumericalSet], 
     # IsPositiveSemiSymmetric and IsNegativeSemiSymmetric
-    # X -> Dual( X ) = X
+    # X -> ConjugateOf( X ) = X
     X -> Gaps( X ) = N( X )
 );
 

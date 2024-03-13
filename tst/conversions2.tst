@@ -30,11 +30,11 @@ gap> IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
 true
 gap> Type( S ) = Type( P );
 true
+gap> IntegerPartition( ConjugateOf( S )) = ConjugateOf( IntegerPartition( S ) );
+true
+gap> ConjugateOf( NumericalSet( P ) ) = NumericalSet( ConjugateOf( P ));
+true
 gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true
 gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
-true
-gap> IntegerPartition( Dual2( S )) = Dual2( IntegerPartition( S ) );
-true
-gap> Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
 true

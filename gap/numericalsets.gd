@@ -135,8 +135,8 @@ DeclareAttribute( "Multiplicity", IsNumericalSet );
 #! @Arguments NumericalSet
 #! @Returns NumericalSet
 #!
+DeclareAttribute( "ConjugateOf", IsNumericalSet );
 DeclareAttribute( "Dual", IsNumericalSet );
-DeclareAttribute( "Dual2", IsNumericalSet );
 DeclareAttribute( "Dual3", IsNumericalSet );
 #! @EndGroup
 

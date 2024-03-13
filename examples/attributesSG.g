@@ -78,22 +78,22 @@ Type( S ) = Type( P );
 #! @EndExample
 
 #! @BeginExample
+IntegerPartition( ConjugateOf( S )) = ConjugateOf( IntegerPartition( S ) );
+#! true
+#! @EndExample
+
+#! @BeginExample
+ConjugateOf( NumericalSet( P ) ) = NumericalSet( ConjugateOf( P ));
+#! true
+#! @EndExample
+
+#! @BeginExample
 IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 #! true
 #! @EndExample
 
 #! @BeginExample
 Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
-#! true
-#! @EndExample
-
-#! @BeginExample
-IntegerPartition( Dual2( S )) = Dual2( IntegerPartition( S ) );
-#! true
-#! @EndExample
-
-#! @BeginExample
-Dual2( NumericalSet( P ) ) = NumericalSet( Dual2( P ));
 #! true
 #! @EndExample
 

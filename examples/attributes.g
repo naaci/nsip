@@ -18,7 +18,7 @@ Atom(S);
 #! @EndExample
 
 #! @BeginExample
-Dual(S);
+ConjugateOf(S);
 #! {0,4,5,7,->}
 #! @EndExample
 
