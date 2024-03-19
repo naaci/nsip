@@ -38,3 +38,11 @@ gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true
 gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
 true
+gap> SpecialSubdiagram( NumericalSet( P ) ) = NumericalSet( SpecialSubdiagram( P ));
+true
+gap> IntegerPartition( SpecialSubdiagram( S ) ) = SpecialSubdiagram( IntegerPartition( S ));
+true
+gap> Reduce( IntegerPartition( S ) ) = IntegerPartition( Reduce( S ));
+true
+gap> Reduce( NumericalSet( P ) ) = NumericalSet( Reduce( P ));
+true

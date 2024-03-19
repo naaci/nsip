@@ -110,3 +110,7 @@ DeclareAttribute( "Weight", IsIntegerPartition);
 DeclareAttribute( "Weight2", IsStrict and IsIntegerPartition);
 
 DeclareGlobalFunction( "PartitionGenerators" );
+
+#! https://doi.org/10.55730/1300-0098.3510
+DeclareAttribute( "Reduce", IsIntegerPartition);
+DeclareAttribute( "SpecialSubdiagram", IsIntegerPartition);

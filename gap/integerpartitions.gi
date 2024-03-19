@@ -328,3 +328,26 @@ InstallMethod(Weight, [IsIntegerPartition],
 InstallMethod(Weight2, [IsStrict and IsIntegerPartition],
     P -> Sum( List( [1 .. Length( P ) - 1 ], i -> ( Length( P ) - i ) * ( P[ i ] - P[ i + 1 ] - 1 )))
 );
+
+InstallMethod(Reduce, [IsIntegerPartition],
+    function (P)
+    local i;
+    i := 2;
+    for i in [ 2 .. Length(P) + 1 ] do
+        if P[ i ] <> P[ 1 ] then
+            break;
+        fi;
+    od;
+    return IntegerPartition( Parts( P ){[ i - 1 .. Length( P ) ]} );
+    end);
+
+InstallMethod(SpecialSubdiagram, [IsIntegerPartition],
+    P -> IntegerPartition( List( 
+        [ 1 .. Length(Reduce( P )) - 1 ],
+        function (i) if Reduce( P )[ i + 1 ] - Reduce( P )[ i ] = 0 then 
+            return Reduce( P )[ i ] - Reduce( P )[ Length( Reduce( P ) ) ] + 1; 
+        else 
+            return Reduce( P )[ i ] - Reduce( P )[ Length( Reduce( P ) ) ];
+        fi; end
+        ))
+);

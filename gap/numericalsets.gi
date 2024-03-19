@@ -239,3 +239,26 @@ InstallMethod( IsOdd, [IsNumericalSet],
 InstallMethod( Weight, [IsNumericalSet],
     S -> Weight( IntegerPartition( S ))
 );
+
+InstallMethod(Reduce, [IsNumericalSet],
+    function (S)
+    local i;
+    i := 1;
+    for i in [ 1 .. Length(S) + 1 ] do
+        if S[ i + 1 ] - S[ i ] <> 1 then
+            break;
+        fi;
+    od;
+    return S - S[ i ];
+    end);
+
+InstallMethod(SpecialSubdiagram, [IsNumericalSet],
+    S -> NumericalSet( List( 
+        [ 1 .. Length(Reduce( S )) ],
+        function (i) if Reduce( S )[ i + 1 ] - Reduce( S )[ i ] = 1 then 
+            return Reduce( S )[ i ] - 1; 
+        else 
+            return Reduce( S )[ i ];
+        fi; end
+        ))
+);
