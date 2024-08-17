@@ -2,11 +2,11 @@
 ## Changes will be discarded by the next call of the AutoDoc method.
 
 
-AUTODOC_file_scan_list := [ "../PackageInfo.g", "../examples/LoadPackage.g", "../examples/attributes.g", "../examples/attributesSG.g", "../examples/conversions.g", "../examples/integerpartitions.g", "../examples/numericalsets.g", "../gap/attributes.gd", "../gap/attributes.gi", "../gap/attributesSG.gd", "../gap/attributesSG.gi", "../gap/conversions.gd", "../gap/conversions.gi", "../gap/conversions2.gi", "../gap/integerpartitions.gd", "../gap/integerpartitions.gi", "../gap/numericalsets.gd", "../gap/numericalsets.gi", "../gap/random.gd", "../gap/random.gi", "../gap/tree.gd", "../gap/tree.gi", "../init.g", "../makedoc.g", "../maketest.g", "../read.g", "/home/naaci/nsip/doc/_Chunks.xml" ];
+AUTODOC_file_scan_list := [ "../PackageInfo.g", "../examples/LoadPackage.g", "../examples/attributes.g", "../examples/attributesSG.g", "../examples/conversions.g", "../examples/integerpartitions.g", "../examples/numericalsets.g", "../gap/attributes.gd", "../gap/attributes.gi", "../gap/attributesSG.gd", "../gap/attributesSG.gi", "../gap/conversions.gd", "../gap/conversions.gi", "../gap/conversions2.gi", "../gap/integerpartitions.gd", "../gap/integerpartitions.gi", "../gap/numericalsets.gd", "../gap/numericalsets.gi", "../gap/random.gd", "../gap/random.gi", "../gap/tree.gd", "../gap/tree.gi", "../init.g", "../makedoc.g", "../maketest.g", "../read.g", "_Chunks.xml" ];
 
 LoadPackage( "GAPDoc" );
 
-example_tree := ExtractExamples( Directory("/home/naaci/.gap/pkg/nsip/doc/"), "nsip.xml", AUTODOC_file_scan_list, 500 );
+example_tree := ExtractExamples( Directory("/root/.gap/pkg/nsip/doc/"), "nsip.xml", AUTODOC_file_scan_list, 500 );
 
 RunExamples( example_tree, rec( compareFunction := "uptowhitespace" ) );
 
