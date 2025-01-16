@@ -97,6 +97,7 @@ DeclareProperty( "IsOdd", IsIntegerPartition );
 
 DeclareAttribute( "Bend", IsStrict and IsOdd and IsIntegerPartition);
 
+DeclareProperty( "IsSymmetric", IsIntegerPartition);
 DeclareAttribute( "UnBend", IsSymmetric and IsIntegerPartition);
 
 DeclareAttribute( "EulerBijection", IsStrict and IsIntegerPartition);
