@@ -7,6 +7,13 @@ on:
       - master
       - main
   pull_request:
+  workflow_dispatch:
+  #  inputs:
+   #   example_input:
+    #    description: 'An example input'
+     #   required: true
+    #    default: 'default value'
+
 
 # the `concurrency` settings ensure that not too many CI jobs run in parallel
 concurrency:
