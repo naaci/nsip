@@ -6,7 +6,9 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 # LoadPackage("nsip");
-LoadPackage("AutoDoc");
+
+# LoadPackage("AutoDoc");
+# GenerateDoc(DocPackage("nsip"),"tex");
 
 AutoDoc( "nsip", rec( 
     autodoc := true,

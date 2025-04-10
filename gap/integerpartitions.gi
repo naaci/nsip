@@ -82,6 +82,9 @@ InstallMethod( ViewString, [IsIntegerPartition],
     )
 );
 
+InstallMethod( FormattedString, [IsIntegerPartition], String
+);
+
 InstallMethod( String, [IsIntegerPartition],
     P -> JoinStringsWithSeparator( 
         # Parts( P ),
