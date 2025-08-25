@@ -1,3 +1,6 @@
 [submodule "article@overleaf"]
 	path = article@overleaf
 	url = https://git.overleaf.com/5e4145552b5216000199f592
+[submodule "ums2025"]
+	path = ums2025
+	url = https://git@git.overleaf.com/6888a68fc6bd5ab8cd5fde08
