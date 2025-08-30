@@ -20,6 +20,10 @@ InstallMethod( IsAlmostSymmetric, [IsIntegerPartitionOrNumericalSet],
 
 );
 
+InstallMethod( IsAlmostSymmetric, [IsNSG],
+    X -> FrobeniusNumber( X ) = -1 or 2 * Genus( X ) = FrobeniusNumber( X ) + Type( X )
+);
+
 InstallMethod( Atom, [IsIntegerPartitionOrNumericalSet],
     X -> Intersection2( X, Dual3( X ) )
     # X -> NumericalSet(Filtered(

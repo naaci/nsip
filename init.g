@@ -26,7 +26,7 @@ ReadPackage( "nsip", "gap/d.gd" );
 #! @Chapter Conversions
 ReadPackage( "nsip", "gap/conversions.gd" );
 ReadPackage( "nsip", "gap/attributes.gd" );
-ReadPackage( "nsip", "gap/attributesSG.gd" );
+# ReadPackage( "nsip", "gap/attributesSG.gd" );
 ReadPackage( "nsip", "gap/random.gd" );
 
 ReadPackage( "nsip", "gap/tree.gd" );

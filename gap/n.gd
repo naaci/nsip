@@ -1,6 +1,5 @@
 #! @Chapter N
-#! @Section N
-#! @Subsection On IntegerPartition
+#! @Section On IntegerPartition
 
 #! @Arguments IntegerPartition
 #! @Returns List
@@ -11,12 +10,11 @@ DeclareAttribute( "N", IsIntegerPartition );
 DeclareAttribute( "ConjugateOf", IsIntegerPartition );
 DeclareSynonym( "Conjugate", ConjugateOf);
 
-# #! @Arguments IntegerPartition
-# #! @Returns List
-# DeclareAttribute( "Gaps", IsIntegerPartition );
+#! @Arguments IntegerPartition
+#! @Returns List
+DeclareAttribute( "Gaps", IsIntegerPartition );
 
-###############################################
-#! @Subsection On NumericalSet
+#! @Section On NumericalSet
 
 #! @Arguments NumericalSet
 #! @Returns List
@@ -27,9 +25,7 @@ DeclareAttribute( "N", IsNumericalSet );
 DeclareAttribute( "ConjugateOf", IsNumericalSet );
 
 ###############################################
-#! @Subsection Common Attributes
-
-## DeclareAttribute( "Dual", IsNumericalSet );
+#! @Section Common Attributes
 
 #! @Label
 #! @Arguments IntegerPartition
@@ -58,16 +54,24 @@ DeclareProperty( "IsSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 #!
 DeclareProperty( "IsNegativeSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 
-# DeclareProperty( "IsPositiveSuperSemiSymmetric", IsIntegerPartitionOrNumericalSet );
-# DeclareProperty( "IsNegativeSuperSemiSymmetric", IsIntegerPartitionOrNumericalSet );
+#! @Label
+#! @Arguments IntegerPartition
+#!
+DeclareProperty( "IsPositive", IsIntegerPartitionOrNumericalSet );
 
-# #! @Label
-# #! @Arguments IntegerPartition
-# #!
-# DeclareProperty( "IsPositive", IsIntegerPartitionOrNumericalSet );
+#! @Label
+#! @Arguments IntegerPartition
+#!
+DeclareProperty( "IsNegative", IsIntegerPartitionOrNumericalSet );
 
-# #! @Label
-# #! @Arguments IntegerPartition
-# #!
-# DeclareProperty( "IsNegative", IsIntegerPartitionOrNumericalSet );
+#! @Section On Semigroups
 
+#! @Label
+#! @Arguments IsNSG
+#!
+DeclareProperty( "IsPseudoSymmetric", IsNSG );
+
+#! @Label
+#! @Arguments IsNSG
+#!
+DeclareOperation( "IsIrreducible", [IsNSG] );

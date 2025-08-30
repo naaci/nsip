@@ -11,7 +11,7 @@ LoadPackage("AutoDoc");
 # GenerateDoc(DocPackage("nsip"),"tex");
 
 AutoDoc( 
-    # "nsip", 
+    "nsip", 
     rec( 
         autodoc := true,
         # gapdoc := rec(
@@ -30,6 +30,16 @@ AutoDoc(
         # ),
         extract_examples := true,
         maketest := true,
+        PackageName := "nsip",
+        Subtitle := "",
+        PackageDoc := rec(
+            BookName := ~.PackageName,
+            ArchiveURLSubset := ["doc"],
+            HTMLStart := "doc/chap0.html",
+            PDFFile := "doc/manual.pdf",
+            SixFile := "doc/manual.six",
+            LongTitle := ~.Subtitle,
+            ),
         )
     );
 QUIT;

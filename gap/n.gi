@@ -46,6 +46,8 @@ InstallMethod(GapsOfFirstType, [IsIntegerPartitionOrNumericalSet],
     # X -> Difference( Gaps( X ), GapsOfSecondType( X ) )
 );
 
+InstallMethod( GapsOfFirstType, [IsNSG], N );
+
 InstallMethod(GapsOfSecondType, [IsIntegerPartitionOrNumericalSet], 
     X -> Difference( Gaps( X ), N( X ) )
     # X -> Difference( Gaps( X ), GapsOfFirstType( X ) )
@@ -58,9 +60,25 @@ InstallMethod( IsSymmetric, [IsIntegerPartitionOrNumericalSet],
     X -> Gaps( X ) = N( X )
 );
 
+InstallMethod( IsSymmetric, [IsNSG],
+    X -> Genus( X ) = Length( X )
+);
+
+InstallMethod( IsPseudoSymmetric, [IsNSG],
+    X -> Genus( X ) = Length( X ) + 1
+);
+
+InstallMethod( IsIrreducible, [IsNSG], 
+    X -> IsSymmetric( X ) or IsPseudoSymmetric( X )
+);
+
 InstallMethod( IsNegativeSemiSymmetric, [IsIntegerPartitionOrNumericalSet],
     X -> IsSubset( Gaps( X ), N( X ) )
     # X -> GapsOfFirstType( X ) = N( X )
+);
+
+InstallMethod( IsNegativeSemiSymmetric, [IsNSG],
+    X -> true
 );
 
 InstallMethod( IsPositiveSemiSymmetric, [IsIntegerPartitionOrNumericalSet],
