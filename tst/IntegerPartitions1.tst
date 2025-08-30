@@ -1,5 +1,5 @@
 gap> P := IntegerPartition([7,3,1,1]);
-        5 2 12= 7+ 3+ 1+ 1
+    A  5 2 12= 7+ 3+ 1+ 1
 gap> Gaps(P);
 [ 1, 2, 3, 4, 6, 7, 10 ]
 gap> GapsOfFirstType(P);
@@ -23,11 +23,9 @@ true
 gap> Type(P);
 5
 gap> ConjugateOf(P);
-        2 2 12= 4+ 2+ 2+ 1+ 1+ 1+ 1
+    A  2 2 12= 4+ 2+ 2+ 1+ 1+ 1+ 1
 gap> Dual(P);
-      - 2 4 23= 7+ 6+ 6+ 4
-gap> IsSuperSemiSymmetric(P);
-false
+    -  2 4 23= 7+ 6+ 6+ 4
 gap> Total(P);
 12
 gap> Trace(P);

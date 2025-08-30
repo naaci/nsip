@@ -1,7 +1,7 @@
 gap> S := NumericalSet( [0,3,4,5,7] );
 {0,3,4,5,7,->}
 gap> P := IntegerPartition( S );
-      + 1 1 6= 3+ 1+ 1+ 1
+    A  1 1 6= 3+ 1+ 1+ 1
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );
@@ -29,6 +29,12 @@ true
 gap> IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
 true
 gap> Type( S ) = Type( P );
+true
+gap> IsNSG( S ) = IsNSG( P );
+true
+gap> IsArf( S ) = IsArf( P );
+true
+gap> not IsNSG( P ) or IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
 true
 gap> IntegerPartition( ConjugateOf( S )) = ConjugateOf( IntegerPartition( S ) );
 true

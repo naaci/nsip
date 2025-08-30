@@ -69,8 +69,8 @@ DeclareAttribute( "Dual", IsIntegerPartition );
 # DeclareAttribute( "Dual3", IsIntegerPartition );
 
 
-#! @Arguments IntegerPartition
-DeclareProperty( "IsSuperSemiSymmetric", IsIntegerPartition );
+# #! @Arguments IntegerPartition
+# DeclareProperty( "IsSuperSemiSymmetric", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
 DeclareProperty( "IsPerfectSemigroup", IsIntegerPartition );
@@ -111,3 +111,6 @@ DeclareGlobalFunction( "PartitionGenerators" );
 #! https://doi.org/10.55730/1300-0098.3510
 DeclareAttribute( "Reduce", IsIntegerPartition);
 DeclareAttribute( "SpecialSubdiagram", IsIntegerPartition);
+
+DeclareAttribute( "RightParts", IsIntegerPartition);
+DeclareAttribute( "BelowParts", IsIntegerPartition);

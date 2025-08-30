@@ -8,7 +8,7 @@ ReadPackage( "nsip", "gap/numericalsets.gi" );
 ReadPackage( "nsip", "gap/integerpartitions.gi" );
 
 ReadPackage( "nsip", "gap/n.gi" );
-ReadPackage( "nsip", "gap/dual3.gi" );
+ReadPackage( "nsip", "gap/d.gi" );
 
 ReadPackage( "nsip", "gap/conversions2.gi" );
 ReadPackage( "nsip", "gap/attributes.gi" );

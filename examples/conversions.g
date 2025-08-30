@@ -14,7 +14,7 @@ P  = IntegerPartition( S );
 
 #! @BeginExample
 P := IntegerPartition( S );
-#!       + 1 1 6= 3+ 1+ 1+ 1
+#!     A  1 1 6= 3+ 1+ 1+ 1
 S  = NumericalSet( P );
 #! true
 #! @EndExample

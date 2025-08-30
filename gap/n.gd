@@ -58,6 +58,9 @@ DeclareProperty( "IsSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 #!
 DeclareProperty( "IsNegativeSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 
+# DeclareProperty( "IsPositiveSuperSemiSymmetric", IsIntegerPartitionOrNumericalSet );
+# DeclareProperty( "IsNegativeSuperSemiSymmetric", IsIntegerPartitionOrNumericalSet );
+
 # #! @Label
 # #! @Arguments IntegerPartition
 # #!

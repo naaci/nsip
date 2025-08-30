@@ -21,7 +21,7 @@ ReadPackage( "nsip", "gap/integerpartitions.gd" );
 ReadPackage( "nsip", "gap/n.gd" );
 
 #! @Chapter Dual3
-ReadPackage( "nsip", "gap/dual3.gd" );
+ReadPackage( "nsip", "gap/d.gd" );
 
 #! @Chapter Conversions
 ReadPackage( "nsip", "gap/conversions.gd" );
