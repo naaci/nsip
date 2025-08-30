@@ -1,7 +1,8 @@
 name: Build manuals
 
 # Trigger the workflow on push to master / main, or on pull request
-# on:
+on:
+  workflow_dispatch:
 #   push:
 #     branches:
 #       - master

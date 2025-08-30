@@ -142,19 +142,9 @@ DeclareAttribute( "Dual", IsNumericalSet );
 
 DeclareProperty( "IsSuperSemiSymmetric", IsNumericalSet );
 
-# #! @Arguments NumericalSet
-# #!
-# DeclareOperation( "IsIrreducible", [IsNumericalSet] );
-
-# DeclareProperty( "IsPseudoSymmetric", IsNumericalSet );
-
 #! @Arguments NumericalSemigroupSet
 #!
 DeclareProperty( "IsPerfectSemigroup", IsNumericalSet );
-
-#! @Arguments NumericalSet
-#!
-# DeclareProperty( "IsSuperSemiSymmetric", IsNumericalSet );
 
 #! @Arguments NumericalSet
 #!

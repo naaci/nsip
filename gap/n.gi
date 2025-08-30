@@ -15,6 +15,8 @@ InstallMethod( ConjugateOf, [IsIntegerPartition],
     #     ))
 );
 
+DeclareSynonym( "Conjugate", ConjugateOf);
+
 # InstallMethod( IsSuperSemiSymmetric, [IsIntegerPartition],
 #     P -> IsNSG( ConjugateOf( P ))
 # );

@@ -8,7 +8,6 @@ DeclareAttribute( "N", IsIntegerPartition );
 #! @Arguments IntegerPartition
 #! @Returns IntegerPartition
 DeclareAttribute( "ConjugateOf", IsIntegerPartition );
-DeclareSynonym( "Conjugate", ConjugateOf);
 
 #! @Arguments IntegerPartition
 #! @Returns List
@@ -47,7 +46,6 @@ DeclareProperty( "IsSymmetric", IsIntegerPartitionOrNumericalSet );
 #!
 DeclareProperty( "IsPositiveSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 DeclareProperty( "IsSemiSymmetric", IsIntegerPartitionOrNumericalSet );
-# DeclareSynonym( "IsSemiSymmetric", IsPositiveSemiSymmetric);
 
 #! @Label
 #! @Arguments IntegerPartition
@@ -71,7 +69,7 @@ DeclareProperty( "IsNegative", IsIntegerPartitionOrNumericalSet );
 #!
 DeclareProperty( "IsPseudoSymmetric", IsNSG );
 
-#! @Label
-#! @Arguments IsNSG
-#!
-DeclareOperation( "IsIrreducible", [IsNSG] );
+# #! @Label
+# #! @Arguments IsNSG
+# #!
+# DeclareOperation( "IsIrreducible", [IsNSG] );

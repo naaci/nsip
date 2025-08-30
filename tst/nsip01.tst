@@ -11,7 +11,7 @@
 gap> START_TEST("nsip01.tst");
 
 # doc/_Chapter_Introduction.xml:10-13
-gap> LoadPackage("nsip");
+gap> LoadPackage("nsip",false);
 true
 
 #
