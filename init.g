@@ -17,6 +17,12 @@ ReadPackage( "nsip", "gap/numericalsets.gd" );
 #! @Section Converting to
 ReadPackage( "nsip", "gap/integerpartitions.gd" );
 
+#! @Chapter N
+ReadPackage( "nsip", "gap/n.gd" );
+
+#! @Chapter Dual3
+ReadPackage( "nsip", "gap/dual3.gd" );
+
 #! @Chapter Conversions
 ReadPackage( "nsip", "gap/conversions.gd" );
 ReadPackage( "nsip", "gap/attributes.gd" );

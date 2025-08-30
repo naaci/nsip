@@ -130,15 +130,15 @@ InstallMethod(FrobeniusNumber, [IsNumericalSet], function( S )
     fi;
 end );
 
-InstallMethod(N, [IsNumericalSet], 
-    S -> Reversed(FrobeniusNumber( S ) - S)
-);
+# InstallMethod(N, [IsNumericalSet], 
+#     S -> Reversed(FrobeniusNumber( S ) - S)
+# );
 
 ###############################################
 
-InstallMethod( ConjugateOf, [IsNumericalSet],
-    S -> NumericalSetByGaps( N( S ) )
-);
+# InstallMethod( ConjugateOf, [IsNumericalSet],
+#     S -> NumericalSetByGaps( N( S ) )
+# );
 
 InstallMethod( Dual, [IsNumericalSet],
     S -> NumericalSetByGaps( 
@@ -147,25 +147,25 @@ InstallMethod( Dual, [IsNumericalSet],
     # S -> NumericalSet( N( S ) + Gaps( S )[ 1 ] )
 );
 
-InstallMethod( Dual3, [IsNumericalSet],
-    # S -> S - NonzeroSmallElements( S )
-    S -> NumericalSet( Filtered(
-        [ 0..Conductor( S ) ],
-        x -> IsSubset( S, x + NonzeroSmallElements( S ) )
-    ))
-);
+# InstallMethod( Dual3, [IsNumericalSet],
+#     # S -> S - NonzeroSmallElements( S )
+#     S -> NumericalSet( Filtered(
+#         [ 0..Conductor( S ) ],
+#         x -> IsSubset( S, x + NonzeroSmallElements( S ) )
+#     ))
+# );
 
 ########################
 
-InstallMethod( IsSuperSemiSymmetric, [IsNumericalSet], function(S)
-    local j;
-    for j in [ 2..Length(S) ] do
-        if not IsSemiSymmetric(S - S[ j ]) then
-            return false;
-        fi;
-    od;
-    return true;
-end);
+# InstallMethod( IsSuperSemiSymmetric, [IsNumericalSet], function(S)
+#     local j;
+#     for j in [ 2..Length(S) ] do
+#         if not IsSemiSymmetric(S - S[ j ]) then
+#             return false;
+#         fi;
+#     od;
+#     return true;
+# end);
 
 
 ########################

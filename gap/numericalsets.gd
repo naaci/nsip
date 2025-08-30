@@ -28,9 +28,9 @@ DeclareGlobalFunction( "NumericalSetByGaps" );
 
 DeclareOperation("PrintObj",[IsNumericalSet]);
 
-#! @Section Testing Element of A Numerical Sets
+# #! @Section Testing Element of A Numerical Sets
 
-DeclareOperation("in",[IsInt,IsNumericalSet]);
+# DeclareOperation("in",[IsInt,IsNumericalSet]);
 
 #! @Section Enumerating Numerical Sets
 
@@ -58,9 +58,9 @@ DeclareOperation("+",[IsInt,IsNumericalSet]);
 #! @Arguments Integer,NumericalSet
 DeclareOperation("-",[IsInt,IsNumericalSet]);
 
-#! @Section Equality of Numerical Sets
+# #! @Section Equality of Numerical Sets
 
-DeclareOperation("=",[IsNumericalSet,IsNumericalSet]);
+# DeclareOperation("=",[IsNumericalSet,IsNumericalSet]);
 
 #! @Section Extending A Numerical Set
 
@@ -137,14 +137,14 @@ DeclareAttribute( "Multiplicity", IsNumericalSet );
 #!
 DeclareAttribute( "ConjugateOf", IsNumericalSet );
 DeclareAttribute( "Dual", IsNumericalSet );
-DeclareAttribute( "Dual3", IsNumericalSet );
+# DeclareAttribute( "Dual3", IsNumericalSet );
 #! @EndGroup
 
 DeclareProperty( "IsSuperSemiSymmetric", IsNumericalSet );
 
-#! @Arguments NumericalSet
-#!
-DeclareOperation( "IsIrreducible", [IsNumericalSet] );
+# #! @Arguments NumericalSet
+# #!
+# DeclareOperation( "IsIrreducible", [IsNumericalSet] );
 
 # DeclareProperty( "IsPseudoSymmetric", IsNumericalSet );
 

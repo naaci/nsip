@@ -19,8 +19,8 @@ BindGlobal( "IntegerPartitionsType",
 #! @Returns IntegerPartition
 DeclareAttribute( "IntegerPartition", IsList );
 
-#! @Section Equality of Integer Partitions
-DeclareOperation( "=", [IsIntegerPartition,IsIntegerPartition] );
+# #! @Section Equality of Integer Partitions
+# DeclareOperation( "=", [IsIntegerPartition,IsIntegerPartition] );
 
 #! @Section Enumerating An Integer Partition
 DeclareOperation( "[]", [IsIntegerPartition,IsInt] );
@@ -38,9 +38,9 @@ DeclareAttribute( "Total", IsIntegerPartition );
 #! @Returns List
 DeclareAttribute( "Parts", IsIntegerPartition );
 
-#! @Arguments IntegerPartition
-#! @Returns List
-DeclareAttribute( "N", IsIntegerPartition );
+# #! @Arguments IntegerPartition
+# #! @Returns List
+# DeclareAttribute( "N", IsIntegerPartition );
 
 #! @Arguments IntegerPartition
 #! @Returns List
@@ -63,10 +63,10 @@ DeclareAttribute( "FrobeniusNumber", IsIntegerPartition );
 #! @Returns Integer
 DeclareAttribute( "Multiplicity", IsIntegerPartition );
 
-DeclareAttribute( "ConjugateOf", IsIntegerPartition );
-DeclareSynonym( "Conjugate", ConjugateOf);
+# DeclareAttribute( "ConjugateOf", IsIntegerPartition );
+# DeclareSynonym( "Conjugate", ConjugateOf);
 DeclareAttribute( "Dual", IsIntegerPartition );
-DeclareAttribute( "Dual3", IsIntegerPartition );
+# DeclareAttribute( "Dual3", IsIntegerPartition );
 
 
 #! @Arguments IntegerPartition

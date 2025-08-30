@@ -1,12 +1,12 @@
 name: Build manuals
 
 # Trigger the workflow on push to master / main, or on pull request
-on:
-  push:
-    branches:
-      - master
-      - main
-  pull_request:
+# on:
+#   push:
+#     branches:
+#       - master
+#       - main
+#   pull_request:
 
 # the `concurrency` settings ensure that not too many CI jobs run in parallel
 concurrency:
@@ -20,10 +20,21 @@ jobs:
   manual:
     name: Build manuals
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        gap-branch:
+          # - master
+            # - stable-latest
+            # - stable-4.13
+            - stable-4.12
+          # - stable-4.11
 
     steps:
       - uses: actions/checkout@v3
       - uses: gap-actions/setup-gap@v2
+        with:
+          GAPBRANCH: ${{ matrix.gap-branch }}
       - uses: gap-actions/build-pkg-docs@v1
         with:
           use-latex: 'true'

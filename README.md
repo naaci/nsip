@@ -13,7 +13,7 @@ using GAP interpreter.
 
 ## Contact
 
-naaci@live.com
+naci.er@hotmail.com
 Report issues at https://github.com/naaci/nsip/issues
 
 ## License

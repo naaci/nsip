@@ -82,8 +82,8 @@ InstallMethod( ViewString, [IsIntegerPartition],
     )
 );
 
-InstallMethod( FormattedString, [IsIntegerPartition], String
-);
+# InstallMethod( FormattedString, [IsIntegerPartition], String
+# );
 
 InstallMethod( String, [IsIntegerPartition],
     P -> JoinStringsWithSeparator( 
@@ -95,12 +95,12 @@ InstallMethod( String, [IsIntegerPartition],
 ################################################################################
 
 InstallMethod(Gaps, [IsIntegerPartition], 
-    P -> N( ConjugateOf( P ))
-    # P -> Union(Set(
-    #      [1..Length(P)], i -> Set(
-    #         [ 1 .. P[ i ] - P[ i + 1 ]], j -> Genus( P ) - 1 - ( P[ i ] - i ) + j
-    #      )
-    # ))
+    # P -> N( ConjugateOf( P ))
+    P -> Union(Set(
+         [1..Length(P)], i -> Set(
+            [ 1 .. P[ i ] - P[ i + 1 ]], j -> Genus( P ) - 1 - ( P[ i ] - i ) + j
+         )
+    ))
 );
 
 InstallMethod(Length, [IsIntegerPartition], 
@@ -123,25 +123,25 @@ InstallMethod( Multiplicity, [IsIntegerPartition],
     P -> Genus( P ) - P[2] + 1
 );
 
-InstallMethod(N, [IsIntegerPartition], 
-    P -> Reversed( Parts( P )) + [ 0 .. Length( P ) - 1 ]
-);
+# InstallMethod(N, [IsIntegerPartition], 
+#     P -> Reversed( Parts( P )) + [ 0 .. Length( P ) - 1 ]
+# );
 
 ###############################################
 
-InstallMethod( ConjugateOf, [IsIntegerPartition], 
-    P -> IntegerPartition( List( 
-        [ 1 .. Genus( P ) ], 
-        i -> Length( Filtered( 
-            Parts( P ),
-            # [ 1 .. Length( P ) ], 
-            x -> i <= x
-            # j -> i <= P[ j ]
-            ))
-        ))
+# InstallMethod( ConjugateOf, [IsIntegerPartition], 
+#     P -> IntegerPartition( List( 
+#         [ 1 .. Genus( P ) ], 
+#         i -> Length( Filtered( 
+#             Parts( P ),
+#             # [ 1 .. Length( P ) ], 
+#             x -> i <= x
+#             # j -> i <= P[ j ]
+#             ))
+#         ))
 
-    # P -> IntegerPartition( AssociatedPartition( Parts( P )))
-);
+#     # P -> IntegerPartition( AssociatedPartition( Parts( P )))
+# );
 
 InstallMethod( Dual, [IsIntegerPartition], 
     P -> IntegerPartition( List( 
@@ -150,15 +150,15 @@ InstallMethod( Dual, [IsIntegerPartition],
     ) )
 );
 
-InstallMethod( Dual3, [IsIntegerPartition], 
-    P -> Dual3( NumericalSet( P ))
-);
+# InstallMethod( Dual3, [IsIntegerPartition], 
+#     P -> Dual3( NumericalSet( P ))
+# );
 
 #############################
 
-InstallMethod( IsSuperSemiSymmetric, [IsIntegerPartition],
-    P -> IsNSG( ConjugateOf( P ))
-);
+# InstallMethod( IsSuperSemiSymmetric, [IsIntegerPartition],
+#     P -> IsNSG( ConjugateOf( P ))
+# );
 
 InstallMethod(Total, [IsIntegerPartition], 
     P -> Sum( Parts ( P ))
