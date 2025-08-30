@@ -9,7 +9,7 @@ using GAP interpreter.
 
 # Usability under GAP versions
 
-![GAP 4.12 workflow][GAP4.12]
+[![GAP](https://github.com/naaci/nsip/actions/workflows/GAP.yml/badge.svg)](https://github.com/naaci/nsip/actions/workflows/GAP.yml)
 
 ## Contact
 
