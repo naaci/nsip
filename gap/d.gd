@@ -1,10 +1,10 @@
 #! @Arguments IntegerPartition
 #! @Returns IntegerPartition
-DeclareAttribute( "Dual3", IsIntegerPartition );
+DeclareAttribute( "D", IsIntegerPartition );
 
 #! @Arguments IsNumericalSet
 #! @Returns IsNumericalSet
-DeclareAttribute( "Dual3", IsNumericalSet );
+DeclareAttribute( "D", IsNumericalSet );
 
 #! @Label
 #! @Arguments IntegerPartition

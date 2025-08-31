@@ -1,4 +1,4 @@
-InstallMethod( Dual3, [IsNumericalSet],
+InstallMethod( D, [IsNumericalSet],
     # S -> S - NonzeroSmallElements( S )
     S -> NumericalSet( Filtered(
         [ 0..Conductor( S ) ],
@@ -8,14 +8,14 @@ InstallMethod( Dual3, [IsNumericalSet],
 
 #############################
 
-InstallMethod( Dual3, [IsIntegerPartition], 
-    P -> Dual3( NumericalSet( P ))
+InstallMethod( D, [IsIntegerPartition], 
+    P -> D( NumericalSet( P ))
 );
 
 #############################
 
 InstallMethod( IsAlmostSymmetric, [IsIntegerPartitionOrNumericalSet],
-    X -> IsSubset( Dual3( X ), GapsOfSecondType( X ) )
+    X -> IsSubset( D( X ), GapsOfSecondType( X ) )
     # X -> IsAlmostSymmetric( NumericalSet( X ) )
 
 );
@@ -25,7 +25,7 @@ InstallMethod( IsAlmostSymmetric, [IsNSG],
 );
 
 InstallMethod( Atom, [IsIntegerPartitionOrNumericalSet],
-    X -> Intersection2( X, Dual3( X ) )
+    X -> Intersection2( X, D( X ) )
     # X -> NumericalSet(Filtered(
     #     [1..Conductor( X )],
     #     x -> IsSubset( X, x + SmallElements( X ) ) # definition of IsSubset is reverse 
@@ -33,7 +33,7 @@ InstallMethod( Atom, [IsIntegerPartitionOrNumericalSet],
 );
 
 InstallMethod( PseudoFrobeniusNumbers, [IsIntegerPartitionOrNumericalSet],
-    X -> Intersection( Gaps( X ), Dual3( X ) )
+    X -> Intersection( Gaps( X ), D( X ) )
     # X -> Filtered(
     #     Gaps( X ), 
     #     x -> IsSubset( X, x + NonzeroSmallElements( X ) ))
@@ -45,12 +45,12 @@ InstallMethod( Type, [IsIntegerPartitionOrNumericalSet],
 
 InstallMethod( Order, [ IsIntegerPartitionOrNumericalSet ], 
 function(X)
-    local i, D;
+    local i, Y;
     i := 0;
-    D := X;
-    while Length( D ) > 0 do
+    Y := X;
+    while Length( Y ) > 0 do
         i := i + 1;
-        D := Dual3(D);
+        Y := D(Y);
     od;
     return i;
 end);
