@@ -54,79 +54,79 @@ false
 gap> IsAlmostSymmetric(S);
 true
 
-# doc/_Chapter_Common_Methods.xml:235-238
+# doc/_Chapter_Common_Methods.xml:207-210
 gap> P := IntegerPartition( [7,2,1,1] );
 SG  A  4 2 11= 7+ 2+ 1+ 1
 
-# doc/_Chapter_Common_Methods.xml:241-244
+# doc/_Chapter_Common_Methods.xml:213-216
 gap> S := NumericalSet( P );
 {0,6,8,9,11,->}
 
-# doc/_Chapter_Common_Methods.xml:247-250
+# doc/_Chapter_Common_Methods.xml:219-222
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 
-# doc/_Chapter_Common_Methods.xml:253-256
+# doc/_Chapter_Common_Methods.xml:225-228
 gap> P  = IntegerPartition( NumericalSet( P ) );
 true
 
-# doc/_Chapter_Common_Methods.xml:259-262
+# doc/_Chapter_Common_Methods.xml:231-234
 gap> Gaps( S ) = Gaps( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:265-268
+# doc/_Chapter_Common_Methods.xml:237-240
 gap> GapsOfFirstType( S ) = GapsOfFirstType( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:271-274
+# doc/_Chapter_Common_Methods.xml:243-246
 gap> GapsOfSecondType( S ) = GapsOfSecondType( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:277-280
+# doc/_Chapter_Common_Methods.xml:249-252
 gap> Genus( S ) = Genus( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:283-286
+# doc/_Chapter_Common_Methods.xml:255-258
 gap> Length( S ) = Length( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:289-292
+# doc/_Chapter_Common_Methods.xml:261-264
 gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:295-298
+# doc/_Chapter_Common_Methods.xml:267-270
 gap> IsSymmetric( S ) = IsSymmetric( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:301-304
+# doc/_Chapter_Common_Methods.xml:273-276
 gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:307-310
+# doc/_Chapter_Common_Methods.xml:279-282
 gap> IsNegativeSemiSymmetric( S ) = IsNegativeSemiSymmetric( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:313-316
+# doc/_Chapter_Common_Methods.xml:285-288
 gap> IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:319-322
+# doc/_Chapter_Common_Methods.xml:291-294
 gap> Type( S ) = Type( P );
 true
 
-# doc/_Chapter_Common_Methods.xml:325-328
+# doc/_Chapter_Common_Methods.xml:297-300
 gap> IntegerPartition( ConjugateOf( S )) = ConjugateOf( IntegerPartition( S ) );
 true
 
-# doc/_Chapter_Common_Methods.xml:331-334
+# doc/_Chapter_Common_Methods.xml:303-306
 gap> ConjugateOf( NumericalSet( P ) ) = NumericalSet( ConjugateOf( P ));
 true
 
-# doc/_Chapter_Common_Methods.xml:337-340
+# doc/_Chapter_Common_Methods.xml:309-312
 gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
 true
 
-# doc/_Chapter_Common_Methods.xml:343-346
+# doc/_Chapter_Common_Methods.xml:315-318
 gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
 true
 
