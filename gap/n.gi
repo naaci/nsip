@@ -17,10 +17,6 @@ InstallMethod( ConjugateOf, [IsIntegerPartition],
 
 DeclareSynonym( "Conjugate", ConjugateOf);
 
-# InstallMethod( IsSuperSemiSymmetric, [IsIntegerPartition],
-#     P -> IsNSG( ConjugateOf( P ))
-# );
-
 ###############################################
 
 InstallMethod(N, [IsNumericalSet], 
@@ -30,16 +26,6 @@ InstallMethod(N, [IsNumericalSet],
 InstallMethod( ConjugateOf, [IsNumericalSet],
     S -> NumericalSetByGaps( N( S ) )
 );
-
-# InstallMethod( IsSuperSemiSymmetric, [IsNumericalSet], function(S)
-#     local j;
-#     for j in [ 2..Length(S) ] do
-#         if not IsSemiSymmetric(S - S[ j ]) then
-#             return false;
-#         fi;
-#     od;
-#     return true;
-# end);
 
 ###############################################
 
@@ -96,10 +82,16 @@ InstallMethod( IsSemiSymmetric, [IsIntegerPartitionOrNumericalSet],
     IsPositiveSemiSymmetric
 );
 
-# InstallMethod( IsPositiveSuperSemiSymmetric, [IsIntegerPartitionOrNumericalSet], 
-#     X -> Length( X ) = 0 or IsPositiveSemiSymmetric( X ) and IsPositiveSuperSemiSymmetric( RightParts( X ) )
-# );
+InstallMethod( IsNSG, [IsIntegerPartitionOrNumericalSet], 
+    X -> Length( X ) = 0 or IsNegativeSemiSymmetric( X ) and IsNSG( BelowParts( X ) )
+);
 
-# InstallMethod( IsNegativeSuperSemiSymmetric, [IsIntegerPartitionOrNumericalSet], 
-#     X -> Length( X ) = 0 or IsNegativeSemiSymmetric( X ) and IsNegativeSuperSemiSymmetric( RightParts( X ) )
+InstallMethod( IsArf, [IsIntegerPartitionOrNumericalSet], 
+    X -> Length( X ) = 0 or IsNSG( X ) and IsArf( RightParts( X ) )
+);
+
+# InstallMethod( IsNSG, [IsNumericalSet],
+#     S -> ForAll(
+#         SmallElements( S ), s -> IsSubset( S, s + SmallElements( S ))
+#     )
 # );

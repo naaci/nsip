@@ -73,3 +73,9 @@ DeclareProperty( "IsPseudoSymmetric", IsIntegerPartitionOrNumericalSet );
 # #! @Arguments IsNSG
 # #!
 # DeclareOperation( "IsIrreducible", [IsNSG] );
+
+#! @Arguments IntegerPartition
+DeclareProperty( "IsNSG", IsIntegerPartitionOrNumericalSet );
+
+#! @Arguments IntegerPartition
+DeclareProperty( "IsArf", IsIntegerPartitionOrNumericalSet );

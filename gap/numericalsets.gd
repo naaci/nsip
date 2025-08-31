@@ -159,11 +159,11 @@ DeclareAttribute( "Total", IsNumericalSet );
 
 #! @Section Numerical Semigroups
 
-#! @Arguments NumericalSet
-#!
-DeclareProperty( "IsNSG", IsNumericalSet );
+# #! @Arguments NumericalSet
+# #!
+# DeclareProperty( "IsNSG", IsNumericalSet );
 
-DeclareProperty( "IsArf", IsNumericalSet );
+# DeclareProperty( "IsArf", IsNumericalSet );
 
 DeclareProperty( "IsStrict", IsNumericalSet );
 DeclareProperty( "IsOdd", IsNumericalSet );
@@ -173,3 +173,6 @@ DeclareAttribute( "Weight", IsNumericalSet);
 #! https://doi.org/10.55730/1300-0098.3510
 DeclareAttribute( "Reduce", IsNumericalSet);
 DeclareAttribute( "SpecialSubdiagram", IsNumericalSet);
+
+DeclareAttribute( "RightParts", IsNumericalSet);
+DeclareAttribute( "BelowParts", IsNumericalSet);

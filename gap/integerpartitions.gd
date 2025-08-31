@@ -82,11 +82,11 @@ DeclareAttribute( "Trace", IsIntegerPartition );
 #! @Section Integer SG Partitions
 
 
-#! @Arguments IntegerPartition
-DeclareProperty( "IsNSG", IsIntegerPartition );
+# #! @Arguments IntegerPartition
+# DeclareProperty( "IsNSG", IsIntegerPartition );
 
-#! @Arguments IntegerPartition
-DeclareProperty( "IsArf", IsIntegerPartition );
+# #! @Arguments IntegerPartition
+# DeclareProperty( "IsArf", IsIntegerPartition );
 
 DeclareAttribute( "CClosure", IsIntegerPartition );
 

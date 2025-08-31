@@ -207,15 +207,15 @@ InstallMethod( Trace, [IsNumericalSet],
 
 #############################
 
-InstallMethod( IsNSG, [IsNumericalSet],
-    S -> ForAll(
-        SmallElements( S ), s -> IsSubset( S, s + SmallElements( S ))
-    )
-);
+# InstallMethod( IsNSG, [IsNumericalSet],
+#     S -> ForAll(
+#         SmallElements( S ), s -> IsSubset( S, s + SmallElements( S ))
+#     )
+# );
 
-InstallMethod( IsArf, [IsNumericalSet], 
-    S -> IsArf( IntegerPartition( S ))
-);
+# InstallMethod( IsArf, [IsNumericalSet], 
+#     S -> IsArf( IntegerPartition( S ))
+# );
 
 
 InstallMethod( IsPerfectSemigroup, [IsNumericalSet], 
@@ -261,4 +261,12 @@ InstallMethod(SpecialSubdiagram, [IsNumericalSet],
             return Reduce( S )[ i ];
         fi; end
         ))
+);
+
+InstallMethod( BelowParts, [IsNumericalSet], 
+    S -> NumericalSet( Union( SmallElements( S ) , [ FrobeniusNumber( S ) ] ))
+);
+
+InstallMethod( RightParts, [IsNumericalSet], 
+    S -> NumericalSet( SmallElements( S ) - Multiplicity( S ) )
 );
