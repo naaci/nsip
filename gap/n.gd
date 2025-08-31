@@ -67,7 +67,7 @@ DeclareProperty( "IsNegative", IsIntegerPartitionOrNumericalSet );
 #! @Label
 #! @Arguments IsNSG
 #!
-DeclareProperty( "IsPseudoSymmetric", IsNSG );
+DeclareProperty( "IsPseudoSymmetric", IsIntegerPartitionOrNumericalSet );
 
 # #! @Label
 # #! @Arguments IsNSG

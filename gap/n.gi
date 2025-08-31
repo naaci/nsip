@@ -66,11 +66,15 @@ InstallMethod( IsSymmetric, [IsNSG],
     X -> Genus( X ) = Length( X )
 );
 
+InstallMethod( IsPseudoSymmetric, [IsIntegerPartitionOrNumericalSet],
+    X -> Gaps( X ) = Union( N( X ) , [ FrobeniusNumber( X ) /2 ] )
+);
+
 InstallMethod( IsPseudoSymmetric, [IsNSG],
     X -> Genus( X ) = Length( X ) + 1
 );
 
-InstallMethod( IsIrreducible, [IsNSG], 
+InstallMethod( IsIrreducible, [IsIntegerPartitionOrNumericalSet], 
     X -> IsSymmetric( X ) or IsPseudoSymmetric( X )
 );
 

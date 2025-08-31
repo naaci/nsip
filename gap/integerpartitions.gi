@@ -39,7 +39,7 @@ view_integer_partition := function(P)
 
     Add(flags," ");
 
-    if IsNSG( P ) and IsPseudoSymmetric( P ) then
+    if IsPseudoSymmetric( P ) then
         Add(flags,"P");
     elif IsSymmetric( P ) then
         Add(flags,"S");
@@ -177,7 +177,7 @@ InstallMethod( Trace, [IsIntegerPartition], function( P )
             return i - 1;
         fi;
     od;
-    return i;
+    return Length( P );
 end );
 
 ################################################################################
