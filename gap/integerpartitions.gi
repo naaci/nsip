@@ -70,8 +70,8 @@ view_integer_partition := function(P)
     #     fi;
     # fi;
     Add(flags," ");
-    Add(flags,FormattedString(Type( P ),2));
-    Add(flags,FormattedString(Trace( P ),2));
+    Add(flags,(Type( P )));
+    Add(flags,(Trace( P )));
     return flags;
 end;
 
@@ -94,7 +94,7 @@ InstallMethod( ViewString, [IsIntegerPartition],
 InstallMethod( String, [IsIntegerPartition],
     P -> JoinStringsWithSeparator( 
         # Parts( P ),
-        List(Parts( P ), X -> FormattedString( X, 2 )),
+        List(Parts( P ), X ->  X),
     "+")
 );
 
