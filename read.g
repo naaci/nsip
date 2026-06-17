@@ -16,3 +16,5 @@ ReadPackage( "nsip", "gap/attributes.gi" );
 ReadPackage( "nsip", "gap/random.gi" );
 
 ReadPackage( "nsip", "gap/tree.gi" );
+
+ReadPackage( "nsip", "gap/hooklengths.gi" );

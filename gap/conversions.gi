@@ -1,7 +1,7 @@
 InstallMethod( NumericalSet, [IsIntegerPartition],
     P -> NumericalSet(
         List( [ 1..Length( P ) + 1 ], 
-        i -> Genus( P ) - 1 - ( P[ i ] - i )
+            i -> Genus( P ) - 1 - ( P[ i ] - i )
         ))
     # P -> NumericalSet(Union(FrobeniusNumber(P)-N(P),[Conductor(P)]));
     );

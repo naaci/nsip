@@ -1,5 +1,3 @@
-
-
 InstallMethod( NumericalSet, [IsListOrCollection], function( L )
     if Length( L ) = 0 then
         return NumericalSetByGaps([]);

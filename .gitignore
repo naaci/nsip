@@ -28,9 +28,10 @@
 
 /bin/
 /gen/
-/Makefile
 
 /tmp/
 /gh-pages/
 /.vscode
 /.vscode/*
+texput.log
+doc/*

@@ -1,5 +1,5 @@
 gap> P := IntegerPartition([7,2,1,1]);
-SG  A  4 2 11= 7+ 2+ 1+ 1
+SG  A 42 11=7+2+1+1
 gap> Gaps(P);
 [ 1, 2, 3, 4, 5, 7, 10 ]
 gap> GapsOfFirstType(P);
@@ -25,9 +25,9 @@ true
 gap> Type(P);
 4
 gap> ConjugateOf(P);
-    A  1 2 11= 4+ 2+ 1+ 1+ 1+ 1+ 1
+    A 12 11=4+2+1+1+1+1+1
 gap> Dual(P);
-       2 4 24= 7+ 6+ 6+ 5
+       24 24=7+6+6+5
 gap> Total(P);
 11
 gap> Trace(P);

@@ -1,4 +1,4 @@
-DeclareInfoClass("InfoIntPart");
+# DeclareInfoClass("InfoIntPart");
 
 DeclareCategory( "IsIntegerPartitionOrNumericalSet", IsAttributeStoringRep );
 
@@ -30,3 +30,5 @@ ReadPackage( "nsip", "gap/attributes.gd" );
 ReadPackage( "nsip", "gap/random.gd" );
 
 ReadPackage( "nsip", "gap/tree.gd" );
+
+ReadPackage( "nsip", "gap/hooklengths.gd" );

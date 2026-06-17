@@ -1,7 +1,7 @@
 gap> S := NumericalSet( [0,3,4,5,7] );
 {0,3,4,5,7,->}
 gap> P := IntegerPartition( S );
-    A  1 1 6= 3+ 1+ 1+ 1
+    A 11 6=3+1+1+1
 gap> S  = NumericalSet( IntegerPartition( S ) );
 true
 gap> P  = IntegerPartition( NumericalSet( P ) );

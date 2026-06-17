@@ -56,7 +56,7 @@ true
 
 # doc/_Chapter_Common_Methods.xml:207-210
 gap> P := IntegerPartition( [7,2,1,1] );
-SG  A  4 2 11= 7+ 2+ 1+ 1
+SG  A 42 11=7+2+1+1
 
 # doc/_Chapter_Common_Methods.xml:213-216
 gap> S := NumericalSet( P );

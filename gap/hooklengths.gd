@@ -1,0 +1,1 @@
+DeclareAttribute( "HookLengths", IsIntegerPartitionOrNumericalSet );

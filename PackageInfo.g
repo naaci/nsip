@@ -75,15 +75,16 @@ Status := "dev",
 
 AbstractHTML   :=  "", 
 
-# PackageDoc := rec( 
-#   BookName  := "nsip", 
-#   ArchiveURLSubset := ["doc"], 
-#   HTMLStart := "doc/chap0.html", 
-#   PDFFile   := "doc/manual.pdf", 
-#   SixFile   := "doc/manual.six", 
-#   LongTitle := ~.Subtitle,
-#   # Date      := "25/03/2023",
-#  ), 
+
+PackageDoc := rec( 
+  BookName  := "nsip", 
+  ArchiveURLSubset := ["doc"], 
+  HTMLStart := "doc/chap0.html", 
+  PDFFile   := "doc/manual.pdf", 
+  SixFile   := "doc/manual.six", 
+  LongTitle := ~.Subtitle,
+  # Date      := "25/03/2023",
+ ), 
 
 Dependencies := rec( 
   # GAP := ">= 4.12", 
@@ -107,7 +108,6 @@ TestFile := "tst/testall.g",
         #     SixFile := "doc/manual.six",
         #     LongTitle := ~.Subtitle,
         #     ),
-
  ) );
 
 

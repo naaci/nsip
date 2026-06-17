@@ -1,4 +1,3 @@
-
 InstallMethod( IntegerPartition, [IsList], function( L )
     if not IsSubset(NonnegativeIntegers, L) then
         return fail;
