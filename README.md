@@ -1,3 +1,6 @@
+[![GAP](https://github.com/naaci/nsip/actions/workflows/test.yml/badge.svg)](https://github.com/naaci/nsip/actions/workflows/test.yml)
+[![GAP](https://github.com/naaci/nsip/actions/workflows/manuals.yml/badge.svg)](https://github.com/naaci/nsip/actions/workflows/manuals.yml)
+
 # The GAP package nsip
 
 A GAP Package for numerical sets and integer partitions. 
@@ -6,10 +9,6 @@ Load this package with
 LoadPackage("nsip");
 ```
 using GAP interpreter.
-
-# Usability under GAP versions
-
-[![GAP](https://github.com/naaci/nsip/actions/workflows/GAP.yml/badge.svg)](https://github.com/naaci/nsip/actions/workflows/GAP.yml)
 
 ## Contact
 
@@ -26,7 +25,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GPL] (GNU
 General Public License) for more details.
 
 [GPL]: LICENSE
-[GAP]: https://github.com/naaci/nsip/actions/workflows/GAP.yml/badge.svg
+[GAP]: https://github.com/naaci/nsip/actions/workflows/test.yml/badge.svg
 [GAP4.12]: https://github.com/naaci/nsip/actions/workflows/GAP4.12.yml/badge.svg
 [GAP4.11]: https://github.com/naaci/nsip/actions/workflows/GAP4.11.yml/badge.svg
 [manuals]: https://github.com/naaci/nsip/actions/workflows/manuals.yml/badge.svg

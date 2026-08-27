@@ -97,7 +97,7 @@ Dependencies := rec(
 
 AvailabilityTest := ReturnTrue, 
 
-TestFile := "tst/testall.g", 
+TestFile := "maketest.g", 
 
 #Keywords := [ "TODO" ], 
         # PackageDoc := rec(

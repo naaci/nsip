@@ -14,3 +14,6 @@ clean:
 
 .git/index : $(wildcard *)
 	git add . && git commit -m a && git push
+
+test:
+	gap maketest.g

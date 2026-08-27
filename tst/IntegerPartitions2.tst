@@ -27,7 +27,7 @@ gap> Type(P);
 gap> ConjugateOf(P);
     A 12 11=4+2+1+1+1+1+1
 gap> Dual(P);
-       24 24=7+6+6+5
+      24 24=7+6+6+5
 gap> Total(P);
 11
 gap> Trace(P);
