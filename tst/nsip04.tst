@@ -10,16 +10,128 @@
 #
 gap> START_TEST("nsip04.tst");
 
-# doc/_Chapter_Conversions.xml:23-28
+# doc/_Chapter_Conversions.xml:28-31
+gap> S := NumericalSet( [0,3,4,5,7] );
+{0,3,4,5,7,->}
+
+# doc/_Chapter_Conversions.xml:34-39
 gap> P := IntegerPartition( S );
     A 11 6=3+1+1+1
 gap> S  = NumericalSet( P );
 true
 
-# doc/_Chapter_Conversions.xml:53-58
+# doc/_Chapter_Conversions.xml:63-68
 gap> S := NumericalSet( P );
 {0,3,4,5,7,->}
 gap> P  = IntegerPartition( S );
+true
+
+# doc/_Chapter_Conversions.xml:74-77
+gap> S := NumericalSet( [0,3,4,5,7] );
+{0,3,4,5,7,->}
+
+# doc/_Chapter_Conversions.xml:80-83
+gap> P := IntegerPartition( S );
+    A 11 6=3+1+1+1
+
+# doc/_Chapter_Conversions.xml:86-89
+gap> S  = NumericalSet( IntegerPartition( S ) );
+true
+
+# doc/_Chapter_Conversions.xml:92-95
+gap> P  = IntegerPartition( NumericalSet( P ) );
+true
+
+# doc/_Chapter_Conversions.xml:98-101
+gap> Gaps( S ) = Gaps( P );
+true
+
+# doc/_Chapter_Conversions.xml:104-107
+gap> Parts( S ) = Parts( P );
+true
+
+# doc/_Chapter_Conversions.xml:110-113
+gap> GapsOfFirstType( S ) = GapsOfFirstType( P );
+true
+
+# doc/_Chapter_Conversions.xml:116-119
+gap> GapsOfSecondType( S ) = GapsOfSecondType( P );
+true
+
+# doc/_Chapter_Conversions.xml:122-125
+gap> Genus( S ) = Genus( P );
+true
+
+# doc/_Chapter_Conversions.xml:128-131
+gap> Length( S ) = Length( P );
+true
+
+# doc/_Chapter_Conversions.xml:134-137
+gap> FrobeniusNumber( S ) = FrobeniusNumber( P );
+true
+
+# doc/_Chapter_Conversions.xml:140-143
+gap> IsSymmetric( S ) = IsSymmetric( P );
+true
+
+# doc/_Chapter_Conversions.xml:146-149
+gap> IsPositiveSemiSymmetric( S ) = IsPositiveSemiSymmetric( P );
+true
+
+# doc/_Chapter_Conversions.xml:152-155
+gap> IsNegativeSemiSymmetric( S ) = IsNegativeSemiSymmetric( P );
+true
+
+# doc/_Chapter_Conversions.xml:158-161
+gap> IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
+true
+
+# doc/_Chapter_Conversions.xml:164-167
+gap> Type( S ) = Type( P );
+true
+
+# doc/_Chapter_Conversions.xml:170-173
+gap> IsNSG( S ) = IsNSG( P );
+true
+
+# doc/_Chapter_Conversions.xml:176-179
+gap> IsArf( S ) = IsArf( P );
+true
+
+# doc/_Chapter_Conversions.xml:182-185
+gap> not IsNSG( P ) or IsAlmostSymmetric( S ) = IsAlmostSymmetric( P );
+true
+
+# doc/_Chapter_Conversions.xml:188-191
+gap> IntegerPartition( ConjugateOf( S )) = ConjugateOf( IntegerPartition( S ) );
+true
+
+# doc/_Chapter_Conversions.xml:194-197
+gap> ConjugateOf( NumericalSet( P ) ) = NumericalSet( ConjugateOf( P ));
+true
+
+# doc/_Chapter_Conversions.xml:200-203
+gap> IntegerPartition( Dual( S )) = Dual( IntegerPartition( S ) );
+true
+
+# doc/_Chapter_Conversions.xml:206-209
+gap> Dual( NumericalSet( P ) ) = NumericalSet( Dual( P ));
+true
+
+# doc/_Chapter_Conversions.xml:212-215
+gap> SpecialSubdiagram( NumericalSet( P ) ) = NumericalSet( SpecialSubdiagram( P ));
+true
+
+# doc/_Chapter_Conversions.xml:218-221
+gap> IntegerPartition( SpecialSubdiagram( S ) ) = SpecialSubdiagram( IntegerPartition( S ));
+true
+
+# doc/_Chapter_Conversions.xml:224-227
+gap> Reduce( IntegerPartition( S ) ) = IntegerPartition( Reduce( S ));
+true
+
+# doc/_Chapter_Conversions.xml:230-233
+gap> Reduce( NumericalSet( P ) ) = NumericalSet( Reduce( P ));
 true
 
 #

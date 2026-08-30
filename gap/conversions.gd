@@ -1,11 +1,19 @@
 #! @Chapter Conversions
+#! There is a bijection between integer partitions and Young diagrams, 
+#! and between Young diagrams and numerical sets.
+#! The methods implemented here are simplified compositions of that bijections between integer partitions and numerical sets.
 
 #! @Section Converting A NumericalSet to IntegerPartition
 
 #! @Label
 #! @Arguments NumericalSet
 #! @Returns IntegerPartition
-#! @Description Calculates the integer partition corresponding to given numerical set.
+#! @Description Calculates
+#!              $\lambda=\lambda_1+\lambda_2+\dots+\lambda_\ell$
+#!              from
+#!              $S=\{s_1=0,s_2,\dots,s_{\ell},\to\}$
+#!              where
+#!              $\lambda_i=g(S)-1+i-s_i$.
 DeclareAttribute( "IntegerPartition", IsNumericalSet);
 
 #! @Section Converting An IntegerPartition to NumericalSet
@@ -13,6 +21,11 @@ DeclareAttribute( "IntegerPartition", IsNumericalSet);
 #! @Label
 #! @Arguments IntegerPartition
 #! @Returns NumericalSet
-#! @Description Calculates the numerical set corresponding to given integer partition.
+#! @Description Calculates
+#!              $S=\{s_1=0,s_2,\dots,s_{\ell+1},\to\}$
+#!              from
+#!              $\lambda=\lambda_1+\lambda_2+\dots+\lambda_\ell$
+#!              where
+#!              $s_i=g(\lambda)-1+i-\lambda_i$.
 DeclareAttribute( "NumericalSet", IsIntegerPartition );
 

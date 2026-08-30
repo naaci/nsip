@@ -1,6 +1,6 @@
 #! @Chapter Introduction
 #! @Section Loading Package
 #! @BeginExample
-LoadPackage("nsip",false);
+LoadPackage("nsip");
 #! true
 #! @EndExample

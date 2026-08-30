@@ -1,19 +1,23 @@
-DeclareAttribute( "N", IsIntegerPartition );
+#! @Chapter Conjugate
+#! @Section N
 
-DeclareAttribute( "ConjugateOf", IsIntegerPartition );
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns List
+DeclareAttribute( "N", IsIntegerPartitionOrNumericalSet );
 
-DeclareAttribute( "Gaps", IsIntegerPartition );
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns IsIntegerPartitionOrNumericalSet
+DeclareAttribute( "ConjugateOf", IsIntegerPartitionOrNumericalSet );
 
-DeclareAttribute( "N", IsNumericalSet );
-
-DeclareAttribute( "ConjugateOf", IsNumericalSet );
-
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns List
 DeclareAttribute( "GapsOfFirstType", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns List
 DeclareAttribute( "GapsOfSecondType", IsIntegerPartitionOrNumericalSet );
 
-DeclareProperty( "IsSymmetric", 
-IsIntegerPartitionOrNumericalSet );
+DeclareProperty( "IsSymmetric", IsIntegerPartitionOrNumericalSet );
 
 DeclareProperty( "IsPositiveSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 DeclareProperty( "IsSemiSymmetric", IsIntegerPartitionOrNumericalSet );

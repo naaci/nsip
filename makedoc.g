@@ -5,21 +5,15 @@
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 
-LoadPackage("nsip");
 
 LoadPackage("AutoDoc");
+LoadPackage("nsip");
 # GenerateDoc(DocPackage("nsip"),"tex");
 
 AutoDoc( 
     "nsip", 
     rec( 
         autodoc := true,
-        # gapdoc := rec(
-        #     LaTeXOptions := rec( EarlyExtraPreamble := """
-        #         \usepackage{a4wide}
-        #         \newcommand{\bbZ}{\mathbb{Z}}
-        #     """ )
-        # ),
         scaffold := true,
         # scaffold := rec(
         #     # includes := [
@@ -31,7 +25,7 @@ AutoDoc(
         extract_examples := true,
         maketest := true,
         PackageName := "nsip",
-        Subtitle := "",
+        Subtitle := "Numerical Sets and Integer Partitions",
         PackageDoc := rec(
             BookName := ~.PackageName,
             ArchiveURLSubset := ["doc"],

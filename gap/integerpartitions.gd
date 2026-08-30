@@ -38,10 +38,6 @@ DeclareAttribute( "Total", IsIntegerPartition );
 #! @Returns List
 DeclareAttribute( "Parts", IsIntegerPartition );
 
-# #! @Arguments IntegerPartition
-# #! @Returns List
-# DeclareAttribute( "N", IsIntegerPartition );
-
 #! @Arguments IntegerPartition
 #! @Returns List
 DeclareAttribute( "Gaps", IsIntegerPartition );
@@ -63,8 +59,6 @@ DeclareAttribute( "FrobeniusNumber", IsIntegerPartition );
 #! @Returns Integer
 DeclareAttribute( "Multiplicity", IsIntegerPartition );
 
-# DeclareAttribute( "ConjugateOf", IsIntegerPartition );
-# DeclareSynonym( "Conjugate", ConjugateOf);
 DeclareAttribute( "Dual", IsIntegerPartition );
 # DeclareAttribute( "Dual3", IsIntegerPartition );
 
@@ -108,7 +102,7 @@ DeclareAttribute( "Weight2", IsStrict and IsIntegerPartition);
 
 DeclareGlobalFunction( "PartitionGenerators" );
 
-#! https://doi.org/10.55730/1300-0098.3510
+# #! https://doi.org/10.55730/1300-0098.3510
 DeclareAttribute( "Reduce", IsIntegerPartition);
 DeclareAttribute( "SpecialSubdiagram", IsIntegerPartition);
 

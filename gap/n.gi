@@ -2,30 +2,19 @@ InstallMethod(N, [IsIntegerPartition],
     P -> Reversed( Parts( P )) + [ 0 .. Length( P ) - 1 ]
 );
 
-InstallMethod( ConjugateOf, [IsIntegerPartition], 
-    P -> IntegerPartition( AssociatedPartition( Parts( P )))
-    # P -> IntegerPartition( List( 
-    #     [ 1 .. Genus( P ) ], 
-    #     i -> Length( Filtered( 
-    #         Parts( P ),
-    #         # [ 1 .. Length( P ) ], 
-    #         x -> i <= x
-    #         # j -> i <= P[ j ]
-    #         ))
-    #     ))
-);
-
-DeclareSynonym( "Conjugate", ConjugateOf);
-
-###############################################
-
 InstallMethod(N, [IsNumericalSet], 
     S -> Reversed(FrobeniusNumber( S ) - S)
+);
+
+InstallMethod( ConjugateOf, [IsIntegerPartition], 
+    P -> IntegerPartition( AssociatedPartition( Parts( P )))
 );
 
 InstallMethod( ConjugateOf, [IsNumericalSet],
     S -> NumericalSetByGaps( N( S ) )
 );
+
+DeclareSynonym( "Conjugate", ConjugateOf);
 
 ###############################################
 

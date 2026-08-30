@@ -1,3 +1,7 @@
+#! @Chapter Duality
+#! @Section D
+
+#! @BeginGroup Duality
 #! @Arguments IntegerPartition
 #! @Returns IntegerPartition
 DeclareAttribute( "D", IsIntegerPartition );
@@ -5,6 +9,7 @@ DeclareAttribute( "D", IsIntegerPartition );
 #! @Arguments IsNumericalSet
 #! @Returns IsNumericalSet
 DeclareAttribute( "D", IsNumericalSet );
+#! @EndGroup
 
 #! @Label
 #! @Arguments IntegerPartition

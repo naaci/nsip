@@ -10,9 +10,213 @@
 #
 gap> START_TEST("nsip03.tst");
 
-# doc/_Chapter_Integer_Partitions.xml:39-42
+# doc/_Chapter_Integer_Partitions.xml:38-41
+gap> P := IntegerPartition([7,3,1,1]);
+    A 52 12=7+3+1+1
+
+# doc/_Chapter_Integer_Partitions.xml:44-47
+gap> Gaps(P);
+[ 1, 2, 3, 4, 6, 7, 10 ]
+
+# doc/_Chapter_Integer_Partitions.xml:50-53
+gap> GapsOfFirstType(P);
+[ 1, 2, 10 ]
+
+# doc/_Chapter_Integer_Partitions.xml:56-59
+gap> GapsOfSecondType(P);
+[ 3, 4, 6, 7 ]
+
+# doc/_Chapter_Integer_Partitions.xml:62-65
+gap> Genus(P);
+7
+
+# doc/_Chapter_Integer_Partitions.xml:68-71
+gap> Length(P);
+4
+
+# doc/_Chapter_Integer_Partitions.xml:74-77
+gap> FrobeniusNumber(P);
+10
+
+# doc/_Chapter_Integer_Partitions.xml:80-83
+gap> IsSymmetric(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:86-89
+gap> IsPositiveSemiSymmetric(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:92-95
+gap> IsNegativeSemiSymmetric(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:98-101
+gap> IsAlmostSymmetric(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:104-107
+gap> Type(P);
+5
+
+# doc/_Chapter_Integer_Partitions.xml:110-113
+gap> ConjugateOf(P);
+    A 22 12=4+2+2+1+1+1+1
+
+# doc/_Chapter_Integer_Partitions.xml:116-119
+gap> Dual(P);
+    - 24 23=7+6+6+4
+
+# doc/_Chapter_Integer_Partitions.xml:122-125
+gap> Total(P);
+12
+
+# doc/_Chapter_Integer_Partitions.xml:128-131
+gap> Trace(P);
+2
+
+# doc/_Chapter_Integer_Partitions.xml:134-137
+gap> IsNSG(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:140-143
+gap> IsArf(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:146-149
+gap> IsOdd(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:152-155
+gap> IsStrict(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:158-161
+gap> EulerBijection(EulerBijection(P))=P;
+true
+
+# doc/_Chapter_Integer_Partitions.xml:164-167
 gap> P := IntegerPartition([7,2,1,1]);
 SG  A 42 11=7+2+1+1
+
+# doc/_Chapter_Integer_Partitions.xml:170-173
+gap> Gaps(P);
+[ 1, 2, 3, 4, 5, 7, 10 ]
+
+# doc/_Chapter_Integer_Partitions.xml:176-179
+gap> GapsOfFirstType(P);
+[ 1, 2, 4, 10 ]
+
+# doc/_Chapter_Integer_Partitions.xml:182-185
+gap> GapsOfSecondType(P);
+[ 3, 5, 7 ]
+
+# doc/_Chapter_Integer_Partitions.xml:188-191
+gap> Genus(P);
+7
+
+# doc/_Chapter_Integer_Partitions.xml:194-197
+gap> Length(P);
+4
+
+# doc/_Chapter_Integer_Partitions.xml:200-203
+gap> FrobeniusNumber(P);
+10
+
+# doc/_Chapter_Integer_Partitions.xml:206-209
+gap> IsSymmetric(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:212-215
+gap> IsPseudoSymmetric(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:218-221
+gap> IsPositiveSemiSymmetric(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:224-227
+gap> IsNegativeSemiSymmetric(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:230-233
+gap> IsAlmostSymmetric(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:236-239
+gap> Type(P);
+4
+
+# doc/_Chapter_Integer_Partitions.xml:242-245
+gap> ConjugateOf(P);
+    A 12 11=4+2+1+1+1+1+1
+
+# doc/_Chapter_Integer_Partitions.xml:248-251
+gap> Dual(P);
+      24 24=7+6+6+5
+
+# doc/_Chapter_Integer_Partitions.xml:254-257
+gap> Total(P);
+11
+
+# doc/_Chapter_Integer_Partitions.xml:260-263
+gap> Trace(P);
+2
+
+# doc/_Chapter_Integer_Partitions.xml:266-269
+gap> IsNSG(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:272-275
+gap> IsArf(P);
+false
+
+# doc/_Chapter_Integer_Partitions.xml:278-281
+gap> P := IntegerPartition([7,2,1,1]);
+SG  A 42 11=7+2+1+1
+
+# doc/_Chapter_Integer_Partitions.xml:483-485
+gap> P := IntegerPartition([19,19,17,17,17,13,1,1,1,1]);;
+
+# doc/_Chapter_Integer_Partitions.xml:488-491
+gap> IsOdd(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:494-496
+gap> S := EulerBijection(P);;
+
+# doc/_Chapter_Integer_Partitions.xml:499-502
+gap> IsStrict(S);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:505-508
+gap> EulerBijection(S) = P;
+true
+
+# doc/_Chapter_Integer_Partitions.xml:517-519
+gap> P := IntegerPartition([19,17,13,1]);;
+
+# doc/_Chapter_Integer_Partitions.xml:522-524
+gap> S := Bend(P);;
+
+# doc/_Chapter_Integer_Partitions.xml:527-530
+gap> IsOdd(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:533-536
+gap> IsStrict(P);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:539-542
+gap> IsSymmetric(S);
+true
+
+# doc/_Chapter_Integer_Partitions.xml:545-548
+gap> UnBend(S) = P;
+true
+
+# doc/_Chapter_Integer_Partitions.xml:551-554
+gap> EulerBijection(P) = P;
+true
 
 #
 gap> STOP_TEST("nsip03.tst", 1);

@@ -173,8 +173,8 @@ InstallMethod( SmallElements, [IsNumericalSet],
 );
 
 InstallMethod( NonzeroSmallElements, [IsNumericalSet],
-    S -> Difference( [ 1 .. Conductor( S ) ], Gaps( S ) )
-    # S -> Difference( SmallElements( S ), [0] )
+    S -> Difference( SmallElements( S ), [0] )
+    # S -> Difference( [ 1 .. Conductor( S ) ], Gaps( S ) )
 );
 
 InstallMethod(Conductor, [IsNumericalSet], 

@@ -1,4 +1,4 @@
-packages :=  latex-bin geometry fancyvrb psnfss hyperref etoolbox enumitem times dvips
+packages :=  latex-bin geometry fancyvrb psnfss hyperref etoolbox enumitem times dvips mfware
 
 install:
 	tlmgr install $(packages)
