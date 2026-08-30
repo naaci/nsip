@@ -1,168 +1,100 @@
 #! @Chapter Numerical Sets
 #! @Section Definition
+#! A numerical set is a cofinite subset of $\mathbb N$ which contains $0$.
 
-#! @Label 
-#! @Arguments Object
-#! @Description A numerical set is a cofinite subset of $\mathbb N$ which contains $0$.
 DeclareCategory( "IsNumericalSet", IsIntegerPartitionOrNumericalSet );
 BindGlobal( "NumericalSetsType", 
-        NewType( CollectionsFamily( CyclotomicsFamily ), 
-                 IsNumericalSet ) );
+        NewType( CollectionsFamily( CyclotomicsFamily ), IsNumericalSet ) 
+);
 
 #! @Section Construction of A Numerical Set
+#! A numerical set can be constructed from the set of its gaps or from the set of its small elements with conductor. 
+#! The following methods are for constructing a numerical set:
 
-#! @BeginGroup NumericalSet
-#! @Arguments List
-#! @Returns NumericalSet
+#! @Label 
+#! @Returns The minimal numerical set containing $S\cap\mathbb N$.
+#! @Arguments S
 DeclareAttribute( "NumericalSet", IsListOrCollection );
 
 #! @Label 
-#! @Arguments List
-#! @Returns NumericalSet
+#! @Returns The maximal numerical set not containing $G\cap\mathbb N^+$.
+#! @Arguments G
 DeclareGlobalFunction( "NumericalSetByGaps" );
-#! @EndGroup
 
 #! @Section Elements of Numerical Sets
 
+#! @Label
+#! @Arguments a, S
+#! @Returns `true` iff $a\in S$
 # DeclareOperation("in",[IsInt,IsNumericalSet]);
 
 #! @Label
-#! @Arguments Int
-#! @Returns Int
+#! @Arguments i
+#! @Returns $S_i\in\{S_1=0,S_2,S_3,\dots\}$
 DeclareOperation("[]",[IsNumericalSet,IsInt]);
+
+DeclareOperation( "{}", [IsNumericalSet,IsList] );
 
 # DeclareOperation( "Iterator", [IsNumericalSet]);
 
 #! @Section Operations on Numerical Sets
 
-DeclareOperation("PrintObj",[IsNumericalSet]);
-
-# DeclareOperation("+",[IsNumericalSet,IsList]);
-# DeclareOperation("-",[IsNumericalSet,IsList]);
-
 #! @BeginGroup sum_of_numerical_set_with_number
-#! @Returns NumericalSet
 #! @Label
-#! @Arguments NumericalSet,Integer
+#! @Returns The numerical set $a+S=\{a+s\mid s\in S\}$.
+
+#! @Arguments S, a
 DeclareOperation("+",[IsNumericalSet,IsInt]);
-#! @Label
-#! @Arguments Integer,NumericalSet
+
+#! @Arguments a, S
 DeclareOperation("+",[IsInt,IsNumericalSet]);
+
 #! @EndGroup
 
-#! @Returns List
 #! @Label
-#! @Arguments Integer,NumericalSet
+#! @Returns The numerical set $a-S=\{b\in\mathbb N\mid a+b\in S\}$.
+#! @Arguments a, S
 DeclareOperation("-",[IsInt,IsNumericalSet]);
 
-# DeclareOperation("=",[IsNumericalSet,IsNumericalSet]);
-
-#! @BeginGroup Extending_numerical_set
-#! @Returns NumericalSet
+#! @BeginGroup
+#! @Returns The numerical set $S\cup A$ or $S\cup\{a\}$
 #! @Label
-#! @Arguments NumericalSet,List
+#! @Arguments S,A
 DeclareOperation("Extend",[IsNumericalSet,IsListOrCollection]);
-#! @Label
-#! @Arguments NumericalSet,Integer
+#! @Arguments S,a
 DeclareOperation("Extend",[IsNumericalSet,IsInt]);
 #! @EndGroup
 
-#! @Arguments NumericalSet,NumericalSet
-#! @Returns NumericalSet
+#! @Label
+#! @Arguments S_1,S_2
+#! @Returns $S_1\cap S_2$
+# DeclareOperation("Intersection",[IsNumericalSet,IsNumericalSet]);
 DeclareOperation("Intersection2",[IsNumericalSet,IsNumericalSet]);
 
-#! @Arguments NumericalSet,NumericalSet
-#! @Returns NumericalSet
+#! @Label
+#! @Arguments S_1,S_2
+#! @Returns $S_1\cup S_2$
+# DeclareOperation("Union",[IsNumericalSet,IsNumericalSet]);
 DeclareOperation("Union2",[IsNumericalSet,IsNumericalSet]);
 
 #! @Section Attributes of Numerical Sets
 
-#! @BeginGroup
-#! @Arguments NumericalSet
-#! @Returns List
-#! @Description The elements of a numerical set little than the conductor are called its small elements.
-DeclareAttribute( "SmallElements", IsNumericalSet );
-#! @Arguments NumericalSet
-#! @Returns List
-DeclareAttribute( "NonzeroSmallElements", IsNumericalSet );
-#! @EndGroup
-
-#! @Arguments NumericalSet
-#! @Returns Integer
-#! @Description Length of a numerical set is the number of its small elements.
-DeclareAttribute( "Length", IsNumericalSet );
-
-#! @Arguments NumericalSet
-#! @Returns List
-#! @Description Parts of a numerical set is equal to the parts of its corresponding integer partition.
-DeclareAttribute( "Parts", IsNumericalSet );
-
-#! @Arguments NumericalSet
-#! @Returns List
+#! @Arguments S
+#! @Returns Finite set $\mathbb N\setminus S$.
 #! @Description Gaps of a numerical set is the set of all missing natural numbers in that set.
 DeclareAttribute( "Gaps", IsNumericalSet );
 
-#! @Arguments NumericalSet
-#! @Returns Integer
-#! @Description Genus of a numeri̇cal set is the number of its gaps.
-DeclareAttribute( "Genus", IsNumericalSet );
+#! @Arguments S
+#! @Returns Finite set $\{s_1,s_2,\dots,s_{\ell}\}=\{s\in S\mid s \textless F_S\}$. 
+#! @Description Here $F_S$ is the Frobenius number of $S$.
+DeclareAttribute( "SmallElements", IsNumericalSet );
+
+#! @Arguments S
+#! @Returns Finite set $\{s_1,s_2,\dots,s_{\ell},s_{\ell+1}\}$. 
+#! @Description This is the `SmallElements` method of `numericalSgps` package.
+#! Here $s_{\ell+1}$ is the conductor.
+DeclareAttribute( "SmallElementsAlt", IsNumericalSet );
 
 #! @Arguments NumericalSet
 #! @Returns Integer
-#! @Description The conductor of a numeri̇cal set is the smallest element of it such that every subsequent integer is an element of it.
-DeclareAttribute( "Conductor", IsNumericalSet );
-
-#! @Arguments NumericalSet
-#! @Returns Integer
-#! @Description The largest gap of a numeri̇cal set is called its Frobenius number.
-DeclareAttribute( "FrobeniusNumber", IsNumericalSet );
-
-#! @Arguments NumericalSet
-#! @Returns Integer
-#!
-DeclareAttribute( "Multiplicity", IsNumericalSet );
-
-#! @Subsection Pseudo-Frobenius Numbers
-
-#! @Subsection Duality and Symmetry
-
-#! @BeginGroup Duality
-#! @Arguments NumericalSet
-#! @Returns NumericalSet
-DeclareAttribute( "Dual", IsNumericalSet );
-# DeclareAttribute( "Dual3", IsNumericalSet );
-#! @EndGroup
-
-DeclareProperty( "IsSuperSemiSymmetric", IsNumericalSet );
-
-#! @Arguments NumericalSemigroupSet
-DeclareProperty( "IsPerfectSemigroup", IsNumericalSet );
-
-#! @Arguments NumericalSet
-DeclareAttribute( "CClosure", IsNumericalSet );
-
-
-#! @Arguments NumericalSet
 DeclareAttribute( "Trace", IsNumericalSet );
-
-#! @Arguments NumericalSet
-DeclareAttribute( "Total", IsNumericalSet );
-
-#! @Section Numerical Semigroups
-
-# #! @Arguments NumericalSet
-# DeclareProperty( "IsNSG", IsNumericalSet );
-
-# DeclareProperty( "IsArf", IsNumericalSet );
-
-DeclareProperty( "IsStrict", IsNumericalSet );
-DeclareProperty( "IsOdd", IsNumericalSet );
-
-DeclareAttribute( "Weight", IsNumericalSet);
-
-#! https://doi.org/10.55730/1300-0098.3510
-DeclareAttribute( "Reduce", IsNumericalSet);
-DeclareAttribute( "SpecialSubdiagram", IsNumericalSet);
-
-DeclareAttribute( "RightParts", IsNumericalSet);
-DeclareAttribute( "BelowParts", IsNumericalSet);

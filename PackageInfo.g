@@ -61,6 +61,10 @@ ArchiveURL      := Concatenation( ~.SourceRepository.URL,
                                  "/releases/download/v", ~.Version, 
                                  "/", ~.PackageName, "-", ~.Version ),
 
+AbstractHTML   :=  "", 
+
+ArchiveFormats := ".tar.gz", 
+
 ##  Status information. Currently the following cases are recognized:
 ##    "accepted"      for successfully refereed packages
 ##    "submitted"     for packages submitted for the refereeing

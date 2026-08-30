@@ -1,4 +1,4 @@
-#! @Chapter Common
+#! @Chapter Common Methods
 #! @Section Examples
 
 gap> while true do

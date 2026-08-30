@@ -2,7 +2,8 @@
 #! @Section Attributes of An Integer Partition
 
 #!
-DeclareAttribute( "DurfeeDecomposition", IsIntegerPartition );
+DeclareAttribute( "DurfeeDecomposition", IsIntegerPartitionOrNumericalSet );
 
 #!
-DeclareAttribute( "Tree", IsIntegerPartition );
+DeclareAttribute( "Tree", IsIntegerPartitionOrNumericalSet );
+

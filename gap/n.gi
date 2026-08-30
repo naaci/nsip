@@ -1,35 +1,34 @@
-InstallMethod(N, [IsIntegerPartition], 
-    P -> Reversed( Parts( P )) + [ 0 .. Length( P ) - 1 ]
-);
-
 InstallMethod(N, [IsNumericalSet], 
     S -> Reversed(FrobeniusNumber( S ) - S)
 );
 
-InstallMethod( ConjugateOf, [IsIntegerPartition], 
-    P -> IntegerPartition( AssociatedPartition( Parts( P )))
+InstallMethod(N, [IsIntegerPartition], 
+    X -> Reversed( Parts( X )) + [ 0 .. Length( X ) - 1 ]
 );
 
 InstallMethod( ConjugateOf, [IsNumericalSet],
     S -> NumericalSetByGaps( N( S ) )
 );
 
+InstallMethod( ConjugateOf, [IsIntegerPartition], 
+    P -> IntegerPartition( AssociatedPartition( Parts( P )))
+);
+
 DeclareSynonym( "Conjugate", ConjugateOf);
 
 ###############################################
 
-InstallMethod(GapsOfFirstType, [IsIntegerPartitionOrNumericalSet], 
+InstallMethod( GapsOfFirstType, [IsIntegerPartitionOrNumericalSet], 
     X -> Intersection( Gaps( X ), N( X ) )
-    # X -> Difference( Gaps( X ), GapsOfSecondType( X ) )
 );
 
 InstallMethod( GapsOfFirstType, [IsNSG], N );
 
-InstallMethod(GapsOfSecondType, [IsIntegerPartitionOrNumericalSet], 
+InstallMethod( GapsOfSecondType, [IsIntegerPartitionOrNumericalSet], 
     X -> Difference( Gaps( X ), N( X ) )
-    # X -> Difference( Gaps( X ), GapsOfFirstType( X ) )
-    # X -> Intersection( Gaps( X ), ConjugateOf( X ) )
 );
+
+###############################################
 
 InstallMethod( IsSymmetric, [IsIntegerPartitionOrNumericalSet], 
     # IsPositiveSemiSymmetric and IsNegativeSemiSymmetric
@@ -84,3 +83,27 @@ InstallMethod( IsArf, [IsIntegerPartitionOrNumericalSet],
 #         SmallElements( S ), s -> IsSubset( S, s + SmallElements( S ))
 #     )
 # );
+
+InstallMethod( RightParts, [IsIntegerPartition], 
+    P -> IntegerPartition( Parts( P ){[ 2 .. Length( P )]})
+);
+
+InstallMethod( BelowParts, [IsIntegerPartition], 
+    P -> IntegerPartition( Parts( P ) - 1 )
+);
+
+InstallMethod( BelowParts, [IsNumericalSet], 
+    S -> Extend( S , FrobeniusNumber( S ))
+);
+
+InstallMethod( RightParts, [IsNumericalSet], 
+    S -> S - Multiplicity( S )
+);
+
+InstallMethod( Dual, [IsNumericalSet],
+    S -> NumericalSet( N( S ) + First( Gaps( S ) ) )
+);
+
+InstallMethod(Gaps, [IsIntegerPartition], 
+    P -> N( ConjugateOf( P ))
+);

@@ -1,16 +1,30 @@
 InstallMethod( NumericalSet, [IsIntegerPartition],
-    P -> NumericalSet(
-        List( [ 1..Length( P ) + 1 ], 
-            i -> Genus( P ) - 1 - ( P[ i ] - i )
-        ))
-    # P -> NumericalSet(Union(FrobeniusNumber(P)-N(P),[Conductor(P)]));
-    );
+    P -> NumericalSet( SmallElementsAlt( P ))
+);
+
+InstallMethod( SmallElements, [IsIntegerPartitionOrNumericalSet],
+    P -> [ Genus(P) .. FrobeniusNumber( P ) ] - Parts( P )
+);
 
 InstallMethod( IntegerPartition, [IsNumericalSet], 
-    S -> IntegerPartition( 
-        List( [ 1..Length( S ) ], 
-            # i -> FrobeniusNumber( S ) - Length( S ) - ( S[ i ]  - i )
-            i -> Genus( S ) - 1 - ( S[ i ]  - i )
-        ))
-    );
+    S -> IntegerPartition( Parts( S ) )
+);
 
+InstallMethod( Parts, [IsIntegerPartitionOrNumericalSet],
+    S -> [ Genus(S) .. FrobeniusNumber( S ) ] - SmallElements( S )
+);
+
+InstallMethod( SmallElementsAlt, [IsIntegerPartition],
+    X -> Union( SmallElements( X ), [ Conductor( X ) ] )
+);
+
+InstallMethod(Gaps, [IsIntegerPartition], 
+    P -> Difference( [ 0 .. FrobeniusNumber( P ) ], SmallElements( P ))
+    # P -> Union(Set(
+    #     [1..Length(P)],
+    #     i -> Set(
+    #         [ 1 .. P[ i ] - P[ i + 1 ]],
+    #         j -> Genus( P ) - 1 - ( P[ i ] - i ) + j
+    #     )
+    # ))
+);

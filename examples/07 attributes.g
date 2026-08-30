@@ -56,3 +56,61 @@ IsSymmetric(S);
 IsAlmostSymmetric(S);
 #! true
 #! @EndExample
+
+#! @BeginExample
+NonzeroSmallElements( S );
+#! [ 3, 4, 5 ]
+#! @EndExample
+
+
+#! @Section Attributes of Numerical Sets
+
+#! @BeginExample
+Conductor( S );
+#! 7
+#! @EndExample
+
+#! @BeginExample
+Multiplicity( S );
+#! 3
+#! @EndExample
+
+#! @BeginExample
+Length( S );
+#! 4
+#! @EndExample
+
+#! @BeginExample
+Gaps( S );
+#! [ 1, 2, 6 ]
+#! @EndExample
+
+#! @BeginExample
+FrobeniusNumber( S );
+#! 6
+#! @EndExample
+
+#! @BeginExample
+Genus( S );
+#! 3
+#! @EndExample
+
+#! @BeginExample
+CClosure( S );
+#! {0,3,->}
+#! @EndExample
+
+#! @BeginExample
+Total( S );
+#! 6
+#! @EndExample
+
+#! @BeginExample
+Trace( S );
+#! 1
+#! @EndExample
+
+#! @BeginExample
+Weight( S );
+#! 6
+#! @EndExample

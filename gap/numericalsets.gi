@@ -17,7 +17,6 @@ end );
 
 InstallMethod( \=, [IsNumericalSet,IsNumericalSet], function( S1 , S2 )
     return Gaps( S1 ) = Gaps( S2 );
-    # return SmallElements( S1 ) = SmallElements( S2 );
 end);
 
 InstallMethod( \[\], [IsNumericalSet,IsInt], function( S , i )
@@ -25,6 +24,10 @@ InstallMethod( \[\], [IsNumericalSet,IsInt], function( S , i )
         return SmallElements( S )[ i ];
     fi;
     return Conductor( S ) - Length( S ) - 1 + i;
+end);
+
+InstallMethod( \{\}, [IsNumericalSet,IsList], function( S , L )
+    return List( L, i -> S[ i ] );
 end);
 
 InstallMethod( \in, [IsInt,IsNumericalSet], function( s , S )
@@ -52,7 +55,7 @@ end);
 # );
 
 InstallMethod( \+, [IsNumericalSet,IsInt], function( S, a )
-    return NumericalSet( SmallElements( S ) + a );
+    return NumericalSet( SmallElementsAlt( S ) + a );
 end);
 
 InstallMethod( \+, [IsInt,IsNumericalSet], function( a, S )
@@ -62,22 +65,6 @@ end);
 InstallMethod( \-, [IsInt,IsNumericalSet], function( a , S )
     return a - Intersection( [ 0 .. a ], S );
 end);
-
-# InstallMethod( \+, [IsNumericalSet,IsList], function( S , L )
-#     Print(11111,"\n");
-#     return NumericalSet( Union( 
-#         SmallElements( S ),
-#         s -> s + L
-#     ));
-# end);
-
-# InstallMethod( \-, [IsNumericalSet,IsList], function( S , L )
-#     Print(-11111,"\n");
-#     return NumericalSet( Filtered(
-#         [ 0 .. Conductor( S ) ],
-#         x -> IsSubset( S, x + L )
-#     ));
-# end);
 
 InstallMethod( Extend, [IsNumericalSet,IsListOrCollection], function( S, L )
     return NumericalSetByGaps( Difference( Gaps( S ), L ));
@@ -97,174 +84,15 @@ end);
 
 ################################################################################
 
-InstallMethod( String, [IsNumericalSet],
-    S -> Concatenation(
-        "{", 
-        JoinStringsWithSeparator( SmallElements( S ), "," ), 
-        ",->}"
-    )
-);
-
-################################################################################
-
-
-InstallMethod( Parts, [IsNumericalSet], 
-    S -> AssociatedPartition( Reversed( Gaps( S ) - [ 0 .. Genus( S ) - 1 ]))
-);
-
-InstallMethod(Length, [IsNumericalSet],
-    S -> Length(SmallElements( S ) ) - 1
-);
-
-InstallMethod(Genus, [IsNumericalSet],
-    S -> Length(Gaps( S ))
-);
-
-InstallMethod(FrobeniusNumber, [IsNumericalSet], function( S )
-    if Gaps( S ) = [] then
-        return -1;
-    else
-        return Maximum( Gaps( S ) );
-    fi;
-end );
-
-# InstallMethod(N, [IsNumericalSet], 
-#     S -> Reversed(FrobeniusNumber( S ) - S)
-# );
-
-###############################################
-
-# InstallMethod( ConjugateOf, [IsNumericalSet],
-#     S -> NumericalSetByGaps( N( S ) )
-# );
-
-InstallMethod( Dual, [IsNumericalSet],
-    S -> NumericalSetByGaps( 
-        Gaps( S )[ 1 ] + FrobeniusNumber( S ) - Gaps( S )
-    )
-    # S -> NumericalSet( N( S ) + Gaps( S )[ 1 ] )
-);
-
-# InstallMethod( Dual3, [IsNumericalSet],
-#     # S -> S - NonzeroSmallElements( S )
-#     S -> NumericalSet( Filtered(
-#         [ 0..Conductor( S ) ],
-#         x -> IsSubset( S, x + NonzeroSmallElements( S ) )
-#     ))
-# );
-
-########################
-
-# InstallMethod( IsSuperSemiSymmetric, [IsNumericalSet], function(S)
-#     local j;
-#     for j in [ 2..Length(S) ] do
-#         if not IsSemiSymmetric(S - S[ j ]) then
-#             return false;
-#         fi;
-#     od;
-#     return true;
-# end);
-
-
-########################
-
 InstallMethod( SmallElements, [IsNumericalSet],
-    S -> Difference( [ 0 .. Conductor( S ) ], Gaps( S ) )
+    X -> Difference( [ 0 .. FrobeniusNumber( X ) ], Gaps( X ) )
 );
 
-InstallMethod( NonzeroSmallElements, [IsNumericalSet],
-    S -> Difference( SmallElements( S ), [0] )
-    # S -> Difference( [ 1 .. Conductor( S ) ], Gaps( S ) )
-);
-
-InstallMethod(Conductor, [IsNumericalSet], 
-    S -> FrobeniusNumber( S ) + 1
-);
-
-InstallMethod( Multiplicity, [IsNumericalSet],
-    S -> S[2]
-);
-
-InstallMethod( CClosure, [IsNumericalSet], 
-    S -> Extend( S, Union(Set(
-        NonzeroSmallElements( S ), 
-        s -> s + PrimeDivisors( s ) 
-    )))
-);
-
-
-#############################
-
-InstallMethod(Total, [IsNumericalSet], 
-    S -> Total( IntegerPartition( S ))
+InstallMethod( SmallElementsAlt, [IsNumericalSet],
+    X -> Union( SmallElements( X ), [ Conductor( X ) ] )
 );
 
 InstallMethod( Trace, [IsNumericalSet], 
-    S -> Trace( IntegerPartition( S ))
+    S -> First( Filtered( [ 1..Length( S ) + 1 ], i -> S[ i ] >= Genus( S ) ) ) - 1
 );
 
-#############################
-
-# InstallMethod( IsNSG, [IsNumericalSet],
-#     S -> ForAll(
-#         SmallElements( S ), s -> IsSubset( S, s + SmallElements( S ))
-#     )
-# );
-
-# InstallMethod( IsArf, [IsNumericalSet], 
-#     S -> IsArf( IntegerPartition( S ))
-# );
-
-
-InstallMethod( IsPerfectSemigroup, [IsNumericalSet], 
-    S -> ForAll( [ 1 .. Length( S ) ], i -> S[ i + 1 ] - S[ i ] <> 2 )
-);
-
-InstallMethod( IsStrict, [IsNumericalSet], 
-    S -> ForAll( [ 1 .. Length( S ) ], i -> S[ i + 1 ] - S[ i ] <> 1 )
-);
-
-InstallMethod( IsOdd, [IsNumericalSet], 
-    S -> Length( S ) = 0 or 
-    ForAll( 
-        [ 1 .. Length( S ) - 1 ], 
-        i -> (S[ i + 1 ] - S[ i ]) mod 2 = 1
-        )
-    and 
-    (Length( S ) - Conductor( S )) mod 2 = 1
-);
-
-InstallMethod( Weight, [IsNumericalSet],
-    S -> Weight( IntegerPartition( S ))
-);
-
-InstallMethod(Reduce, [IsNumericalSet],
-    function (S)
-    local i;
-    i := 1;
-    for i in [ 1 .. Length(S) + 1 ] do
-        if S[ i + 1 ] - S[ i ] <> 1 then
-            break;
-        fi;
-    od;
-    return S - S[ i ];
-    end);
-
-InstallMethod(SpecialSubdiagram, [IsNumericalSet],
-    S -> NumericalSet( List( 
-        [ 1 .. Length(Reduce( S )) ],
-        function (i) if Reduce( S )[ i + 1 ] - Reduce( S )[ i ] = 1 then 
-            return Reduce( S )[ i ] - 1; 
-        else 
-            return Reduce( S )[ i ];
-        fi; end
-        ))
-);
-
-InstallMethod( BelowParts, [IsNumericalSet], 
-    S -> NumericalSet( Union( SmallElements( S ) , [ FrobeniusNumber( S ) ] ))
-);
-
-InstallMethod( RightParts, [IsNumericalSet], 
-    S -> NumericalSet( SmallElements( S ) - Multiplicity( S ) )
-);

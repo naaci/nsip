@@ -17,21 +17,47 @@ DeclareAttribute( "GapsOfFirstType", IsIntegerPartitionOrNumericalSet );
 #! @Returns List
 DeclareAttribute( "GapsOfSecondType", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsSymmetric", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsPositiveSemiSymmetric", IsIntegerPartitionOrNumericalSet );
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsNegativeSemiSymmetric", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsPositive", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsNegative", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsPseudoSymmetric", IsIntegerPartitionOrNumericalSet );
 
 # DeclareOperation( "IsIrreducible", [IsNSG] );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsNSG", IsIntegerPartitionOrNumericalSet );
 
+#! @Arguments IsIntegerPartitionOrNumericalSet
+#! @Returns Bool
 DeclareProperty( "IsArf", IsIntegerPartitionOrNumericalSet );
+
+#! @BeginGroup
+#! @Arguments NumericalSet
+#! @Returns NumericalSet
+DeclareAttribute( "BelowParts", IsIntegerPartitionOrNumericalSet);
+DeclareAttribute( "RightParts", IsIntegerPartitionOrNumericalSet);
+#! @EndGroup
+

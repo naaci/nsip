@@ -10,7 +10,7 @@
 #
 gap> START_TEST("nsip01.tst");
 
-# doc/_Chapter_Introduction.xml:10-13
+# doc/_Chapter_Introduction.xml:38-41
 gap> LoadPackage("nsip");
 true
 

@@ -3,23 +3,26 @@
 #! @Subsection Examples
 
 #! @BeginExample
-S := NumericalSet( [ 0, 3, 4, 5, 7 ] );
+S := NumericalSetByGaps( [ 1, 2, 6 ] );
 #! {0,3,4,5,7,->}
 #! @EndExample
 
-#! @Section Attributes of Numerical Sets
 #! @BeginExample
-Gaps( S );
-#! [ 1, 2, 6 ]
-#! @EndExample
-
-#! @Section Construction of A Numerical Set
-#! @BeginExample
-T := NumericalSetByGaps( [ 1, 6, 7 ] );
-#! {0,2,3,4,5,8,->}
+T := NumericalSet( [ 2, 9, 10, 11 ] );
+#! {0,2,9,->}
 #! @EndExample
 
 #! @Section Elements of Numerical Sets
+
+#! @BeginExample
+1 in S;
+#! false
+#! @EndExample
+
+#! @BeginExample
+100 in S;
+#! true
+#! @EndExample
 
 #! @BeginExample
 S[ 3 ];
@@ -34,7 +37,7 @@ S[ 10 ];
 #! @Section Operations on Numerical Sets
 
 #! @BeginExample
-S + 2;
+2 + S;
 #! {0,2,5,6,7,9,->}
 #! @EndExample
 
@@ -54,31 +57,16 @@ Extend( S, [ 2, 6 ]);
 #! @EndExample
 
 #! @BeginExample
-Intersection2( S, T );
-#! {0,3,4,5,8,->}
+Intersection( S, T );
+#! {0,9,->}
 #! @EndExample
 
 #! @BeginExample
-Union2( S, T );
+Union( S, T );
 #! {0,2,3,4,5,7,->}
 #! @EndExample
 
 #! @Section Attributes of Numerical Sets
-
-#! @BeginExample
-SmallElements( S );
-#! [ 0, 3, 4, 5, 7 ]
-#! @EndExample
-
-#! @BeginExample
-NonzeroSmallElements( S );
-#! [ 3, 4, 5, 7 ]
-#! @EndExample
-
-#! @BeginExample
-Length( S );
-#! 4
-#! @EndExample
 
 #! @BeginExample
 Parts( S );
@@ -91,22 +79,7 @@ Gaps( S );
 #! @EndExample
 
 #! @BeginExample
-Genus( S );
-#! 3
+SmallElements( S );
+#! [ 0, 3, 4, 5 ]
 #! @EndExample
-
-#! @BeginExample
-Conductor( S );
-#! 7
-#! @EndExample
-
-#! @BeginExample
-FrobeniusNumber( S );
-#! 6
-#! @EndExample
-
-#! @BeginExample
-Multiplicity( S );
-#! 3
-#! @EndExample
-
+ 

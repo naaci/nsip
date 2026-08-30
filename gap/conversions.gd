@@ -14,13 +14,14 @@
 #!              $S=\{s_1=0,s_2,\dots,s_{\ell},\to\}$
 #!              where
 #!              $\lambda_i=g(S)-1+i-s_i$.
+
 DeclareAttribute( "IntegerPartition", IsNumericalSet);
 
 #! @Section Converting An IntegerPartition to NumericalSet
 
 #! @Label
 #! @Arguments IntegerPartition
-#! @Returns NumericalSet
+#! @Returns Numerical set corresponding to the given integer partition.
 #! @Description Calculates
 #!              $S=\{s_1=0,s_2,\dots,s_{\ell+1},\to\}$
 #!              from
@@ -29,3 +30,15 @@ DeclareAttribute( "IntegerPartition", IsNumericalSet);
 #!              $s_i=g(\lambda)-1+i-\lambda_i$.
 DeclareAttribute( "NumericalSet", IsIntegerPartition );
 
+DeclareAttribute( "SmallElements", IsIntegerPartitionOrNumericalSet );
+DeclareAttribute( "SmallElementsAlt", IsIntegerPartitionOrNumericalSet );
+
+#! @Arguments IntegerPartition
+#! @Returns List
+DeclareAttribute( "Gaps", IsIntegerPartition );
+
+
+#! @Arguments S
+#! @Returns $\{i-s_i\mid i=G_S\dots F_S, s_i\in S\}$. 
+#! @Description Here $G_S$ is the genus and $F_S$ is the Frobenius number of $S$.
+DeclareAttribute( "Parts", IsNumericalSet );

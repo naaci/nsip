@@ -10,173 +10,65 @@
 #
 gap> START_TEST("nsip02.tst");
 
-# doc/_Chapter_Numerical_Sets.xml:40-43
-gap> S:=NumericalSet([3,8]);
-{0,3,8,->}
-
-# doc/_Chapter_Numerical_Sets.xml:46-49
-gap> SmallElements(S);
-[ 0, 3, 8 ]
-
-# doc/_Chapter_Numerical_Sets.xml:52-55
-gap> Gaps(S);
-[ 1, 2, 4, 5, 6, 7 ]
-
-# doc/_Chapter_Numerical_Sets.xml:58-61
-gap> GapsOfFirstType(S);
-[ 4, 7 ]
-
-# doc/_Chapter_Numerical_Sets.xml:64-67
-gap> GapsOfSecondType(S);
-[ 1, 2, 5, 6 ]
-
-# doc/_Chapter_Numerical_Sets.xml:70-73
-gap> Genus(S);
-6
-
-# doc/_Chapter_Numerical_Sets.xml:76-79
-gap> Length(S);
-2
-
-# doc/_Chapter_Numerical_Sets.xml:82-85
-gap> FrobeniusNumber(S);
-7
-
-# doc/_Chapter_Numerical_Sets.xml:88-91
-gap> IsSymmetric(S);
-false
-
-# doc/_Chapter_Numerical_Sets.xml:94-97
-gap> IsPositiveSemiSymmetric(S);
-false
-
-# doc/_Chapter_Numerical_Sets.xml:100-103
-gap> IsNegativeSemiSymmetric(S);
-true
-
-# doc/_Chapter_Numerical_Sets.xml:106-109
-gap> IsAlmostSymmetric(S);
-false
-
-# doc/_Chapter_Numerical_Sets.xml:112-115
-gap> Type(S);
-3
-
-# doc/_Chapter_Numerical_Sets.xml:118-121
-gap> ConjugateOf(S);
-{0,1,2,3,5,6,8,->}
-
-# doc/_Chapter_Numerical_Sets.xml:124-127
-gap> Dual(S);
-{0,5,8,->}
-
-# doc/_Chapter_Numerical_Sets.xml:130-133
-gap> IsSemiSymmetric(S);
-false
-
-# doc/_Chapter_Numerical_Sets.xml:136-139
-gap> PseudoFrobeniusNumbers(S);
-[ 5, 6, 7 ]
-
-# doc/_Chapter_Numerical_Sets.xml:142-145
-gap> Atom(S);
-{0,8,->}
-
-# doc/_Chapter_Numerical_Sets.xml:148-151
-gap> SmallElements(S);
-[ 0, 3, 8 ]
-
-# doc/_Chapter_Numerical_Sets.xml:154-157
-gap> Conductor(S);
-8
-
-# doc/_Chapter_Numerical_Sets.xml:160-163
-gap> Multiplicity(S);
-3
-
-# doc/_Chapter_Numerical_Sets.xml:166-169
-gap> CClosure(S);
-{0,3,6,8,->}
-
-# doc/_Chapter_Numerical_Sets.xml:172-175
-gap> S := NumericalSet( [ 0, 3, 4, 5, 7 ] );
+# doc/_Chapter_Numerical_Sets.xml:39-42
+gap> S := NumericalSetByGaps( [ 1, 2, 6 ] );
 {0,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:181-184
-gap> T := NumericalSetByGaps( [ 1, 6, 7 ] );
-{0,2,3,4,5,8,->}
+# doc/_Chapter_Numerical_Sets.xml:44-47
+gap> T := NumericalSet( [ 2, 9, 10, 11 ] );
+{0,2,9,->}
 
-# doc/_Chapter_Numerical_Sets.xml:203-206
+# doc/_Chapter_Numerical_Sets.xml:74-77
+gap> 1 in S;
+false
+
+# doc/_Chapter_Numerical_Sets.xml:79-82
+gap> 100 in S;
+true
+
+# doc/_Chapter_Numerical_Sets.xml:84-87
 gap> S[ 3 ];
 4
 
-# doc/_Chapter_Numerical_Sets.xml:209-212
+# doc/_Chapter_Numerical_Sets.xml:89-92
 gap> S[ 10 ];
 12
 
-# doc/_Chapter_Numerical_Sets.xml:273-276
-gap> S + 2;
+# doc/_Chapter_Numerical_Sets.xml:146-149
+gap> 2 + S;
 {0,2,5,6,7,9,->}
 
-# doc/_Chapter_Numerical_Sets.xml:279-282
+# doc/_Chapter_Numerical_Sets.xml:151-154
 gap> 2 - S;
 [ 2 ]
 
-# doc/_Chapter_Numerical_Sets.xml:285-288
+# doc/_Chapter_Numerical_Sets.xml:156-159
 gap> Extend( S, 2);
 {0,2,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:291-294
+# doc/_Chapter_Numerical_Sets.xml:161-164
 gap> Extend( S, [ 2, 6 ]);
 {0,2,->}
 
-# doc/_Chapter_Numerical_Sets.xml:297-300
-gap> Intersection2( S, T );
-{0,3,4,5,8,->}
+# doc/_Chapter_Numerical_Sets.xml:166-169
+gap> Intersection( S, T );
+{0,9,->}
 
-# doc/_Chapter_Numerical_Sets.xml:303-306
-gap> Union2( S, T );
+# doc/_Chapter_Numerical_Sets.xml:171-174
+gap> Union( S, T );
 {0,2,3,4,5,7,->}
 
-# doc/_Chapter_Numerical_Sets.xml:433-436
-gap> Gaps( S );
-[ 1, 2, 6 ]
-
-# doc/_Chapter_Numerical_Sets.xml:439-442
-gap> SmallElements( S );
-[ 0, 3, 4, 5, 7 ]
-
-# doc/_Chapter_Numerical_Sets.xml:445-448
-gap> NonzeroSmallElements( S );
-[ 3, 4, 5, 7 ]
-
-# doc/_Chapter_Numerical_Sets.xml:451-454
-gap> Length( S );
-4
-
-# doc/_Chapter_Numerical_Sets.xml:457-460
+# doc/_Chapter_Numerical_Sets.xml:218-221
 gap> Parts( S );
 [ 3, 1, 1, 1 ]
 
-# doc/_Chapter_Numerical_Sets.xml:463-466
+# doc/_Chapter_Numerical_Sets.xml:223-226
 gap> Gaps( S );
 [ 1, 2, 6 ]
 
-# doc/_Chapter_Numerical_Sets.xml:469-472
-gap> Genus( S );
-3
-
-# doc/_Chapter_Numerical_Sets.xml:475-478
-gap> Conductor( S );
-7
-
-# doc/_Chapter_Numerical_Sets.xml:481-484
-gap> FrobeniusNumber( S );
-6
-
-# doc/_Chapter_Numerical_Sets.xml:487-490
-gap> Multiplicity( S );
-3
+# doc/_Chapter_Numerical_Sets.xml:228-231
+gap> SmallElements( S );
+[ 0, 3, 4, 5 ]
 
 #
 gap> STOP_TEST("nsip02.tst", 1);

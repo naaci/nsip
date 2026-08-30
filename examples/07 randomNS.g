@@ -1,10 +1,10 @@
-#! @Chapter Common
+#! @Chapter Common Methods
 #! @Section Examples
 
 gap> while true do
-> P := IntegerPartition( D( RandomIntegerPartition( 10, 15 )));;
+> P := RandomIntegerPartition(1000,1000);;
 > S := NumericalSet( P );;
-> if not IsArf(P) then break; fi;
+> if not IsNSG( S ) then break; fi;
 > od;
 
 #! @BeginExample
@@ -18,27 +18,12 @@ P  = IntegerPartition( NumericalSet( P ) );
 #! @EndExample
 
 #! @BeginExample
-IsNSG( P );
-#! true
-#! @EndExample
-
-#! @BeginExample
 P = ConjugateOf( ConjugateOf( P ) );
 #! true
 #! @EndExample
 
 #! @BeginExample
 S = ConjugateOf( ConjugateOf( S ) );
-#! true
-#! @EndExample
-
-#! @BeginExample
-P = Dual( Dual( P ) );
-#! true
-#! @EndExample
-
-#! @BeginExample
-S = Dual( Dual( S ) );
 #! true
 #! @EndExample
 
@@ -79,11 +64,6 @@ FrobeniusNumber( S ) = FrobeniusNumber( P );
 
 #! @BeginExample
 IsSymmetric( S ) = IsSymmetric( P );
-#! true
-#! @EndExample
-
-#! @BeginExample
-IsPseudoSymmetric( S ) = IsPseudoSymmetric( P );
 #! true
 #! @EndExample
 
